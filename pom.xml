@@ -36,6 +36,7 @@
     </properties>
 
     <dependencies>
+
         <!--shiro jar-->
         <dependency>
             <groupId>org.apache.shiro</groupId>
@@ -51,6 +52,11 @@
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-ehcache</artifactId>
             <version>${shiro-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-version}</version>
         </dependency>
 
         <!--slf4j 实现类-->
