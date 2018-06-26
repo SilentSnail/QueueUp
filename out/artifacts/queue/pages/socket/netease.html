@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../static/js/nim/NIM_Web_SDK_v5.0.0.js"></script>
+    <script src="../../static/js/util/AppConfig.js"></script>
+    <script src="../../static/js/util/DateUtils.js"></script>
+    <script type="text/javascript">
+        //初始化
+        var nim = SDK.NIM.getInstance({
+            appKey:getAppKey(),//网易云信管理后台查看的AppKey
+            account:getUserAccount(),//系统内登录的账号
+            token:getToken(),//系统账号登录成功后回传的token
+            debug:true,//是否开启调试，默认false。开启后将会在浏览器控制台中输出日志
+            onconnect: connect,
+            onerror: error,
+            onwillreconnect: willReconnect,
+            ondisconnect: disConnect,
+            onmsg: onMessage,
+        });
+
+        function disConnect(error){//
+            if(error){
+                switch (error.code){
+                    case 302:// 账号或者密码错误, 请跳转到登录页面并提示错误
+                        setMessage("用户名或密码错误");
+                        break;
+                    case 417:// 重复登录, 已经在其它端登录了, 请跳转到登录页面并提示错误
+                        setMessage("重复登录");
+                        break;
+                    case 'kicked':// 被踢, 请提示错误后跳转到登录页面
+                        setMessage("被踢下线");
+                        break;
+                    default:
+                        setMessage("链接断开")
+                        break;
+                }
+            }
+        }
+
+        //链接失败
+        function error(error){//连接失败
+            setMessage(error);
+        }
+
+        //链接成功
+        function connect(data){//链接成功
+            setMessage("链接成功")
+            nim.getHistoryMsgs({
+                scene: 'p2p',
+                to: 'admin',
+                done: getHistoryMsgsDone
+            });
+        }
+
+        //重新链接
+        function willReconnect(obj){//自动重新链接
+            setMessage("链接断开，正在自动重连。。。");
+        }
+
+        function setMessage(msg){
+            var div = document.getElementById("message");
+            var message = "<br/>" + msg;
+            div.innerHTML += message;
+        }
+
+        //接收消息
+        function onMessage(msg) {
+            console.log('收到消息');
+            switch (msg.scene) {
+                case 'p2p'://单人聊天
+                    var time = timestampToTime(msg.time);
+                    var message = time + " - " + msg.from + "：" + msg.text;
+                    setMessage(message);
+                    break;
+                case 'team':
+                    //群消息通知
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function getHistoryMsgsDone(error, obj) {
+            setMessage('获取云端历史记录' + (!error?'成功':'失败'));
+            if (!error) {
+                var msgs = obj.msgs;
+                for (var i = 0; i < msgs.length; i++){
+                    var time = timestampToTime(msgs[i].time);
+                    var message = time + " - " + msgs[i].from + "：" + msgs[i].text;
+                    setMessage(message);
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<h1>云信 Web SDK Online Test</h1>
+<div>
+    <p>
+        <span>CONTENT:</span>
+        <input type="text" id="content">
+    </p>
+    <p>
+        <button id="connect-sdk">发送消息</button>
+    </p>
+    <div id="message"></div>
+</div>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

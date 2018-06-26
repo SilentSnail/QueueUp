@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ServiceSocket</title>
+    <script src="../../static/js/app/ServiceSocket.js"></script>
+</head>
+<body>
+
+<div>
+    <span>用户名：</span><input type="text" id="username">
+</div>
+<div>
+    <button onclick="ServiceSocket()">发起链接</button>
+    <button onclick="closeSocket()">关闭链接</button>
+</div>
+<div class="sendDiv">
+    <span>消息内容：</span><input type="text" id="message"><br>
+</div>
+<div>
+    <button onclick="sendMessage('S')">发送消息</button>
+    <button onclick="sendMessage('N')">关闭对话</button>
+</div>
+<div>
+    <button onclick="clearShow()">清屏</button>
+</div>
+<div id="showMessage" class="message"></div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 注解扫描 base-package:扫描目录 use-default-filters:是否使用默认过滤器 -->
+    <context:component-scan base-package="com.queue" use-default-filters="true">
+        <!-- 全局扫描排除Controller,此处使用Spring父容器,父容器不能访问子容器。Controller使用SpringMVC进行扫描 -->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+    </context:component-scan>
+
+    <!-- 向Spring容器注册注解 https://blog.csdn.net/chenlong220192/article/details/46723561 -->
+    <context:annotation-config />
+
+    <!-- 加载配置文件 -->
+    <context:property-placeholder location="classpath:application.properties" />
+
+    <!-- 为@aspectJ切面的bean创建代理。自动使用CGLib动态代理。 -->
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+
+    <bean id="save_Source" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="url" value="${save.jdbc.url}"></property>
+        <property name="username" value="${save.jdbc.username}"></property>
+        <property name="password" value="${save.jdbc.password}"></property>
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="initialSize" value="${initialSize}"/>
+        <property name="minIdle" value="${minIdle}"/>
+        <property name="maxActive" value="${maxActive}"/>
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="${maxWait}"/>
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="${timeBetweenEvictionRunsMillis}"/>
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="${minEvictableIdleTimeMillis}"/>
+        <!-- 配置监控统计拦截的filters -->
+        <property name="filters" value="${filters}"/>
+    </bean>
+
+    <bean id="read_Source" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="url" value="${read.jdbc.url}"></property>
+        <property name="username" value="${read.jdbc.username}"></property>
+        <property name="password" value="${read.jdbc.password}"></property>
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="initialSize" value="${initialSize}"/>
+        <property name="minIdle" value="${minIdle}"/>
+        <property name="maxActive" value="${maxActive}"/>
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="${maxWait}"/>
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="${timeBetweenEvictionRunsMillis}"/>
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="${minEvictableIdleTimeMillis}"/>
+        <!-- 配置监控统计拦截的filters -->
+        <property name="filters" value="${filters}"/>
+    </bean>
+
+    <bean id="dataSource" class="com.queue.datasource.ChooseDataSource">
+        <property name="targetDataSources">
+            <map key-type="java.lang.String">
+                <entry key="write" value-ref="save_Source" />
+                <entry key="read" value-ref="read_Source" />
+            </map>
+        </property>
+        <property name="defaultTargetDataSource" ref="read_Source" />
+    </bean>
+
+    <!-- 配置mybatis的log日志实现为log4j2，这种配置方式同mybatis配置文件里面的setting -->
+    <bean id="log4j2Configuration" class="org.apache.ibatis.session.Configuration">
+        <property name="logImpl" value="org.apache.ibatis.logging.log4j2.Log4j2Impl" />
+        <property name="proxyFactory">
+            <bean class="org.apache.ibatis.executor.loader.cglib.CglibProxyFactory" />
+        </property>
+    </bean>
+
+    <!--session会话工厂-->
+    <bean id="sessionFactory" class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configuration" ref="log4j2Configuration" />
+        <!-- 配置Mybatis配置文件 -->
+        <property name="mapperLocations" value="classpath*:com/queue/**/mapper/*.xml" />
+        <property name="plugins">
+            <array>
+                <bean class="com.baomidou.mybatisplus.plugins.PaginationInterceptor">
+                    <property name="dialectType" value="mysql" />
+                </bean>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <value>
+                            helperDialect=mysql
+                            rowBoundsWithCount=true
+                            supportMethodsArguments=true
+                            autoRuntimeDialect=true
+                            returnPageInfo=check
+                        </value>
+                    </property>
+                </bean>
+            </array>
+        </property>
+    </bean>
+
+    <!--spring 事务管理类-->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!-- 用于扫描mapper配置,如果不配置改Bean，Service无法自动注入Mapper -->
+    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sessionFactory" />
+        <property name="basePackage" value="com.queue.**.mapper" />
+    </bean>
+
+    <!--关于事务的一些配置-->
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+            <tx:method name="*" read-only="true"/>
+            <tx:method name="load*" read-only="true" />
+            <tx:method name="get*" read-only="true" />
+            <tx:method name="select*" read-only="true" />
+            <tx:method name="query*" read-only="true" />
+            <tx:method name="create*" propagation="REQUIRED" />
+            <tx:method name="save*" propagation="REQUIRED" />
+            <tx:method name="insert*" propagation="REQUIRED" />
+            <tx:method name="update*" propagation="REQUIRED" />
+            <tx:method name="delete*" propagation="REQUIRED" />
+            <tx:method name="edit*" propagation="REQUIRED" />
+            <tx:method name="add*" propagation="REQUIRED" />
+            <tx:method name="do*" propagation="REQUIRED" />
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- 配置Spring AOP， AOP和Aspectj是两种切面编程，目的都差不多 -->
+    <aop:config proxy-target-class="true" expose-proxy="true">
+        <aop:pointcut id="transactionPointcut" expression="execution(* com.queue..service.*+.*(..))" />
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="transactionPointcut" order="1" />
+        <aop:advisor id="duridAdvice" advice-ref="duridStatInterceptor" pointcut-ref="transactionPointcut" order="2" />
+    </aop:config>
+
+    <!-- 配置durid监控 -->
+    <bean id="duridStatInterceptor" class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor" />
+
+    <import resource="classpath:spring-cache.xml" />
+
+</beans>

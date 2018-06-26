@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="securityFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager" />
+        <property name="loginUrl" value="/pages/login.html" />
+        <property name="successUrl" value="/pages/admin/admin.html" />
+        <property name="unauthorizedUrl" value="/pages/error.html" />
+        <property name="filterChainDefinitions">
+            <value>
+                /valid/* = anon
+                /static/** = anon
+                /pages/* = anon
+                /** = authc
+            </value>
+        </property>
+    </bean>
+
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="myRealm" />
+        <property name="sessionManager" ref="sessionManager" />
+    </bean>
+
+    <bean id="myRealm" class="com.queue.shiro.realm.MyRealm">
+        <constructor-arg index="0" name="cacheManager" ref="shiroCache" />
+        <!-- 启用身份验证缓存，即缓存AuthenticationInfo信息，默认false -->
+        <property name="authenticationCachingEnabled" value="false" />
+        <property name="authorizationCachingEnabled" value="false" />
+        <!-- 缓存AuthenticationInfo信息的缓存名称 -->
+        <property name="authenticationCacheName" value="authenticationCache" />
+        <!-- 缓存AuthorizationInfo信息的缓存名称 -->
+        <property name="authorizationCacheName" value="authorizationCache" />
+    </bean>
+
+    <!--引用Spring Cache ,配置查看spring-cache方法-->
+    <bean id="shiroCache" class="com.queue.shiro.cache.ShiroCacheManager">
+        <property name="cacheManager" ref="springCacheManager" />
+    </bean>
+
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <property name="globalSessionTimeout" value="${shiro.session.timeout}" />
+        <property name="sessionDAO" ref="sessionDAO" />
+    </bean>
+
+    <bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO">
+        <property name="cacheManager" ref="shiroCache" />
+        <property name="sessionIdGenerator">
+            <bean class="org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator" />
+        </property>
+        <property name="activeSessionsCacheName" value="activeSessionCache" />
+    </bean>
+
+</beans>

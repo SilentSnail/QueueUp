@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CustomerSocket</title>
+    <script src="../../static/js/app/CustomerSocket.js"></script>
+    <link rel="stylesheet" href="../../static/css/labelStyle.css">
+</head>
+<body>
+
+<div>
+    <span>用户名：</span><input type="text" id="username">
+</div>
+<div>
+    <button onclick="socketConnection()">发起链接</button>
+    <button onclick="closeWebSocket()">关闭链接</button>
+</div>
+
+<div id="service">
+    <div class="sendDiv">
+        <span>消息内容：</span><input type="text" id="message"><br>
+        <button onclick="sendMessage('Y')">人工服务</button>
+        <button onclick="sendMessage('N')">关闭人工服务</button>
+        <button onclick="sendMessage('S')">发送消息</button>
+    </div>
+</div>
+
+<!--<div id="customer" style="display: none;">-->
+    <!--<div class="sendDiv">-->
+        <!--<span>消息内容：</span><input type="text" id="message"><br>-->
+        <!--<span>发送对象：</span><input type="text" id="toUser">-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<button onclick="sendMessage('to')">发送消息</button>-->
+        <!--<button onclick="sendMessage('all')">发送通知</button>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div>
+    <button onclick="clearShow()">清屏</button>
+</div>
+<div id="showMessage" class="message"></div>
+
+</body>
+</html>
