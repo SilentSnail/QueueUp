@@ -1,60 +1,72 @@
 /**
  * Created by liusong on 2018/4/17.
  */
-
-$('#login-button').click(function (event) {
-    event.preventDefault();
-    currClass = $(this).attr("class");
-    if(currClass == "usr_login"){
-        login()
-    }else if(currClass == "usr_repwd"){
-        rePwd();
-    }else{
-        alert("出错了");
+$(function () {
+    $('.select_label').click(function() {
+        $('.select_label').removeClass('select_label-active');
+        $(this).addClass('select_label-active');
+    });
+    $('#js-usr-login').click(function() {
+        $('#login-div').show();
+        $('#repwd-div').hide();
+        $('#hide-div').show();
+        $('input[name="email"]').val("");
+        $('#login').removeClass("usr_send");
+        $('#login').addClass("usr_login");
+    });
+    $('#js-usr-repwd').click(function() {
+        $('#login-div').hide();
+        $('#repwd-div').show();
+        $('#hide-div').hide();
+        $('input[name="username"]').val("");
+        $('input[name="password"]').val("");
+        $('#login').removeClass("usr_login");
+        $('#login').addClass("usr_send");
+    });
+    $('#from').submit(function (event) {
+        event.preventDefault();
+        currClass = $("#login").attr("class");
+        if(currClass == "btn btn-primary usr_login"){
+            if(validCheck(1)){
+                send("/valid/login", 1)
+            }
+        }else if(currClass == "btn btn-primary usr_send"){
+            if(validCheck(2)){
+                send("/valid/rePassword", 2)
+            }
+        }else{
+            alert("出错了");
+        }
+    });
+    function validCheck(type) {
+        if(type == 1){
+            if($('input[name="username"]').val() == ""){
+                showMessage("用户名不能为空");
+                return false;
+            }
+            if($('input[name="password"]').val() == ""){
+                showMessage("密码不能为空");
+                return false;
+            }
+        }else{
+            if($('input[name="email"]').val() == ""){
+                showMessage("邮箱不能为空");
+                return false;
+            }
+        }
+        return true;
+    }
+    function send(url, type) {
+        ajax(url, $('#from').serialize(), function (data) {
+            if(data.code == 1){
+                if(type == 1){
+                    window.location = "/pages/admin/admin.html"
+                }else{
+                    showMessage("邮件发送成功")
+                }
+            }else{
+                showMessage(data.msg);
+            }
+        });
     }
 });
-
-$('.select_label').click(function() {
-    $('.select_label').removeClass('select_label-active');
-    $(this).addClass('select_label-active');
-});
-
-$('#js-usr-login').click(function() {
-    $('input[name="email"]').hide().val("");
-    $('input[name="username"]').show();
-    $('input[name="password"]').show();
-    $('#remeber').show();
-    $('#login-button').removeClass("usr_repwd");
-    $('#login-button').addClass("usr_login");
-});
-$('#js-usr-repwd').click(function() {
-    $('input[name="email"]').show();
-    $('input[name="username"]').hide().val("");
-    $('input[name="password"]').hide().val("");
-    $('#remeber').hide();
-    $('#login-button').removeClass("usr_login");
-    $('#login-button').addClass("usr_repwd");
-});
-
-login = function () {
-    ajax("/valid/login", $('#submit').serialize(), function (data) {
-        if(data.code == 1){
-            $('.select_list').hide();//隐藏选项
-            $('form').fadeOut(500);//淡入淡出方式隐藏form
-            $('.wrapper').addClass('form-success');//添加样式
-            window.location = "/pages/admin/admin.html"
-        }else{
-            alert(data.msg);
-        }
-    });
-}
-
-rePwd = function () {
-    ajax("/valid/rePassword", $('#submit').serialize(), function (data) {
-        if(data.code == 1){
-            alert("密码重置邮件已发送!");
-        }else{
-            alert(data.msg);
-        }
-    });
-}

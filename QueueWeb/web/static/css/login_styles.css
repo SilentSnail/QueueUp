@@ -10,27 +10,23 @@ body {
   font-weight: 300;
 }
 body ::-webkit-input-placeholder {
-  /* WebKit browsers */
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
   font-weight: 300;
 }
 body :-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
   opacity: 1;
   font-weight: 300;
 }
 body ::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
   opacity: 1;
   font-weight: 300;
 }
 body :-ms-input-placeholder {
-  /* Internet Explorer 10+ */
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
   font-weight: 300;
@@ -41,67 +37,29 @@ body :-ms-input-placeholder {
   background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
   opacity: 0.8;
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 0;
   width: 100%;
   height: 400px;
-  margin-top: -200px;
   overflow: hidden;
   text-align: center;
 }
 
-.wrapper.form-success .container h1 {
-  -webkit-transform: translateY(85px);
-      -ms-transform: translateY(85px);
-          transform: translateY(85px);
-}
 .container {
   max-width: 600px;
   margin: 0 auto;
   padding: 40px 0;
   height: 400px;
+}
 
-}
- h1 {
-  font-size: 40px;
-  -webkit-transition-duration: 1s;
-          transition-duration: 1s;
-  -webkit-transition-timing-function: ease-in-put;
-          transition-timing-function: ease-in-put;
-  font-weight: 200;
-}
 form {
   padding: 20px 0;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 2;
 }
-form input {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  outline: 0;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  background-color: rgba(255, 255, 255, 0.2);
-  width: 250px;
-  border-radius: 3px;
-  padding: 10px 15px;
-  margin: 0 auto 10px auto;
-  display: block;
-  text-align: center;
-  font-size: 18px;
-  color: white;
-  -webkit-transition-duration: 0.25s;
-          transition-duration: 0.25s;
-  font-weight: 300;
-}
-form input:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-form input:focus {
-  background-color: white;
-  width: 300px;
-  color: #53e3a6;
-}
+
 form button {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -118,6 +76,7 @@ form button {
   -webkit-transition-duration: 0.25s;
           transition-duration: 0.25s;
 }
+
 form button:hover {
   background-color: #f5f7f9;
 }
@@ -211,6 +170,7 @@ form button:hover {
   -webkit-animation-delay: 11s;
           animation-delay: 11s;
 }
+
 @-webkit-keyframes square {
   0% {
     -webkit-transform: translateY(0);
@@ -231,6 +191,7 @@ form button:hover {
             transform: translateY(-700px) rotate(600deg);
   }
 }
+
 .select_label {
   color: #fff;
   cursor: pointer;
@@ -242,6 +203,7 @@ form button:hover {
 .select_label-active {
   opacity: 1;
 }
+
 ul, ol {
   list-style: none;
   padding-top: -10px;
@@ -257,24 +219,30 @@ ul, ol {
 button.usr_login::before {
   content: '登录';
 }
-button.usr_repwd::before {
+button.usr_send::before {
   content: "重置密码";
 }
+
 .text_hide{
   display: none;
 }
-.box {
-  width:20px;
-  height: 20px;
-  padding: 0px 0px;
-}
-#remeber{
+
+.from-foot{
   margin-top: 10px;
   width: 250px;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
 }
-#remeber div{
+
+.from-foot div{
+  margin-left: auto ; margin-right: auto ;
+}
+
+.from-input-div{
+  width: 250px;
+}
+
+.div-center{
   margin-left: auto ; margin-right: auto ;
 }

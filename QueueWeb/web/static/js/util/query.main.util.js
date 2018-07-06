@@ -37,3 +37,7 @@ ajax = function (url, data, callFun, param, options) {
         }
     });
 }
+
+showMessage = function (data){
+    (new $.zui.ModalTrigger({showHeader: false, width:300, custom : data})).show();
+}
