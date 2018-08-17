@@ -1,5 +1,10 @@
 package com.queue.util;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  * Created by liusong on 2018/5/2.
  */
@@ -28,5 +33,27 @@ public class FileUtils {
             builder.append(str);
         }
         return builder.toString();
+    }
+
+    /**
+     * 追加写入文件
+     * @param filePath 文件路径
+     * @param context 写入内容
+     */
+    public synchronized static void writeStrToFile(String filePath, String context) {
+        File file = new File(filePath);
+        BufferedWriter out = null;
+        try {
+            if(!file.exists()) {
+                file.createNewFile();
+            }
+            out = new BufferedWriter(new FileWriter(file, true));
+            out.write("\r\n");
+            out.write(context);
+            out.flush();
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

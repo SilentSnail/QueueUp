@@ -14,31 +14,27 @@ public class EncryptionUtils {
 
     private static final char[] HEX_DIGITS = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 
-    private static String encodeBase64(String body){
+    public static String encodeBase64(String body){
         return Base64.encodeToString(body.getBytes());
     }
 
-    private static String decodeBase64(String code){
+    public static String decodeBase64(String code){
         return Base64.decodeToString(code);
     }
 
-    private static String encodeHexCode(String body){
+    public static String encodeHexCode(String body){
         return Hex.encodeToString(body.getBytes());
     }
 
-    private static String decodeHexCode(String code){
+    public static String decodeHexCode(String code){
         return new String(Hex.decode(code.getBytes()));
     }
 
-    private static String shahash(String body){
+    public static String shahash(String body){
         return new Sha256Hash(body, salt).toString();
     }
 
     public static String toMD5(String body){
         return DigestUtils.md5DigestAsHex((body + salt).getBytes());
-    }
-
-    public static void main(String[] args) {
-        System.out.println(EncryptionUtils.toMD5("123456"));
     }
 }

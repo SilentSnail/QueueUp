@@ -101,12 +101,6 @@ public class ExcelUtils {
                 return String.valueOf(cell.getBooleanCellValue());
             case FORMULA://公式
                 return getCellValue(evaluator.evaluate(cell));
-//            case _NONE://未知类型数据
-//                return null;
-//            case ERROR://误差值
-//                break;
-//            case BLANK://空白单元格
-//                return "";
         }
         return null;
     }
