@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="queue">
-    <output-path>$PROJECT_DIR$/out/artifacts/queue</output-path>
+    <output-path>/Volumes/TEST_HD/Temp/artifacts/QueueUp</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="QueueWeb/web/queue" />
       <element id="directory" name="WEB-INF">
@@ -80,6 +80,8 @@
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.5.5" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.9" />
           <element id="library" level="project" name="Maven: org.springframework:spring-websocket:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.21" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-simple:1.7.21" />
         </element>
       </element>
     </root>

@@ -4,9 +4,9 @@
 <!--xmlns="http://logging.apache.org/log4j/2.0/config"-->
 <Configuration status="debug" strict="true">
     <Properties>
-        <Property name="LOG_HOME">${sys:catalina.home}/logs</Property>
-        <property name="ERROR_LOG_FILE_NAME">${sys:catalina.home}/logs/error</property>
-        <property name="WARN_LOG_FILE_NAME">${sys:catalina.home}/logs/warn</property>
+        <Property name="LOG_HOME">/Volumes/TEST_HD/Temp/logs</Property>
+        <property name="ERROR_LOG_FILE_NAME">/Volumes/TEST_HD/Temp/logs/error</property>
+        <property name="WARN_LOG_FILE_NAME">/Volumes/TEST_HD/Temp/logs/warn</property>
         <!-- 输出日志的格式 -->
         <!--
             %d{yyyy-MM-dd HH:mm:ss, SSS} : 日志生产时间
