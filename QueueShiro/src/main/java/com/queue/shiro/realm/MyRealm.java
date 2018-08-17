@@ -47,7 +47,7 @@ public class MyRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         log.info("Shiro开始登录认证");
         SecurityUserEntity entity = (SecurityUserEntity) token;
-        RoleUser user = userService.getUserByName(new RoleUser(entity.getUsername()));
+        RoleUser user = userService.getUserByEntity(new RoleUser(entity.getUsername()));
         if(user == null){
             throw new UnknownAccountException("用户或或密码不正确");
         }

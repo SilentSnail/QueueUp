@@ -15,7 +15,7 @@ public class DBHelper {
 
     public static void main(String[] args) {
         String sql = "SELECT * FROM VIDEO_PATH";
-        List<Map> list = DBHelper.search(sql);
+        List<Map<String, String>> list = DBHelper.search(sql);
         Map data = null;
         for (int i = 0; i < list.size(); i++) {
             data = list.get(i);
@@ -50,11 +50,11 @@ public class DBHelper {
 
     public static String getSourceUUID(String source){
         String sql = "SELECT IDENTITY FROM RESOURCE_URL WHERE SOURCE_URL = '" + source + "'";
-        List<Map> list = DBHelper.search(sql);
+        List<Map<String, String>> list = DBHelper.search(sql);
         if(list.size() == 0){
             return null;
         }
-        return list.get(0).get("IDENTITY").toString();
+        return list.get(0).get("IDENTITY");
     }
 
     public static int saveVideoPage(Map data){
@@ -98,7 +98,7 @@ public class DBHelper {
         return 0;
     }
 
-    private static List<Map> search(String sql){
+    private static List<Map<String, String>> search(String sql){
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet result = null;
@@ -129,16 +129,16 @@ public class DBHelper {
         return null;
     }
 
-    private static List<Map> getData(ResultSet rs) throws SQLException {
-        List<Map> result = new LinkedList<Map>();
+    private static List<Map<String, String>> getData(ResultSet rs) throws SQLException {
+        List<Map<String, String>> result = new LinkedList<Map<String, String>>();
         ResultSetMetaData rsmd = rs.getMetaData();
         String[] colums = new String[rsmd.getColumnCount()];
         for (int i = 0; i < rsmd.getColumnCount(); i++) {
             colums[i] = rsmd.getColumnName(i+1);
         }
-        Map map;
+        Map<String, String> map;
         while (rs.next()){
-            map = new LinkedHashMap();
+            map = new LinkedHashMap<String, String>();
             for (String key : colums) {
                 String value = rs.getString(key);
                 map.put(key, value);

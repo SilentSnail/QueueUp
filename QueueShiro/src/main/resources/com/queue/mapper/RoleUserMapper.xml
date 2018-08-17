@@ -115,7 +115,13 @@
     select * from ROLE_USER
   </select>
 
-  <select id="getUserByName" parameterType="com.queue.entity.RoleUser" resultMap="BaseResultMap">
-    select * from ROLE_USER WHERE USERNAME = #{username,jdbcType=CHAR}
+  <select id="getUserByEntity" parameterType="com.queue.entity.RoleUser" resultMap="BaseResultMap">
+    select * from ROLE_USER WHERE 1 = 1
+     <if test="username != null">
+       and USERNAME = #{username,jdbcType=CHAR}
+     </if>
+     <if test="email != null">
+       and email = #{email,jdbcType=VARCHAR}
+     </if>
   </select>
 </mapper>

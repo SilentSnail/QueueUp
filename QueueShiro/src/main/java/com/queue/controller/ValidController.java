@@ -70,14 +70,24 @@ public class ValidController extends BaseController{
     }
 
     @RequestMapping("/rePassword")
-    public R rePassword(@RequestParam(value = "email", required = true) String email){
+    public R rePassword(@RequestParam(value = "email") String email){
         try {
             Asserts.isEmpty(email, "邮箱不能为空");
         } catch (Exception e) {
             return R.error(e.getMessage());
         }
-        System.out.println("消えてはありません");
-        System.out.println(email);
         return R.ok();
     }
+
+    @RequestMapping("/checkName")
+    public R checkUser(@RequestParam(value = "username") String name){
+        try {
+            RoleUser user = userService.getUserByEntity(new RoleUser(name));
+            Asserts.isNull(user, "无用户信息");
+            return R.error("用户已存在");
+        } catch (Exception e) {
+            return R.ok();
+        }
+    }
+
 }

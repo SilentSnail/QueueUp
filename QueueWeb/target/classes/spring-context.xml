@@ -60,6 +60,11 @@
         <property name="filters" value="${filters}"/>
     </bean>
 
+    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="configLocation" value="classpath:${cache.ehCacheConfig}" />
+        <property name="shared" value="true" />
+    </bean>
+
     <bean id="dataSource" class="com.queue.datasource.ChooseDataSource">
         <property name="targetDataSources">
             <map key-type="java.lang.String">

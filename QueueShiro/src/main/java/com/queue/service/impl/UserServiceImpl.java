@@ -26,8 +26,8 @@ public class UserServiceImpl implements UserService {
         return page;
     }
 
-    public RoleUser getUserByName(RoleUser user){
-        return userMapper.getUserByName(user);
+    public RoleUser getUserByEntity(RoleUser user){
+        return userMapper.getUserByEntity(user);
     }
 
     public int save(RoleUser user) {

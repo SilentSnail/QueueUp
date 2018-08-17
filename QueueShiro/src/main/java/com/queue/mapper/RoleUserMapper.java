@@ -23,5 +23,5 @@ public interface RoleUserMapper {
 
     List<RoleUser> searchUserByPage();
 
-    RoleUser getUserByName(RoleUser user);
+    RoleUser getUserByEntity(RoleUser user);
 }

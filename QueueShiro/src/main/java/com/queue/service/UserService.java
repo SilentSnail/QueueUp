@@ -10,7 +10,7 @@ public interface UserService {
 
     PageInfo<RoleUser> getUserByPage(int pageNum, int pageSize);
 
-    RoleUser getUserByName(RoleUser user);
+    RoleUser getUserByEntity(RoleUser user);
 
     int save(RoleUser user);
 }
