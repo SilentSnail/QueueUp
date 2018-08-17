@@ -33,18 +33,13 @@
         <module name="websocket" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="1.0.0.1" target="1.5" />
-      <module name="common" target="1.5" />
-      <module name="generator" target="1.5" />
-      <module name="QueueCommon" target="1.5" />
-      <module name="QueueShiro" target="1.5" />
-      <module name="QueueSocket" target="1.5" />
-      <module name="QueueUp" target="1.5" />
-      <module name="QueueWeb" target="1.5" />
-      <module name="queueWeb" target="1.5" />
-      <module name="ShiroGenerator" target="1.5" />
-      <module name="websocket" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="QueueCommon" target="1.8" />
+      <module name="QueueShiro" target="1.8" />
+      <module name="QueueSocket" target="1.8" />
+      <module name="QueueUp" target="1.8" />
+      <module name="QueueWeb" target="1.8" />
+      <module name="ShiroGenerator" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
