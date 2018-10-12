@@ -1,8 +1,7 @@
 package com.queue.entity;
 
 import com.alibaba.fastjson.JSON;
-import com.queue.util.EncryptionUtils;
-import com.queue.util.StreamUtils;
+import com.queue.util.SecurityUtils;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -131,12 +130,12 @@ public class RoleUser implements Serializable {
     }
 
     public RoleUser initRoleUser(){
-        this.setUserCode(StreamUtils.getUUID());
+        this.setUserCode(SecurityUtils.getUUID());
         this.setCreateTime(new Date());
         this.setCreator(this.getUsername());
         this.setIsDelete((short) 0);
         this.setRoleId((short)0);
-        this.setPassword(EncryptionUtils.toMD5(this.getPassword()));
+        this.setPassword(SecurityUtils.toMD5(this.getPassword()));
         return this;
     }
 }

@@ -1,6 +1,5 @@
 package com.queue.util;
 
-import org.apache.commons.lang.ArrayUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -67,8 +66,7 @@ public class ExcelUtils {
     private Workbook readExcelByPath(String path) throws IOException, FileFormatException {
         InputStream stream = ExcelUtils.class.getResourceAsStream(path);
         Asserts.isNull(stream,"读取文件失败，文件路径错误");
-        byte[] bytes = ArrayUtils.subarray(StreamUtils.InputStreamToBytes(stream),0,8);
-        String head = FileUtils.getExcelHeader(bytes);
+        String head = FileUtils.getFileHeader(stream);
         //这里应该关闭InputStream，未测试关闭后是否还能获取到Workbook,故此处未添加关闭代码
         if(FileUtils.FILE_HEAD_XLS.equals(head)) {
             return new HSSFWorkbook(stream);

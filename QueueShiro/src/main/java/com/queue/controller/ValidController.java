@@ -4,9 +4,8 @@ import com.queue.entity.RoleUser;
 import com.queue.service.UserService;
 import com.queue.shiro.bean.SecurityUserEntity;
 import com.queue.util.Asserts;
-import com.queue.util.EncryptionUtils;
+import com.queue.util.SecurityUtils;
 import com.queue.util.R;
-import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -27,7 +26,7 @@ public class ValidController extends BaseController{
     private UserService userService;
 
     @RequestMapping("/login")
-    public R login(String username, String password, @RequestParam(value = "member", required = true, defaultValue = "0") String member){
+    public R login(String username, String password, @RequestParam(defaultValue = "0") String member){
         try {
             Asserts.isEmpty(username, "用户名不能为空");
             Asserts.isEmpty(password, "密码不能为空");
@@ -35,8 +34,8 @@ public class ValidController extends BaseController{
             return R.error(e.getMessage());
         }
         System.out.println(member);
-        SecurityUserEntity token = new SecurityUserEntity(username, EncryptionUtils.toMD5(password));
-        Subject subject = SecurityUtils.getSubject();
+        SecurityUserEntity token = new SecurityUserEntity(username, SecurityUtils.toMD5(password));
+        Subject subject = org.apache.shiro.SecurityUtils.getSubject();
         try {
             subject.login(token);
             return R.ok();

@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
+ * 分页工具类
  * Created by liusong on 2018/4/10.
  */
 public class PageUtils implements Serializable {

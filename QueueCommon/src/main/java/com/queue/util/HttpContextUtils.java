@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * 获取Request和Response工具类
  * Created by liusong on 2018/4/10.
  */
 public class HttpContextUtils {

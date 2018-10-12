@@ -19,7 +19,6 @@ public class SendMailPool implements Runnable {
     private Integer status = -1;
 
     public void execute() {
-        System.out.println("mail线程池开始执行");
         if(pool == null){
             throw new NullPointerException("mail线程池尚未初始化");
         }
@@ -29,7 +28,6 @@ public class SendMailPool implements Runnable {
             if(thread == null){//如果没有任务 则休息10秒
                 synchronized (this){
                     try {
-                        System.out.println("线程池进行休眠");
                         this.setStatus(0);
                         this.wait();
                     } catch (InterruptedException e) {

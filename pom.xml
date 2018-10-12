@@ -33,6 +33,10 @@
         <json-version>2.4</json-version>
         <poi-version>3.17</poi-version>
         <slf4j-version>1.7.21</slf4j-version>
+        <jedis-version>2.9.0</jedis-version>
+        <redis-data>2.1.0.RELEASE</redis-data>
+        <protostuff-version>1.5.9</protostuff-version>
+        <javamail-version>1.4.7</javamail-version>
     </properties>
 
     <dependencies>
@@ -218,6 +222,19 @@
             <artifactId>servlet-api</artifactId>
             <version>2.5</version>
             <scope>provided</scope>
+        </dependency>
+
+        <!-- spring集成redis -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>${redis-data}</version>
+        </dependency>
+        <!-- Jedis -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>${jedis-version}</version>
         </dependency>
     </dependencies>
 </project>

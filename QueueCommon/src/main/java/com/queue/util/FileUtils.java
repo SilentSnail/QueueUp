@@ -1,11 +1,11 @@
 package com.queue.util;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import org.apache.commons.lang.ArrayUtils;
+
+import java.io.*;
 
 /**
+ * 文件读取工具类
  * Created by liusong on 2018/5/2.
  */
 public class FileUtils {
@@ -15,17 +15,42 @@ public class FileUtils {
     public static final String FILE_HEAD_RAR = "526172211A0700";//RAR压缩文件的文件头
     public static final String FILE_HEAD_ZIP = "504B0304140000";//ZIP压缩文件的文件头
 
-    public static String getExcelHeader(byte[] b){
-        return bytesToHexString(b);
+    /**
+     * 获取文件头，默认头8位
+     * @param stream
+     * @return
+     */
+    public static String getFileHeader(InputStream stream) throws IOException {
+        return FileUtils.getFileHeader(stream, 8);
     }
 
-    private static String bytesToHexString(byte[] bytes){
+    /**
+     * 获取指定结束位置的Hex码 从0开始
+     * @param stream
+     * @param length
+     * @return
+     * @throws IOException
+     */
+    public static String getFileHeader(InputStream stream, Integer length) throws IOException {
+        return FileUtils.getFileHeader(stream, 0, length);
+    }
+
+    /**
+     * 获取指定位置开始，指定位置结束的Hex码
+     * @param stream
+     * @param start
+     * @param length
+     * @return
+     * @throws IOException
+     */
+    public static String getFileHeader(InputStream stream, Integer start, Integer length) throws IOException {
+        byte[] bytes = ArrayUtils.subarray(StreamUtils.InputStreamToBytes(stream), start, length);
         StringBuilder builder = new StringBuilder();
         if(bytes == null || bytes.length <= 0){
             return null;
         }
         String str;
-        for (byte b :bytes) {
+        for (byte b : bytes) {
             str = Integer.toHexString(b & 0xFF).toUpperCase();
             if(str.length() < 2){
                 builder.append(0);

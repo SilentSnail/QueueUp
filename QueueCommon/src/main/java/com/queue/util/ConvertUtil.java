@@ -6,7 +6,7 @@ import java.util.*;
 /**
  * Created by liusong on 2018/8/16.
  */
-public class EntityToMapUtil {
+public class ConvertUtil {
 
     private static void setObjectValue(Object obj, Map<String, Object> params) throws SecurityException, IllegalAccessException, NoSuchFieldException {
         Class<?> clazz = obj.getClass();
@@ -71,9 +71,9 @@ public class EntityToMapUtil {
      * @param clazz
      * @return
      */
-    public static Object convertMap2Obj(Map<String, Object> map,Class clazz) throws InstantiationException, IllegalAccessException, SecurityException, NoSuchFieldException{
+    public static Object convertMapToObj(Map<String, Object> map,Class clazz) throws InstantiationException, IllegalAccessException, SecurityException, NoSuchFieldException{
         Object obj=clazz.newInstance();
-        EntityToMapUtil.setObjectValue(obj, map);
+        ConvertUtil.setObjectValue(obj, map);
         return obj;
     }
 
@@ -82,15 +82,34 @@ public class EntityToMapUtil {
      * @param obj
      * @return
      */
-    public static Map convertObj2Map(Object obj) throws SecurityException, NoSuchFieldException, IllegalAccessException {
+    public static Map convertObjToMap(Object obj) throws SecurityException, NoSuchFieldException, IllegalAccessException {
         Map map = new HashMap();
-        List<Field> fieldsList = EntityToMapUtil.getAllFieldList(obj.getClass());
+        List<Field> fieldsList = ConvertUtil.getAllFieldList(obj.getClass());
         for (int i = 0; i < fieldsList.size(); i++) {
             Field f = fieldsList.get(i);
-            Object propertyValue = EntityToMapUtil.getObjectValue(obj, f);
+            Object propertyValue = ConvertUtil.getObjectValue(obj, f);
             map.put(f.getName(), propertyValue);
         }
         return map;
     }
 
+    public static <T> T[] sort(T[] ts, Integer[] sortType){
+        T t;
+        int temp;
+        for(int i = 0 ; i < ts.length-1; i ++) {
+            for(int j = 0 ;j < ts.length-1-i ; j++) {
+                if(sortType[j] > sortType[j+1]) { //交换两数位置
+                    //排序
+                    temp = sortType[j];
+                    sortType[j] = sortType[j+1];
+                    sortType[j+1] = temp;
+                    //返回排序的结果
+                    t = ts[j];
+                    ts[j] = ts[j+1];
+                    ts[j+1] = t;
+                }
+            }
+        }
+        return ts;
+    }
 }

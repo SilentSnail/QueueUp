@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.queue.mapper.CurrencyTblMapper">
+  <resultMap id="BaseResultMap" type="com.queue.entity.CurrencyTbl">
+    <result column="C_ID" jdbcType="BIGINT" property="cId" />
+    <result column="CUR_ID" jdbcType="VARCHAR" property="curId" />
+    <result column="CUR_NAME" jdbcType="VARCHAR" property="curName" />
+    <result column="CUR_STATUS" jdbcType="SMALLINT" property="curStatus" />
+    <result column="DEL_STATUS" jdbcType="SMALLINT" property="delStatus" />
+  </resultMap>
+  <insert id="insert" parameterType="com.queue.entity.CurrencyTbl">
+    insert into currency_tbl (C_ID, CUR_ID, CUR_NAME, 
+      CUR_STATUS, DEL_STATUS)
+    values (#{cId,jdbcType=BIGINT}, #{curId,jdbcType=VARCHAR}, #{curName,jdbcType=VARCHAR}, 
+      #{curStatus,jdbcType=SMALLINT}, #{delStatus,jdbcType=SMALLINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.queue.entity.CurrencyTbl">
+    insert into currency_tbl
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cId != null">
+        C_ID,
+      </if>
+      <if test="curId != null">
+        CUR_ID,
+      </if>
+      <if test="curName != null">
+        CUR_NAME,
+      </if>
+      <if test="curStatus != null">
+        CUR_STATUS,
+      </if>
+      <if test="delStatus != null">
+        DEL_STATUS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cId != null">
+        #{cId,jdbcType=BIGINT},
+      </if>
+      <if test="curId != null">
+        #{curId,jdbcType=VARCHAR},
+      </if>
+      <if test="curName != null">
+        #{curName,jdbcType=VARCHAR},
+      </if>
+      <if test="curStatus != null">
+        #{curStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="delStatus != null">
+        #{delStatus,jdbcType=SMALLINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>
