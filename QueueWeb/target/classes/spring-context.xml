@@ -60,8 +60,6 @@
         <property name="filters" value="${filters}"/>
     </bean>
 
-
-
     <bean id="dataSource" class="com.queue.datasource.ChooseDataSource">
         <property name="targetDataSources">
             <map key-type="java.lang.String">
@@ -77,6 +75,15 @@
         <property name="logImpl" value="org.apache.ibatis.logging.log4j2.Log4j2Impl" />
         <property name="proxyFactory">
             <bean class="org.apache.ibatis.executor.loader.cglib.CglibProxyFactory" />
+        </property>
+    </bean>
+
+    <bean id="globalConfig" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
+        <!-- 是否刷新mapper -->
+        <property name="refresh" value="false" />
+        <property name="idType" value="0" />
+        <property name="sqlInjector">
+            <bean class="com.baomidou.mybatisplus.mapper.AutoSqlInjector" />
         </property>
     </bean>
 
@@ -104,6 +111,7 @@
                 </bean>
             </array>
         </property>
+        <property name="globalConfig" ref="globalConfig" />
     </bean>
 
     <!--spring 事务管理类-->
@@ -120,19 +128,19 @@
     <!--关于事务的一些配置-->
     <tx:advice id="txAdvice" transaction-manager="txManager">
         <tx:attributes>
-            <tx:method name="*" read-only="true"/>
             <tx:method name="load*" read-only="true" />
             <tx:method name="get*" read-only="true" />
             <tx:method name="select*" read-only="true" />
             <tx:method name="query*" read-only="true" />
+            <tx:method name="find*" read-only="true" />
             <tx:method name="create*" propagation="REQUIRED" />
             <tx:method name="save*" propagation="REQUIRED" />
             <tx:method name="insert*" propagation="REQUIRED" />
             <tx:method name="update*" propagation="REQUIRED" />
             <tx:method name="delete*" propagation="REQUIRED" />
-            <tx:method name="edit*" propagation="REQUIRED" />
+            <tx:method name="change*" propagation="REQUIRED" />
             <tx:method name="add*" propagation="REQUIRED" />
-            <tx:method name="do*" propagation="REQUIRED" />
+            <tx:method name="*" read-only="true"/>
         </tx:attributes>
     </tx:advice>
 

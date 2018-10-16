@@ -2,126 +2,42 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.queue.mapper.RoleUserMapper">
 
-  <resultMap id="BaseResultMap" type="com.queue.entity.RoleUser">
-    <result column="user_code" jdbcType="CHAR" property="userCode" />
-    <result column="username" jdbcType="CHAR" property="username" />
-    <result column="password" jdbcType="CHAR" property="password" />
-    <result column="phone" jdbcType="CHAR" property="phone" />
-    <result column="address" jdbcType="VARCHAR" property="address" />
-    <result column="role_id" jdbcType="SMALLINT" property="roleId" />
-    <result column="is_delete" jdbcType="TINYINT" property="isDelete" />
-    <result column="user_id" jdbcType="BIGINT" property="userId" />
-    <result column="email" jdbcType="VARCHAR" property="email" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="creator" jdbcType="CHAR" property="creator" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="reviser" jdbcType="VARCHAR" property="reviser" />
-  </resultMap>
+    <!-- 开启二级缓存 -->
+    <!--<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
 
-  <insert id="insert" parameterType="com.queue.entity.RoleUser">
-    insert into role_user (user_code, username, password, 
-      phone, role_id,
-      is_delete, user_id, email, 
-      create_time, creator, update_time, 
-      reviser)
-    values (#{userCode,jdbcType=CHAR}, #{username,jdbcType=CHAR}, #{password,jdbcType=CHAR}, 
-      #{phone,jdbcType=CHAR}, #{roleId,jdbcType=SMALLINT},
-      #{isDelete,jdbcType=SMALLINT}, #{userId,jdbcType=BIGINT}, #{email,jdbcType=VARCHAR},
-      #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=CHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{reviser,jdbcType=VARCHAR})
-  </insert>
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.queue.entity.RoleUser">
+        <id column="user_code" property="userCode" />
+        <result column="user_id" property="userId" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="phone" property="phone" />
+        <result column="email" property="email" />
+        <result column="role_id" property="roleId" />
+        <result column="is_delete" property="isDelete" />
+        <result column="create_time" property="createTime" />
+        <result column="creator" property="creator" />
+        <result column="update_time" property="updateTime" />
+        <result column="reviser" property="reviser" />
+    </resultMap>
 
-  <insert id="insertSelective" parameterType="com.queue.entity.RoleUser">
-    insert into role_user
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="userCode != null">
-        user_code,
-      </if>
-      <if test="username != null">
-        username,
-      </if>
-      <if test="password != null">
-        password,
-      </if>
-      <if test="phone != null">
-        phone,
-      </if>
-      <if test="roleId != null">
-        role_id,
-      </if>
-      <if test="isDelete != null">
-        is_delete,
-      </if>
-      <if test="userId != null">
-        user_id,
-      </if>
-      <if test="email != null">
-        email,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-      <if test="creator != null">
-        creator,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-      <if test="reviser != null">
-        reviser,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="userCode != null">
-        #{userCode,jdbcType=CHAR},
-      </if>
-      <if test="username != null">
-        #{username,jdbcType=CHAR},
-      </if>
-      <if test="password != null">
-        #{password,jdbcType=CHAR},
-      </if>
-      <if test="phone != null">
-        #{phone,jdbcType=CHAR},
-      </if>
-      <if test="roleId != null">
-        #{roleId,jdbcType=SMALLINT},
-      </if>
-      <if test="isDelete != null">
-        #{isDelete,jdbcType=TINYINT},
-      </if>
-      <if test="userId != null">
-        #{userId,jdbcType=BIGINT},
-      </if>
-      <if test="email != null">
-        #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="creator != null">
-        #{creator,jdbcType=CHAR},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="reviser != null">
-        #{reviser,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user_id, user_code, username, password, phone, email, role_id, is_delete, create_time, creator, update_time, reviser
+    </sql>
 
-  <select id="searchUserByPage" resultType="com.queue.entity.RoleUser">
-    select * from ROLE_USER
-  </select>
+    <select id="getUserByEntity" parameterType="com.queue.entity.RoleUser" resultMap="BaseResultMap">
+        select * from ROLE_USER WHERE 1 = 1
+        <if test="userName != null">
+            and USERNAME = #{userName,jdbcType=CHAR}
+        </if>
+        <if test="email != null">
+            and email = #{email,jdbcType=VARCHAR}
+        </if>
+    </select>
 
-  <select id="getUserByEntity" parameterType="com.queue.entity.RoleUser" resultMap="BaseResultMap">
-    select * from ROLE_USER WHERE 1 = 1
-     <if test="username != null">
-       and USERNAME = #{username,jdbcType=CHAR}
-     </if>
-     <if test="email != null">
-       and email = #{email,jdbcType=VARCHAR}
-     </if>
-  </select>
+    <update id="changePassword">
+        UPDATE ROLE_USER SET PASSWORD = #{password} WHERE USER_ID = #{userId}
+    </update>
+
 </mapper>

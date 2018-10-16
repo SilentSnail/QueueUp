@@ -1,6 +1,6 @@
 package com.test;
 
-import com.queue.mail.send.SendMailPool;
+import com.queue.mail.util.SendMailPool;
 import com.test.tool.PoolSendTest;
 import com.test.tool.SendMailTest;
 

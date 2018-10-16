@@ -1,74 +1,74 @@
 package com.queue.entity;
 
-import com.alibaba.fastjson.JSON;
-import com.queue.util.SecurityUtils;
+import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.enums.IdType;
 
 import java.io.Serializable;
 import java.util.Date;
 
-public class RoleUser implements Serializable {
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author liusong
+ * @since 2018-10-16
+ */
+public class RoleUser extends Model<RoleUser> {
 
-    private String userCode;//用户编码
-    private String username;//用户名
-    private String password;//密码
-    private String phone;//手机号码
-    private String email;
-    private Short roleId;
-    private Short isDelete;
-    private Long userId;
-    private Date createTime;
-    private String creator;
-    private Date updateTime;
-    private String reviser;
     private static final long serialVersionUID = 1L;
 
-    public String getUserCode() {
-        return userCode;
-    }
+    /**
+     * 用户ID
+     */
+    private Long userId;
+    /**
+     * 主键id 唯一标识
+     */
+    @TableId(value = "user_code", type = IdType.AUTO)
+    private String userCode;
+    /**
+     * 登陆名
+     */
+    private String username;
+    /**
+     * 密码
+     */
+    private String password;
+    /**
+     * 手机号码
+     */
+    private String phone;
+    /**
+     * 邮箱
+     */
+    private String email;
+    /**
+     * 角色ID 默认为0
+     */
+    private Integer roleId;
+    /**
+     * 是否删除 1：删除 0：未删除
+     */
+    private Integer isDelete;
+    /**
+     * 创建时间
+     */
+    private Date createTime;
+    /**
+     * 创建人
+     */
+    private String creator;
+    /**
+     * 更新时间
+     */
+    private Date updateTime;
+    /**
+     * 修改人
+     */
+    private String reviser;
 
-    public void setUserCode(String userCode) {
-        this.userCode = userCode == null ? null : userCode.trim();
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone == null ? null : phone.trim();
-    }
-
-    public Short getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Short roleId) {
-        this.roleId = roleId;
-    }
-
-    public Short getIsDelete() {
-        return isDelete;
-    }
-
-    public void setIsDelete(Short isDelete) {
-        this.isDelete = isDelete;
-    }
 
     public Long getUserId() {
         return userId;
@@ -78,12 +78,60 @@ public class RoleUser implements Serializable {
         this.userId = userId;
     }
 
+    public String getUserCode() {
+        return userCode;
+    }
+
+    public void setUserCode(String userCode) {
+        this.userCode = userCode;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
+        this.email = email;
+    }
+
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
+
+    public Integer getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Integer isDelete) {
+        this.isDelete = isDelete;
     }
 
     public Date getCreateTime() {
@@ -99,7 +147,7 @@ public class RoleUser implements Serializable {
     }
 
     public void setCreator(String creator) {
-        this.creator = creator == null ? null : creator.trim();
+        this.creator = creator;
     }
 
     public Date getUpdateTime() {
@@ -115,27 +163,35 @@ public class RoleUser implements Serializable {
     }
 
     public void setReviser(String reviser) {
-        this.reviser = reviser == null ? null : reviser.trim();
-    }
-
-    public RoleUser(){}
-
-    public RoleUser(String username){
-        this.setUsername(username);
+        this.reviser = reviser;
     }
 
     @Override
-    public String toString(){
-        return JSON.toJSONString(this);
+    protected Serializable pkVal() {
+        return this.userCode;
+    }
+
+    @Override
+    public String toString() {
+        return "RoleUser{" +
+        "userId=" + userId +
+        ", userCode=" + userCode +
+        ", username=" + username +
+        ", password=" + password +
+        ", phone=" + phone +
+        ", email=" + email +
+        ", roleId=" + roleId +
+        ", isDelete=" + isDelete +
+        ", createTime=" + createTime +
+        ", creator=" + creator +
+        ", updateTime=" + updateTime +
+        ", reviser=" + reviser +
+        "}";
     }
 
     public RoleUser initRoleUser(){
-        this.setUserCode(SecurityUtils.getUUID());
-        this.setCreateTime(new Date());
-        this.setCreator(this.getUsername());
-        this.setIsDelete((short) 0);
-        this.setRoleId((short)0);
-        this.setPassword(SecurityUtils.toMD5(this.getPassword()));
+        this.setIsDelete(0);
+        this.setRoleId(1);
         return this;
     }
 }

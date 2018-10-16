@@ -9,6 +9,7 @@
           <element id="module-output" name="QueueShiro" />
           <element id="module-output" name="QueueCommon" />
           <element id="module-output" name="QueueSocket" />
+          <element id="module-output" name="QueueBus" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: cglib:cglib:3.2.6" />
@@ -82,6 +83,16 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-websocket:5.0.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.21" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-simple:1.7.21" />
+          <element id="library" level="project" name="Maven: io.protostuff:protostuff-api:1.5.9" />
+          <element id="library" level="project" name="Maven: io.protostuff:protostuff-collectionschema:1.5.9" />
+          <element id="library" level="project" name="Maven: io.protostuff:protostuff-core:1.5.9" />
+          <element id="library" level="project" name="Maven: io.protostuff:protostuff-runtime:1.5.9" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-pool2:2.4.2" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:2.1.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-keyvalue:2.1.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-redis:2.1.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-oxm:5.1.0.RELEASE" />
+          <element id="library" level="project" name="Maven: redis.clients:jedis:2.9.0" />
         </element>
       </element>
     </root>

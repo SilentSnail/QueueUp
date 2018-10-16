@@ -1,7 +1,7 @@
 package com.test.tool;
 
-import com.queue.mail.send.SendMail;
-import com.queue.mail.send.SendMailPool;
+import com.queue.mail.util.SendMail;
+import com.queue.mail.util.SendMailPool;
 
 /**
  * Created by liusong on 2018/6/28.

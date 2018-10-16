@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.queue.mapper.ExchangeRateMapper">
+
+    <resultMap id="BaseResultMap" type="com.queue.entity.ExchangeRate">
+        <result column="EXC_ID" jdbcType="BIGINT" property="excId" />
+        <result column="CONVERT_FRONT_NAME" jdbcType="VARCHAR" property="convertFrontName" />
+        <result column="CONVERT_FRONT_NUM" jdbcType="DOUBLE" property="convertFrontNum" />
+        <result column="CONVERT_LATER_NAME" jdbcType="VARCHAR" property="convertLaterName" />
+        <result column="CONVERT_LATER_NUM" jdbcType="DOUBLE" property="convertLaterNum" />
+        <result column="SEARCH_TYPE" jdbcType="VARCHAR" property="searchType" />
+        <result column="FRAUD_FRONT_NAME" jdbcType="VARCHAR" property="fraudFrontName" />
+        <result column="FRAUD_FRONT_NUM" jdbcType="DOUBLE" property="fraudFrontNum" />
+        <result column="FRAUD_LATER_NAME" jdbcType="VARCHAR" property="fraudLaterName" />
+        <result column="FRAUD_LATER_NUM" jdbcType="DOUBLE" property="fraudLaterNum" />
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    </resultMap>
+
+    <select id="searchExchangeByPage">
+        SELECT * FROM EXCHANGE_RATE ORDER BY EXC_ID
+    </select>
+</mapper>

@@ -1,6 +1,8 @@
 package com.queue.mail.service;
 
-import com.queue.mail.send.SendMailPool;
+import com.queue.mail.entity.MailMessage;
+import com.queue.mail.util.SendMail;
+import com.queue.mail.util.SendMailPool;
 
 import java.util.concurrent.TimeUnit;
 
@@ -66,5 +68,9 @@ public class MailMessageService {
 
     public SendMailPool getMailPool(){
         return pool;
+    }
+
+    public void sendMail(MailMessage mail){
+        this.pool.setRunnable(new SendMail(mail));
     }
 }

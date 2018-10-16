@@ -36,8 +36,16 @@ ajax = function (url, data, callFun, param, options) {
             console.log(errorThrown);
         }
     });
-}
+};
 
 showMessage = function (data){
     (new $.zui.ModalTrigger({showHeader: false, width:300, custom : data})).show();
+};
+
+function getPageParam(data, param) {
+    if (param) {
+        data['page.pageNum'] = param.start / param.length + 1;
+        data['page.pageSize'] = param.length;
+    }
+    return data;
 }

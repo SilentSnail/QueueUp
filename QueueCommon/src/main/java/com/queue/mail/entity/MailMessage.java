@@ -12,9 +12,6 @@ public class MailMessage {
     private String[] bccAccount;//密送
     private String[] mailFiles;//附件
 
-    public MailMessage() {
-    }
-
     /**
      * 初始化邮件对象
      * @param subject 标题

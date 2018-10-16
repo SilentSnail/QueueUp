@@ -33,6 +33,10 @@ public class R extends HashMap<String,Object> {
         return new R(map);
     }
 
+    public static R ok(Object value){
+        return new R().put("data", value);
+    }
+
     public static R error(){
         return new R().error(500, "系统异常，请联系管理员");
     }
@@ -43,5 +47,9 @@ public class R extends HashMap<String,Object> {
 
     public static R error(int code, String message){
         return new R().put("code", code).put("msg", message);
+    }
+
+    public static R okPage(PageBean value){
+        return new R().put("data", value);
     }
 }

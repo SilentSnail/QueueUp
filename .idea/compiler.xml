@@ -22,18 +22,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="bus" />
         <module name="common" />
         <module name="generator" />
+        <module name="QueueBus" />
         <module name="QueueCommon" />
         <module name="QueueShiro" />
         <module name="QueueSocket" />
         <module name="queueWeb" />
         <module name="QueueWeb" />
-        <module name="ShiroGenerator" />
         <module name="websocket" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="bus" target="1.5" />
+      <module name="QueueBus" target="1.5" />
       <module name="QueueCommon" target="1.5" />
       <module name="QueueShiro" target="1.5" />
       <module name="QueueSocket" target="1.5" />

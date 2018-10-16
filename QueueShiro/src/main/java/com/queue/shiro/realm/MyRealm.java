@@ -1,7 +1,8 @@
 package com.queue.shiro.realm;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.queue.entity.RoleUser;
-import com.queue.service.UserService;
+import com.queue.service.RoleUserService;
 import com.queue.shiro.bean.SecurityUserEntity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,7 +23,7 @@ public class MyRealm extends AuthorizingRealm {
     private Logger log = LogManager.getLogger(MyRealm.class);
 
     @Autowired
-    private UserService userService;
+    private RoleUserService userService;
 
     public MyRealm(CacheManager cacheManager){
         super(cacheManager);
@@ -47,7 +48,7 @@ public class MyRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         log.info("Shiro开始登录认证");
         SecurityUserEntity entity = (SecurityUserEntity) token;
-        RoleUser user = userService.getUserByEntity(new RoleUser(entity.getUsername()));
+        RoleUser user = this.userService.selectOne(new EntityWrapper().eq("username", entity.getUsername()));
         if(user == null){
             throw new UnknownAccountException("用户或或密码不正确");
         }

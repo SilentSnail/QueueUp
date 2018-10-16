@@ -1,8 +1,8 @@
 package com.test;
 
 import com.queue.mail.entity.MailMessage;
-import com.queue.mail.send.SendMail;
 import com.queue.mail.service.MailMessageService;
+import com.queue.mail.util.SendMail;
 import com.queue.util.RedisUtils;
 import com.queue.util.SecurityUtils;
 import com.queue.util.SerializeUtils;

@@ -77,10 +77,9 @@ public class SerializeUtils {
                 cons = ConvertUtil.sort(cons, sort);
             }
             Constructor<T> con = cons[0];
-            //不管有参无参，都可以进行构造，但是构造参数必须为引用数据类型,无法构造基本数据类型
-            Object[] obj = new Object[con.getParameterTypes().length];
             con.setAccessible(true);//成员变量为private 设置此项才有访问权限
-            T msg = con.newInstance(obj);
+            //不管有参无参，都可以进行构造，但是构造参数必须为引用数据类型,无法构造基本数据类型
+            T msg = con.newInstance(new Object[con.getParameterTypes().length]);
             Schema<T> schema = getSchema(classType);
             ProtostuffIOUtil.mergeFrom(bytes, msg, schema);
             return msg;

@@ -7,7 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/QueueSocket/QueueSocket.iml" filepath="$PROJECT_DIR$/QueueSocket/QueueSocket.iml" />
       <module fileurl="file://$PROJECT_DIR$/QueueUp.iml" filepath="$PROJECT_DIR$/QueueUp.iml" />
       <module fileurl="file://$PROJECT_DIR$/QueueWeb/QueueWeb.iml" filepath="$PROJECT_DIR$/QueueWeb/QueueWeb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ShiroGenerator/ShiroGenerator.iml" filepath="$PROJECT_DIR$/ShiroGenerator/ShiroGenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QueueBus/bus.iml" filepath="$PROJECT_DIR$/QueueBus/bus.iml" />
     </modules>
   </component>
 </project>

@@ -9,7 +9,7 @@
         <property name="unauthorizedUrl" value="/pages/error.html" />
         <property name="filterChainDefinitions">
             <value>
-                /valid/* = anon
+                /valid/** = anon
                 /static/** = anon
                 /pages/* = anon
                 /** = authc

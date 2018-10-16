@@ -9,9 +9,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <module>QueueBus</module>
         <module>QueueShiro</module>
         <module>QueueWeb</module>
-        <module>ShiroGenerator</module>
         <module>QueueCommon</module>
         <module>QueueSocket</module>
     </modules>
