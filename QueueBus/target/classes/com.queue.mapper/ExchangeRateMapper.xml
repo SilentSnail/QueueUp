@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.queue.mapper.ExchangeRateMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.queue.entity.ExchangeRate">
+        <id column="EXC_ID" property="excId" />
+        <result column="CONVERT_FRONT_NAME" property="convertFrontName" />
+        <result column="CONVERT_FRONT_NUM" property="convertFrontNum" />
+        <result column="CONVERT_LATER_NAME" property="convertLaterName" />
+        <result column="CONVERT_LATER_NUM" property="convertLaterNum" />
+        <result column="SEARCH_TYPE" property="searchType" />
+        <result column="FRAUD_FRONT_NAME" property="fraudFrontName" />
+        <result column="FRAUD_FRONT_NUM" property="fraudFrontNum" />
+        <result column="FRAUD_LATER_NAME" property="fraudLaterName" />
+        <result column="FRAUD_LATER_NUM" property="fraudLaterNum" />
+        <result column="CREATE_TIME" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        EXC_ID, CONVERT_FRONT_NAME, CONVERT_FRONT_NUM, CONVERT_LATER_NAME, CONVERT_LATER_NUM, SEARCH_TYPE, FRAUD_FRONT_NAME, FRAUD_FRONT_NUM, FRAUD_LATER_NAME, FRAUD_LATER_NUM, CREATE_TIME
+    </sql>
+
+</mapper>
