@@ -7,123 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cc3de32-5a58-4df8-a212-f7a5c9ba893f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/CurrencyTblController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/ExchangeRateController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/FileRecordController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/LoanController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/LoginHistoryController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/OtherDayWeatherController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/PermissionsController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/ResourceUrlController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/TedayWeatherController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/VideoPageController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/WeatherCityController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/FileRecord.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/Loan.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/LoginHistory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/Permissions.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/ResourceUrl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/RoleInf.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/VideoPage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/FileRecordMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/LoanMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/LoginHistoryMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/PermissionsMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/ResourceUrlMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/RoleInfMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/VideoPageMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/CurrencyTblService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/FileRecordService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/LoanService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/LoginHistoryService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/OtherDayWeatherService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/PermissionsService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/ResourceUrlService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/RoleInfService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/TedayWeatherService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/VideoPageService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/WeatherCityService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/CurrencyTblServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/FileRecordServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/LoanServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/LoginHistoryServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/OtherDayWeatherServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/PermissionsServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/ResourceUrlServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/RoleInfServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/TedayWeatherServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/VideoPageServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/WeatherCityServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/FileRecordMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/LoanMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/LoginHistoryMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/PermissionsMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/ResourceUrlMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/RoleInfMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/VideoPageMapper.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/ExchangeRageController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/Video.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/VideoMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/VideoService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/VideoServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/entity/Permissions.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/entity/RoleInf.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/mapper/PermissionsMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/mapper/RoleInfMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/QueueShiro/src/main/resources/com/queue/mapper/PermissionsMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/QueueShiro/target/classes/com/queue/mapper/PermissionsMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/QueueShiro/target/classes/com/queue/mapper/RoleInfMapper.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_2_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_3_0_5.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_2_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_0_5.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_generate_2_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_0_5.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_support_2_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_generator_3_0_5.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/VideoController.java" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/RoleInfController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/queue.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/queue.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/bus.iml" afterPath="$PROJECT_DIR$/QueueBus/bus.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/pom.xml" afterPath="$PROJECT_DIR$/QueueBus/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/CurrencyTbl.java" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/CurrencyTbl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/ExchangeRate.java" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/ExchangeRate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/OtherDayWeather.java" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/OtherDayWeather.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/TedayWeather.java" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/TedayWeather.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/WeatherCity.java" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/WeatherCity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/CurrencyTblMapper.java" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/CurrencyTblMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/ExchangeRateMapper.java" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/ExchangeRateMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/OtherDayWeatherMapper.java" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/OtherDayWeatherMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/TedayWeatherMapper.java" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/TedayWeatherMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/WeatherCityMapper.java" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/WeatherCityMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/ExchangeRateService.java" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/ExchangeRateService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/ExchangeRateServiceImpl.java" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/ExchangeRateServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/CurrencyTblMapper.xml" afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/CurrencyTblMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/ExchangeRateMapper.xml" afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/ExchangeRateMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/OtherDayWeatherMapper.xml" afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/OtherDayWeatherMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/TedayWeatherMapper.xml" afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/TedayWeatherMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/WeatherCityMapper.xml" afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com.queue.mapper/WeatherCityMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueCommon/QueueCommon.iml" afterPath="$PROJECT_DIR$/QueueCommon/QueueCommon.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/util/RedisUtils.java" afterPath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/util/RedisUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueCommon/src/main/resources/mail.properties" afterPath="$PROJECT_DIR$/QueueCommon/src/main/resources/mail.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueShiro/QueueShiro.iml" afterPath="$PROJECT_DIR$/QueueShiro/QueueShiro.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/controller/ValidController.java" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/controller/ValidController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/entity/RoleUser.java" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/entity/RoleUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/entity/ValidLog.java" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/entity/ValidLog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/mapper/RoleUserMapper.java" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/mapper/RoleUserMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/mapper/ValidLogMapper.java" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/mapper/ValidLogMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/RoleUserService.java" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/RoleUserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/ValidLogService.java" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/ValidLogService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/impl/RoleUserServiceImpl.java" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/impl/RoleUserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/impl/ValidLogServiceImpl.java" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/impl/ValidLogServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/shiro/realm/MyRealm.java" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/shiro/realm/MyRealm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueShiro/src/main/resources/com/queue/mapper/RoleUserMapper.xml" afterPath="$PROJECT_DIR$/QueueShiro/src/main/resources/com/queue/mapper/RoleUserMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueShiro/src/main/resources/com/queue/mapper/ValidLogMapper.xml" afterPath="$PROJECT_DIR$/QueueShiro/src/main/resources/com/queue/mapper/ValidLogMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueShiro/target/classes/com/queue/mapper/RoleUserMapper.xml" afterPath="$PROJECT_DIR$/QueueShiro/target/classes/com/queue/mapper/RoleUserMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueSocket/QueueSocket.iml" afterPath="$PROJECT_DIR$/QueueSocket/QueueSocket.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueUp.iml" afterPath="$PROJECT_DIR$/QueueUp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueWeb/QueueWeb.iml" afterPath="$PROJECT_DIR$/QueueWeb/QueueWeb.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueWeb/src/main/resources/spring-context.xml" afterPath="$PROJECT_DIR$/QueueWeb/src/main/resources/spring-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/mybatis/MyBatisTest.java" afterPath="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/mybatis/MyBatisTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueueWeb/target/classes/spring-context.xml" afterPath="$PROJECT_DIR$/QueueWeb/target/classes/spring-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="QueueUp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -265,7 +150,18 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="mail.properties" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/QueueCommon/src/main/resources/mail.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -308,7 +204,6 @@
         <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/QueueSocket/src/main/java/com/queue/gener.java" />
         <option value="$PROJECT_DIR$/QueueSocket/src/main/java/com/queue/service/impl/LoanServiceImpl.java" />
-        <option value="$PROJECT_DIR$/QueueCommon/src/main/resources/mail.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/entity/RoleUser.java" />
         <option value="$PROJECT_DIR$/QueueShiro/src/main/resources/com/queue/mapper/RoleUserMapper.xml" />
@@ -336,6 +231,7 @@
         <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/mapper/RoleUserMapper.java" />
         <option value="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/util/RedisUtils.java" />
         <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/VideoPageController.java" />
+        <option value="$PROJECT_DIR$/QueueCommon/src/main/resources/mail.properties" />
       </list>
     </option>
   </component>
@@ -405,6 +301,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -423,10 +321,168 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueCommon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueCommon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueCommon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueCommon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueBus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueBus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueBus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueueBus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1190,7 +1246,8 @@
       <workItem from="1539749496825" duration="2292000" />
       <workItem from="1539751839919" duration="1874000" />
       <workItem from="1539757750567" duration="4943000" />
-      <workItem from="1539768538334" duration="63000" />
+      <workItem from="1539768538334" duration="218000" />
+      <workItem from="1539768929956" duration="28000" />
     </task>
     <task id="LOCAL-00001" summary="Project Start Success">
       <created>1529982774901</created>
@@ -1234,7 +1291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539671550287</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="修改">
+      <created>1539768622566</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1539768622566</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1270,7 +1334,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207239000" />
+    <option name="totallyTimeSpent" value="207422000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="23" width="1277" height="777" extended-state="6" />
@@ -1284,8 +1348,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32955465" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1296,8 +1360,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24939272" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66861314" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1358,7 +1422,8 @@
     <MESSAGE value="Change Path" />
     <MESSAGE value="Change Config" />
     <MESSAGE value="123" />
-    <option name="LAST_COMMIT_MESSAGE" value="123" />
+    <MESSAGE value="修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1379,14 +1444,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/QueueWeb/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="43" column="57" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/OtherDayWeatherMapper.java" />
     <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/ExchangeRateMapper.java" />
     <entry file="file://$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/entity/RoleUser.java">
@@ -1606,7 +1663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-625">
           <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1689,6 +1745,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueCommon/src/main/resources/mail.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
           <folding />
         </state>
       </provider>
