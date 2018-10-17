@@ -1,6 +1,6 @@
 package com.queue.shiro.realm;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.queue.entity.RoleUser;
 import com.queue.service.RoleUserService;
 import com.queue.shiro.bean.SecurityUserEntity;
@@ -48,7 +48,7 @@ public class MyRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         log.info("Shiro开始登录认证");
         SecurityUserEntity entity = (SecurityUserEntity) token;
-        RoleUser user = this.userService.selectOne(new EntityWrapper().eq("username", entity.getUsername()));
+        RoleUser user = this.userService.getOne(new QueryWrapper<RoleUser>().eq("username", entity.getUsername()));
         if(user == null){
             throw new UnknownAccountException("用户或或密码不正确");
         }

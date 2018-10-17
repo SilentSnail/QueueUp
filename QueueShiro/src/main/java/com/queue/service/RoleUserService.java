@@ -1,7 +1,7 @@
 package com.queue.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.queue.entity.RoleUser;
-import com.baomidou.mybatisplus.service.IService;
 
 import java.util.List;
 

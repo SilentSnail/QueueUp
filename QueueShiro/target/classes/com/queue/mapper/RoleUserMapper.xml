@@ -2,9 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.queue.mapper.RoleUserMapper">
 
-    <!-- 开启二级缓存 -->
-    <!--<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
-
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.queue.entity.RoleUser">
         <id column="user_code" property="userCode" />
@@ -26,10 +23,10 @@
         user_id, user_code, username, password, phone, email, role_id, is_delete, create_time, creator, update_time, reviser
     </sql>
 
-    <select id="getUserByEntity" parameterType="com.queue.entity.RoleUser" resultMap="BaseResultMap">
+    <select id="getUserByParam" parameterType="com.queue.entity.RoleUser" resultMap="BaseResultMap">
         select * from ROLE_USER WHERE 1 = 1
-        <if test="userName != null">
-            and USERNAME = #{userName,jdbcType=CHAR}
+        <if test="username != null">
+            and USERNAME = #{username,jdbcType=CHAR}
         </if>
         <if test="email != null">
             and email = #{email,jdbcType=VARCHAR}
@@ -39,5 +36,4 @@
     <update id="changePassword">
         UPDATE ROLE_USER SET PASSWORD = #{password} WHERE USER_ID = #{userId}
     </update>
-
 </mapper>

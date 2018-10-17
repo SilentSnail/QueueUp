@@ -10,15 +10,12 @@
           <element id="module-output" name="QueueCommon" />
           <element id="module-output" name="QueueSocket" />
           <element id="module-output" name="QueueBus" />
+          <element id="module-output" name="bus" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: cglib:cglib:3.2.6" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.1.9" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.47" />
-          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-core:2.2.0" />
-          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-generate:2.2.0" />
-          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-support:2.2.0" />
-          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus:2.2.0" />
           <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:1.0" />
           <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper:5.1.3" />
           <element id="library" level="project" name="Maven: com.github.virtuald:curvesapi:1.04" />
@@ -93,6 +90,11 @@
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-redis:2.1.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-oxm:5.1.0.RELEASE" />
           <element id="library" level="project" name="Maven: redis.clients:jedis:2.9.0" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-annotation:3.0.5" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-core:3.0.5" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-extension:3.0.5" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-generator:3.0.5" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus:3.0.5" />
         </element>
       </element>
     </root>

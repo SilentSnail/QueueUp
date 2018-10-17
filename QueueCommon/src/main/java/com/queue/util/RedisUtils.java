@@ -1,6 +1,7 @@
 package com.queue.util;
 
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import java.util.Map;
@@ -9,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by liusong on 2018/10/10.
  */
+@Service
 public class RedisUtils<K, V> {
 
     private RedisTemplate<K, V> redisTemplate;

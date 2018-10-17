@@ -1,7 +1,7 @@
 package com.queue.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.queue.entity.RoleUser;
 import com.queue.entity.ValidLog;
 import com.queue.mail.entity.MailMessage;
@@ -70,7 +70,7 @@ public class ValidController {
     @RequestMapping("/register")
     public R register(RoleUser user){
         try {
-            if(userService.insert(user.initRoleUser())){
+            if(this.userService.save(user)){
                 return R.ok();
             }else{
                 return R.error("保存失败");
@@ -86,7 +86,7 @@ public class ValidController {
             Asserts.isEmpty(email, "邮箱不能为空");
             RoleUser user = new RoleUser();
             user.setEmail(email);
-            user = this.userService.selectOne(new EntityWrapper().eq("email", email));
+            user = this.userService.getOne(new QueryWrapper<RoleUser>().eq("email", email));
             if(ObjectUtils.isEmpty(user)){
                 return R.error("该邮箱尚未注册，请确认邮箱是否正确");
             }
@@ -112,7 +112,7 @@ public class ValidController {
     @RequestMapping("/checkName")
     public R checkUser(@RequestParam(value = "username") String name){
         try {
-            RoleUser user = this.userService.selectOne(new EntityWrapper().eq("userName", name));
+            RoleUser user = this.userService.getOne(new QueryWrapper<RoleUser>().eq("userName", name));
             Asserts.isNull(user, "无用户信息");
             return R.error("用户已存在");
         } catch (Exception e) {

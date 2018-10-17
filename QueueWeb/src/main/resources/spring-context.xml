@@ -71,31 +71,38 @@
     </bean>
 
     <!-- 配置mybatis的log日志实现为log4j2，这种配置方式同mybatis配置文件里面的setting -->
-    <bean id="log4j2Configuration" class="org.apache.ibatis.session.Configuration">
+    <bean id="mybatisConfiguration" class="com.baomidou.mybatisplus.core.MybatisConfiguration">
         <property name="logImpl" value="org.apache.ibatis.logging.log4j2.Log4j2Impl" />
         <property name="proxyFactory">
             <bean class="org.apache.ibatis.executor.loader.cglib.CglibProxyFactory" />
         </property>
+        <property name="mapUnderscoreToCamelCase" value="true"/>
     </bean>
 
-    <bean id="globalConfig" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
+    <bean id="globalConfig" class="com.baomidou.mybatisplus.core.config.GlobalConfig">
         <!-- 是否刷新mapper -->
-        <property name="refresh" value="false" />
-        <property name="idType" value="0" />
+        <property name="refresh" value="true" />
+        <property name="dbConfig">
+            <bean class="com.baomidou.mybatisplus.core.config.GlobalConfig.DbConfig">
+                <property name="dbType" value="MYSQL"/>
+                <property name="idType" value="AUTO" />
+            </bean>
+        </property>
         <property name="sqlInjector">
-            <bean class="com.baomidou.mybatisplus.mapper.AutoSqlInjector" />
+            <bean class="com.baomidou.mybatisplus.extension.injector.LogicSqlInjector" />
         </property>
     </bean>
 
     <!--session会话工厂-->
-    <bean id="sessionFactory" class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
+    <bean id="sessionFactory" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="configuration" ref="log4j2Configuration" />
+        <property name="globalConfig" ref="globalConfig" />
+        <property name="configuration" ref="mybatisConfiguration" />
         <!-- 配置Mybatis配置文件 -->
         <property name="mapperLocations" value="classpath*:com/queue/**/mapper/*.xml" />
         <property name="plugins">
             <array>
-                <bean class="com.baomidou.mybatisplus.plugins.PaginationInterceptor">
+                <bean class="com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor">
                     <property name="dialectType" value="mysql" />
                 </bean>
                 <bean class="com.github.pagehelper.PageInterceptor">
@@ -111,7 +118,6 @@
                 </bean>
             </array>
         </property>
-        <property name="globalConfig" ref="globalConfig" />
     </bean>
 
     <!--spring 事务管理类-->

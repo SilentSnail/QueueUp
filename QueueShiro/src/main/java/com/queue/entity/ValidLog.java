@@ -1,31 +1,70 @@
 package com.queue.entity;
 
-import com.alibaba.fastjson.JSONObject;
-import com.baomidou.mybatisplus.activerecord.Model;
-
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
 import java.io.Serializable;
-import java.util.Date;
 
 /**
- * 验证日志信息
- * Created by liusong on 2018/10/12.
+ * <p>
+ * 
+ * </p>
+ *
+ * @author liusong
+ * @since 2018-10-17
  */
 public class ValidLog extends Model<ValidLog> {
 
-    private Long id;//id
-    private String code;//code
-    private String logIp;//访问者IP
-    private Long userId;
-    private Date createTime;//创建时间
-    private String sign;//标记
-    private Date effectiveTime;//有效时间
-    private Integer status;//状态
+    private static final long serialVersionUID = 1L;
 
-    public Long getId() {
+        /**
+     * 验证日志ID
+     */
+         @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
+
+        /**
+     * 验证Code
+     */
+         private String code;
+
+        /**
+     * 当前访问IP
+     */
+         private String logIp;
+
+        /**
+     * 用户ID
+     */
+         private Long userId;
+
+        /**
+     * 创建时间
+     */
+         private LocalDateTime createTime;
+
+        /**
+     * 标记
+     */
+         private String sign;
+
+        /**
+     * 失效时间
+     */
+         private LocalDateTime effectiveTime;
+
+        /**
+     * 状态 0：无效  1：有效
+     */
+         private Integer status;
+
+
+    public Integer getId() {
         return id;
     }
 
-    public ValidLog setId(Long id) {
+    public ValidLog setId(Integer id) {
         this.id = id;
         return this;
     }
@@ -39,15 +78,6 @@ public class ValidLog extends Model<ValidLog> {
         return this;
     }
 
-    public Long getUserId() {
-        return userId;
-    }
-
-    public ValidLog setUserId(Long userId) {
-        this.userId = userId;
-        return this;
-    }
-
     public String getLogIp() {
         return logIp;
     }
@@ -57,11 +87,20 @@ public class ValidLog extends Model<ValidLog> {
         return this;
     }
 
-    public Date getCreateTime() {
+    public Long getUserId() {
+        return userId;
+    }
+
+    public ValidLog setUserId(Long userId) {
+        this.userId = userId;
+        return this;
+    }
+
+    public LocalDateTime getCreateTime() {
         return createTime;
     }
 
-    public ValidLog setCreateTime(Date createTime) {
+    public ValidLog setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -75,11 +114,11 @@ public class ValidLog extends Model<ValidLog> {
         return this;
     }
 
-    public Date getEffectiveTime() {
+    public LocalDateTime getEffectiveTime() {
         return effectiveTime;
     }
 
-    public ValidLog setEffectiveTime(Date effectiveTime) {
+    public ValidLog setEffectiveTime(LocalDateTime effectiveTime) {
         this.effectiveTime = effectiveTime;
         return this;
     }
@@ -94,11 +133,21 @@ public class ValidLog extends Model<ValidLog> {
     }
 
     @Override
-    public String toString(){
-        return JSONObject.toJSONString(this);
-    }
-
     protected Serializable pkVal() {
         return this.id;
+    }
+
+    @Override
+    public String toString() {
+        return "ValidLog{" +
+        "id=" + id +
+        ", code=" + code +
+        ", logIp=" + logIp +
+        ", userId=" + userId +
+        ", createTime=" + createTime +
+        ", sign=" + sign +
+        ", effectiveTime=" + effectiveTime +
+        ", status=" + status +
+        "}";
     }
 }

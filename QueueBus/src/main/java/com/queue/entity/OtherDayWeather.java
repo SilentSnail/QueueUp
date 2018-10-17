@@ -1,23 +1,64 @@
 package com.queue.entity;
 
-import com.baomidou.mybatisplus.activerecord.Model;
-
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
 import java.io.Serializable;
-import java.util.Date;
 
 /**
- * 其他时间的天气情况
+ * <p>
+ * 
+ * </p>
+ *
+ * @author liusong
+ * @since 2018-10-17
  */
 public class OtherDayWeather extends Model<OtherDayWeather> {
 
+    private static final long serialVersionUID = 1L;
+
+        /**
+     * 天气ID
+     */
+         @TableId(value = "ODW_ID", type = IdType.AUTO)
     private Long odwId;
-    private String tIdentity;
-    private String odwDay;
-    private String temperature;
-    private String odwWeather;
-    private String windDirection;
-    private String odwWeek;
-    private Date createTime;
+
+        /**
+     * 关联Code
+     */
+         private String tIdentity;
+
+        /**
+     * 其他日期名称
+     */
+         private String odwDay;
+
+        /**
+     * 气温
+     */
+         private String temperature;
+
+        /**
+     * 天气情况
+     */
+         private String odwWeather;
+
+        /**
+     * 风力情况
+     */
+         private String windDirection;
+
+        /**
+     * 每周天数
+     */
+         private String odwWeek;
+
+        /**
+     * 创建时间
+     */
+         private LocalDateTime createTime;
+
 
     public Long getOdwId() {
         return odwId;
@@ -33,7 +74,7 @@ public class OtherDayWeather extends Model<OtherDayWeather> {
     }
 
     public OtherDayWeather settIdentity(String tIdentity) {
-        this.tIdentity = tIdentity == null ? null : tIdentity.trim();
+        this.tIdentity = tIdentity;
         return this;
     }
 
@@ -42,7 +83,7 @@ public class OtherDayWeather extends Model<OtherDayWeather> {
     }
 
     public OtherDayWeather setOdwDay(String odwDay) {
-        this.odwDay = odwDay == null ? null : odwDay.trim();
+        this.odwDay = odwDay;
         return this;
     }
 
@@ -51,7 +92,7 @@ public class OtherDayWeather extends Model<OtherDayWeather> {
     }
 
     public OtherDayWeather setTemperature(String temperature) {
-        this.temperature = temperature == null ? null : temperature.trim();
+        this.temperature = temperature;
         return this;
     }
 
@@ -60,7 +101,7 @@ public class OtherDayWeather extends Model<OtherDayWeather> {
     }
 
     public OtherDayWeather setOdwWeather(String odwWeather) {
-        this.odwWeather = odwWeather == null ? null : odwWeather.trim();
+        this.odwWeather = odwWeather;
         return this;
     }
 
@@ -69,7 +110,7 @@ public class OtherDayWeather extends Model<OtherDayWeather> {
     }
 
     public OtherDayWeather setWindDirection(String windDirection) {
-        this.windDirection = windDirection == null ? null : windDirection.trim();
+        this.windDirection = windDirection;
         return this;
     }
 
@@ -78,20 +119,35 @@ public class OtherDayWeather extends Model<OtherDayWeather> {
     }
 
     public OtherDayWeather setOdwWeek(String odwWeek) {
-        this.odwWeek = odwWeek == null ? null : odwWeek.trim();
+        this.odwWeek = odwWeek;
         return this;
     }
 
-    public Date getCreateTime() {
+    public LocalDateTime getCreateTime() {
         return createTime;
     }
 
-    public OtherDayWeather setCreateTime(Date createTime) {
+    public OtherDayWeather setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
+    @Override
     protected Serializable pkVal() {
         return this.odwId;
+    }
+
+    @Override
+    public String toString() {
+        return "OtherDayWeather{" +
+        "odwId=" + odwId +
+        ", tIdentity=" + tIdentity +
+        ", odwDay=" + odwDay +
+        ", temperature=" + temperature +
+        ", odwWeather=" + odwWeather +
+        ", windDirection=" + windDirection +
+        ", odwWeek=" + odwWeek +
+        ", createTime=" + createTime +
+        "}";
     }
 }

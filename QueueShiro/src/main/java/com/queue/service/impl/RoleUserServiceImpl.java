@@ -1,6 +1,6 @@
 package com.queue.service.impl;
 
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.queue.entity.RoleUser;
 import com.queue.mapper.RoleUserMapper;
 import com.queue.service.RoleUserService;
@@ -16,7 +16,7 @@ import java.util.List;
  * </p>
  *
  * @author liusong
- * @since 2018-10-16
+ * @since 2018-10-17
  */
 @Service
 public class RoleUserServiceImpl extends ServiceImpl<RoleUserMapper, RoleUser> implements RoleUserService {

@@ -2,28 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.queue.mapper.ValidLogMapper">
 
+    <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.queue.entity.ValidLog">
-        <result column="id" jdbcType="BIGINT" property="id" />
-        <result column="code" jdbcType="CHAR" property="code" />
-        <result column="user_id" jdbcType="BIGINT" property="userId" />
-        <result column="log_ip" jdbcType="CHAR" property="logIp" />
-        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-        <result column="sign" jdbcType="CHAR" property="sign" />
-        <result column="effective_time" jdbcType="TIMESTAMP" property="effectiveTime" />
-        <result column="status" jdbcType="SMALLINT" property="status" />
+        <id column="id" property="id" />
+        <result column="code" property="code" />
+        <result column="log_ip" property="logIp" />
+        <result column="user_id" property="userId" />
+        <result column="create_time" property="createTime" />
+        <result column="sign" property="sign" />
+        <result column="effective_time" property="effectiveTime" />
+        <result column="status" property="status" />
     </resultMap>
 
+    <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, code, user_id, log_ip, create_time, sign, effective_time, status
+        id, code, log_ip, user_id, create_time, sign, effective_time, status
     </sql>
 
-    <insert id="insertByEntity" parameterType="com.queue.entity.ValidLog">
-        insert into valid_log
-        (code, user_id, log_ip, sign, effective_time) values
-        (#{code}, #{userId}, #{logIp}, #{sign}, adddate(now(), interval 10 minute))
-    </insert>
-
-    <select id="searchByParam" parameterType="java.util.HashMap" resultMap="BaseResultMap">
-        select * from valid_log where code = #{code} and sign = #{sign} and effective_time &gt;= now()
-    </select>
 </mapper>

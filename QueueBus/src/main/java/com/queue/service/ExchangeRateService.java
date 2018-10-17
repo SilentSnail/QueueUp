@@ -1,15 +1,16 @@
 package com.queue.service;
 
-import com.baomidou.mybatisplus.service.IService;
 import com.queue.entity.ExchangeRate;
-
-import java.util.List;
+import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * Created by liusong on 2018/4/10.
+ * <p>
+ *  服务类
+ * </p>
+ *
+ * @author liusong
+ * @since 2018-10-17
  */
 public interface ExchangeRateService extends IService<ExchangeRate> {
-
-    List<ExchangeRate> getExchangeByPage();
 
 }

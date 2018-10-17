@@ -1,28 +1,20 @@
 package com.queue.service.impl;
 
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.queue.entity.ExchangeRate;
 import com.queue.mapper.ExchangeRateMapper;
 import com.queue.service.ExchangeRateService;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 /**
- * Created by liusong on 2018/4/10.
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author liusong
+ * @since 2018-10-17
  */
 @Service
-public class ExchangeRateServiceImpl extends ServiceImpl<ExchangeRateMapper, ExchangeRate> implements ExchangeRateService{
+public class ExchangeRateServiceImpl extends ServiceImpl<ExchangeRateMapper, ExchangeRate> implements ExchangeRateService {
 
-    private static Logger log = LogManager.getLogger(ExchangeRateServiceImpl.class);
-
-    @Autowired
-    private ExchangeRateMapper exchangeMapper;
-
-    public List<ExchangeRate> getExchangeByPage() {
-        return exchangeMapper.searchExchangeByPage();
-    }
 }

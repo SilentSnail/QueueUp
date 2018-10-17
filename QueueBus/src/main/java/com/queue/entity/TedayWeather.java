@@ -1,40 +1,89 @@
 package com.queue.entity;
 
-import com.baomidou.mybatisplus.activerecord.Model;
-
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
 import java.io.Serializable;
-import java.util.Date;
 
 /**
- * 当前的天气情况
+ * <p>
+ * 
+ * </p>
+ *
+ * @author liusong
+ * @since 2018-10-17
  */
 public class TedayWeather extends Model<TedayWeather> {
 
+    private static final long serialVersionUID = 1L;
+
+        /**
+     * 天气ID
+     */
+         @TableId(value = "T_ID", type = IdType.AUTO)
     private Long tId;
 
-    private String crtCity;
+        /**
+     * 城市
+     */
+         private String crtCity;
 
-    private String crtDay;
+        /**
+     * 日期
+     */
+         private String crtDay;
 
-    private String crtWeek;
+        /**
+     * 周天数
+     */
+         private String crtWeek;
 
-    private String curLunarDay;
+        /**
+     * 农历日期
+     */
+         private String curLunarDay;
 
-    private Short pmExponent;
+        /**
+     * PM2.5指数
+     */
+         private Integer pmExponent;
 
-    private Short temperature;
+        /**
+     * 当前气温
+     */
+         private Integer temperature;
 
-    private String crtWeather;
+        /**
+     * 当前天气情况
+     */
+         private String crtWeather;
 
-    private String tedayTemperature;
+        /**
+     * 整体气温
+     */
+         private String tedayTemperature;
 
-    private String tedayWeather;
+        /**
+     * 整体天气
+     */
+         private String tedayWeather;
 
-    private String windDirection;
+        /**
+     * 风力等级
+     */
+         private String windDirection;
 
-    private String tIdentity;
+        /**
+     * 未来几天天气情况关联ID
+     */
+         private String tIdentity;
 
-    private Date createTime;
+        /**
+     * 创建时间
+     */
+         private LocalDateTime createTime;
+
 
     public Long gettId() {
         return tId;
@@ -50,7 +99,7 @@ public class TedayWeather extends Model<TedayWeather> {
     }
 
     public TedayWeather setCrtCity(String crtCity) {
-        this.crtCity = crtCity == null ? null : crtCity.trim();
+        this.crtCity = crtCity;
         return this;
     }
 
@@ -59,7 +108,7 @@ public class TedayWeather extends Model<TedayWeather> {
     }
 
     public TedayWeather setCrtDay(String crtDay) {
-        this.crtDay = crtDay == null ? null : crtDay.trim();
+        this.crtDay = crtDay;
         return this;
     }
 
@@ -68,7 +117,7 @@ public class TedayWeather extends Model<TedayWeather> {
     }
 
     public TedayWeather setCrtWeek(String crtWeek) {
-        this.crtWeek = crtWeek == null ? null : crtWeek.trim();
+        this.crtWeek = crtWeek;
         return this;
     }
 
@@ -77,24 +126,24 @@ public class TedayWeather extends Model<TedayWeather> {
     }
 
     public TedayWeather setCurLunarDay(String curLunarDay) {
-        this.curLunarDay = curLunarDay == null ? null : curLunarDay.trim();
+        this.curLunarDay = curLunarDay;
         return this;
     }
 
-    public Short getPmExponent() {
+    public Integer getPmExponent() {
         return pmExponent;
     }
 
-    public TedayWeather setPmExponent(Short pmExponent) {
+    public TedayWeather setPmExponent(Integer pmExponent) {
         this.pmExponent = pmExponent;
         return this;
     }
 
-    public Short getTemperature() {
+    public Integer getTemperature() {
         return temperature;
     }
 
-    public TedayWeather setTemperature(Short temperature) {
+    public TedayWeather setTemperature(Integer temperature) {
         this.temperature = temperature;
         return this;
     }
@@ -104,7 +153,7 @@ public class TedayWeather extends Model<TedayWeather> {
     }
 
     public TedayWeather setCrtWeather(String crtWeather) {
-        this.crtWeather = crtWeather == null ? null : crtWeather.trim();
+        this.crtWeather = crtWeather;
         return this;
     }
 
@@ -113,7 +162,7 @@ public class TedayWeather extends Model<TedayWeather> {
     }
 
     public TedayWeather setTedayTemperature(String tedayTemperature) {
-        this.tedayTemperature = tedayTemperature == null ? null : tedayTemperature.trim();
+        this.tedayTemperature = tedayTemperature;
         return this;
     }
 
@@ -122,7 +171,7 @@ public class TedayWeather extends Model<TedayWeather> {
     }
 
     public TedayWeather setTedayWeather(String tedayWeather) {
-        this.tedayWeather = tedayWeather == null ? null : tedayWeather.trim();
+        this.tedayWeather = tedayWeather;
         return this;
     }
 
@@ -131,7 +180,7 @@ public class TedayWeather extends Model<TedayWeather> {
     }
 
     public TedayWeather setWindDirection(String windDirection) {
-        this.windDirection = windDirection == null ? null : windDirection.trim();
+        this.windDirection = windDirection;
         return this;
     }
 
@@ -140,20 +189,40 @@ public class TedayWeather extends Model<TedayWeather> {
     }
 
     public TedayWeather settIdentity(String tIdentity) {
-        this.tIdentity = tIdentity == null ? null : tIdentity.trim();
+        this.tIdentity = tIdentity;
         return this;
     }
 
-    public Date getCreateTime() {
+    public LocalDateTime getCreateTime() {
         return createTime;
     }
 
-    public TedayWeather setCreateTime(Date createTime) {
+    public TedayWeather setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
+    @Override
     protected Serializable pkVal() {
         return this.tId;
+    }
+
+    @Override
+    public String toString() {
+        return "TedayWeather{" +
+        "tId=" + tId +
+        ", crtCity=" + crtCity +
+        ", crtDay=" + crtDay +
+        ", crtWeek=" + crtWeek +
+        ", curLunarDay=" + curLunarDay +
+        ", pmExponent=" + pmExponent +
+        ", temperature=" + temperature +
+        ", crtWeather=" + crtWeather +
+        ", tedayTemperature=" + tedayTemperature +
+        ", tedayWeather=" + tedayWeather +
+        ", windDirection=" + windDirection +
+        ", tIdentity=" + tIdentity +
+        ", createTime=" + createTime +
+        "}";
     }
 }

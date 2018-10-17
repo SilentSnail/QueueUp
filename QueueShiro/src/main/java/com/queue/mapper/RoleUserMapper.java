@@ -1,7 +1,8 @@
 package com.queue.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.queue.entity.RoleUser;
-import com.baomidou.mybatisplus.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -11,11 +12,11 @@ import java.util.List;
  * </p>
  *
  * @author liusong
- * @since 2018-10-16
+ * @since 2018-10-17
  */
 public interface RoleUserMapper extends BaseMapper<RoleUser> {
 
     List<RoleUser> getUserByParam(RoleUser user);
 
-    void changePassword(Long id, String password);
+    void changePassword(@Param("userId") Long id,@Param("password") String password);
 }
