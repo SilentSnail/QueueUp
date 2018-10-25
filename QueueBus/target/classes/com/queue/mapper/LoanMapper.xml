@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.queue.mapper.LoanMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.queue.entity.Loan">
+        <id column="id" property="id" />
+        <result column="code" property="code" />
+        <result column="loan_type" property="loanType" />
+        <result column="load_name" property="loadName" />
+        <result column="id_card" property="idCard" />
+        <result column="phone" property="phone" />
+        <result column="amount" property="amount" />
+        <result column="load_time" property="loadTime" />
+        <result column="repayment_time" property="repaymentTime" />
+        <result column="actual_repayment_time" property="actualRepaymentTime" />
+        <result column="status" property="status" />
+        <result column="remark" property="remark" />
+        <result column="is_iou" property="isIou" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, code, loan_type, load_name, id_card, phone, amount, load_time, repayment_time, actual_repayment_time, status, remark, is_iou
+    </sql>
+
+    <select id="searchByParam" parameterType="com.queue.entity.vo.LoanSearchVo" resultType="com.queue.entity.Loan">
+        SELECT * FROM LOAN WHERE 1 = 1
+        <if test="name != null and name != ''">
+            AND load_name = #{name}
+        </if>
+        <if test="type > 0">
+            AND loan_type = #{type}
+        </if>
+        <if test="status != null">
+            AND loan_type = #{status}
+        </if>
+        <if test="startTime != null">
+            AND load_time &gt; #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND load_time &lt; #{endTime}
+        </if>
+    </select>
+</mapper>
