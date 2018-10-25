@@ -2,8 +2,7 @@ package com.queue.controller;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
@@ -13,7 +12,7 @@ import org.springframework.stereotype.Controller;
  * @author liusong
  * @since 2018-10-17
  */
-@Controller
+@RestController
 @RequestMapping("/currencyTbl")
 public class CurrencyTblController {
 

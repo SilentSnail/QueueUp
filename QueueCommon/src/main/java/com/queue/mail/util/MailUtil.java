@@ -6,6 +6,7 @@ import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
 import javax.mail.*;
 import javax.mail.internet.*;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
@@ -26,7 +27,8 @@ public class MailUtil {
 
     static{
         try {
-            InputStream io = MailUtil.class.getClassLoader().getResourceAsStream("mail.properties");
+//            InputStream io = MailUtil.class.getClassLoader().getResourceAsStream("mail.properties");
+            InputStream io = new FileInputStream("/Volumes/TEST_HD/Document/mail.properties");
             config.load(io);
             props = new Properties();
             props.put("mail.smtp.auth", config.get("mail.auth"));

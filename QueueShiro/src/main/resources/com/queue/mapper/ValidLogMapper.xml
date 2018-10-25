@@ -19,4 +19,11 @@
         id, code, log_ip, user_id, create_time, sign, effective_time, status
     </sql>
 
+    <select id="searchByParam" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+        select * from valid_log where code = #{code} and sign = #{sign} and effective_time &gt;= now()
+    </select>
+
+    <insert id="saveValidByEntity">
+        insert into valid_log (code, log_ip, user_id, sign, effective_time) values (#{code}, #{logIp}, #{userId}, #{sign}, #{effectiveTime});
+    </insert>
 </mapper>

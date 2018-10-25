@@ -2,6 +2,9 @@ package com.queue.service;
 
 import com.queue.entity.Loan;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.queue.entity.vo.LoanSearchVo;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface LoanService extends IService<Loan> {
 
+    List<Loan> searchByParam(LoanSearchVo search);
 }

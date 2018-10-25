@@ -18,31 +18,31 @@ public class Loan extends Model<Loan> {
 
     private static final long serialVersionUID = 1L;
 
-        /**
+    /**
      * 借款ID
      */
-         @TableId(value = "id", type = IdType.AUTO)
+     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-        /**
+    /**
      * 借款Code
      */
-         private String code;
+     private String code;
 
-        /**
+    /**
      * 借款类型  1：借出  2：借入
      */
-         private Integer loanType;
+     private Integer loanType;
 
-        /**
+    /**
      * 借款人姓名
      */
-         private String loadName;
+     private String loadName;
 
-        /**
+    /**
      * 身份证号
      */
-         private String idCard;
+     private String idCard;
 
         /**
      * 手机号

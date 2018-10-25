@@ -23,12 +23,12 @@
         user_id, user_code, username, password, phone, email, role_id, is_delete, create_time, creator, update_time, reviser
     </sql>
 
-    <select id="getUserByParam" parameterType="com.queue.entity.RoleUser" resultMap="BaseResultMap">
-        select * from ROLE_USER WHERE 1 = 1
-        <if test="username != null">
+    <select id="getUserByParam" parameterType="com.queue.entity.RoleUser" resultType="com.queue.entity.dto.SysUserDto">
+        select user_id, user_code, username, phone, email, role_id, is_delete, create_time, creator, update_time, reviser from ROLE_USER WHERE 1 = 1
+        <if test="username != null and username != ''">
             and USERNAME = #{username,jdbcType=CHAR}
         </if>
-        <if test="email != null">
+        <if test="email != null and email != ''">
             and email = #{email,jdbcType=VARCHAR}
         </if>
     </select>

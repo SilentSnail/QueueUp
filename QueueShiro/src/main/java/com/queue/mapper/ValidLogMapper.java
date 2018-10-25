@@ -3,6 +3,8 @@ package com.queue.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.queue.entity.ValidLog;
 
+import java.util.Map;
+
 /**
  * <p>
  *  Mapper 接口
@@ -13,4 +15,7 @@ import com.queue.entity.ValidLog;
  */
 public interface ValidLogMapper extends BaseMapper<ValidLog> {
 
+    ValidLog searchByParam(Map<String, Object> param);
+
+    void saveValidByEntity(ValidLog valid);
 }

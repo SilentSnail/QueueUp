@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/QueueBus/QueueBus.iml" filepath="$PROJECT_DIR$/QueueBus/QueueBus.iml" />
       <module fileurl="file://$PROJECT_DIR$/QueueCommon/QueueCommon.iml" filepath="$PROJECT_DIR$/QueueCommon/QueueCommon.iml" />
       <module fileurl="file://$PROJECT_DIR$/QueueShiro/QueueShiro.iml" filepath="$PROJECT_DIR$/QueueShiro/QueueShiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/QueueSocket/QueueSocket.iml" filepath="$PROJECT_DIR$/QueueSocket/QueueSocket.iml" />
       <module fileurl="file://$PROJECT_DIR$/QueueUp.iml" filepath="$PROJECT_DIR$/QueueUp.iml" />
       <module fileurl="file://$PROJECT_DIR$/QueueWeb/QueueWeb.iml" filepath="$PROJECT_DIR$/QueueWeb/QueueWeb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/QueueBus/bus.iml" filepath="$PROJECT_DIR$/QueueBus/bus.iml" />
     </modules>
   </component>
 </project>

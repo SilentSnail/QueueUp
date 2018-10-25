@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.queue.entity.ValidLog;
 import com.queue.mapper.ValidLogMapper;
 import com.queue.service.ValidLogService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -19,7 +20,14 @@ import java.util.Map;
 @Service
 public class ValidLogServiceImpl extends ServiceImpl<ValidLogMapper, ValidLog> implements ValidLogService {
 
+    @Autowired
+    private ValidLogMapper validLogMapper;
+
     public ValidLog searchByParam(Map<String, Object> param) {
-        return null;
+        return this.validLogMapper.searchByParam(param);
+    }
+
+    public void saveValidByEntity(ValidLog valid) {
+        this.validLogMapper.saveValidByEntity(valid);
     }
 }

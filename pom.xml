@@ -16,6 +16,7 @@
         <module>QueueSocket</module>
     </modules>
 
+    <!-- 修改编译的jdk版本 -->
     <properties>
         <queue-model>1.0-SNAPSHOT</queue-model>
         <spring-version>5.0.4.RELEASE</spring-version>
@@ -37,6 +38,13 @@
         <redis-data>2.1.0.RELEASE</redis-data>
         <protostuff-version>1.5.9</protostuff-version>
         <javamail-version>1.4.7</javamail-version>
+        <!-- 以下是jdk版本配置 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <encoding>UTF-8</encoding>
     </properties>
 
     <dependencies>
@@ -74,6 +82,11 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
+            <version>${mybatis-plus}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-extension</artifactId>
             <version>${mybatis-plus}</version>
         </dependency>
         <dependency>

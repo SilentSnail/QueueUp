@@ -2,6 +2,7 @@ package com.queue.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.queue.entity.RoleUser;
+import com.queue.entity.dto.SysUserDto;
 import com.queue.mapper.RoleUserMapper;
 import com.queue.service.RoleUserService;
 import com.queue.util.SecurityUtils;
@@ -24,7 +25,7 @@ public class RoleUserServiceImpl extends ServiceImpl<RoleUserMapper, RoleUser> i
     @Autowired
     private RoleUserMapper userMapper;
 
-    public List<RoleUser> getUserByParam(RoleUser user) {
+    public List<SysUserDto> getUserByParam(RoleUser user) {
         return this.userMapper.getUserByParam(user);
     }
 

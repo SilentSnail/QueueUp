@@ -1,7 +1,9 @@
 package com.test.mybatis;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.queue.entity.RoleUser;
 import com.queue.service.RoleUserService;
+import com.queue.util.SecurityUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +23,11 @@ public class MyBatisTest {
 
     @Test
     public void getUserInfo(){
-        RoleUser param = new RoleUser();
-        param.setUsername("admin");
-        RoleUser user = this.userService.getUserByParam(param).get(0);
-        if(!ObjectUtils.isEmpty(user)){
-            System.out.println(user.toString());
+        RoleUser us = this.userService.getOne(new QueryWrapper<RoleUser>().eq("username", "admin"));
+        if(!ObjectUtils.isEmpty(us)){
+            us.setPassword(SecurityUtils.toMD5("123456"));
+            boolean check = this.userService.updateById(us);
+            System.out.println(check);
         }
     }
 }

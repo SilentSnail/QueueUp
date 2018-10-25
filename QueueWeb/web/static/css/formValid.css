@@ -1,0 +1,92 @@
+
+.main {
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 110px 0;
+    min-height: 100%;
+    box-sizing: border-box
+}
+
+.login-body {
+    width: 375px;
+    margin: 0 auto;
+    box-sizing: border-box
+}
+
+.login-body[bgimg] {
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .05)
+}
+
+.login-body .layui-form-item {
+    position: relative
+}
+
+.login-body .layui-form-item .layui-input {
+    padding-left: 38px
+}
+
+.body-box {
+    padding: 20px
+}
+
+.loginIcon {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    width: 38px;
+    line-height: 36px;
+    text-align: center;
+    color: #d2d2d2
+}
+
+.body-title {
+    text-align: center
+}
+
+.body-title h2 {
+    margin-bottom: 10px;
+    font-weight: 300;
+    font-size: 30px;
+    color: #000
+}
+
+.body-title p {
+    font-weight: 300;
+    color: #999
+}
+
+.login-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    line-height: 30px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, .5)
+}
+
+@media screen and (max-width:768px) {
+    .main {
+        padding-top: 60px
+    }
+
+    .login-body {
+        width: 300px
+    }
+
+    .body-box {
+        padding: 10px
+    }
+}
+
+.link {
+    color: #029789 !important
+}
+
+.link:hover {
+    opacity: .8
+}

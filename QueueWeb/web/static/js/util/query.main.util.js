@@ -1,14 +1,13 @@
 /**
  * Created by liusong on 2018/6/23.
  */
-
 ajax = function (url, data, callFun, param, options) {
     this.defaults = {
         type : 'POST',
         async : true,
         dataType : 'json',
         traditional : false,
-        contentType : 'application/x-www-form-urlencoded'
+        contentType : 'application/x-www-form-urlencoded;charset=utf-8'
     };
     var settings = $.extend({}, this.defaults, options);
     if(url) {
@@ -38,14 +37,10 @@ ajax = function (url, data, callFun, param, options) {
     });
 };
 
-showMessage = function (data){
-    (new $.zui.ModalTrigger({showHeader: false, width:300, custom : data})).show();
-};
-
 function getPageParam(data, param) {
     if (param) {
-        data['page.pageNum'] = param.start / param.length + 1;
-        data['page.pageSize'] = param.length;
+        data['page.pageNo'] = param.currentPage;
+        data['page.pageSize'] = param.dataSize;
     }
     return data;
-}
+};

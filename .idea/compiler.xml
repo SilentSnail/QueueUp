@@ -35,14 +35,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="bus" target="1.5" />
-      <module name="QueueBus" target="1.5" />
-      <module name="QueueCommon" target="1.5" />
-      <module name="QueueShiro" target="1.5" />
-      <module name="QueueSocket" target="1.5" />
-      <module name="QueueUp" target="1.5" />
-      <module name="QueueWeb" target="1.5" />
-      <module name="ShiroGenerator" target="1.5" />
+      <module name="QueueBus" target="1.8" />
+      <module name="QueueCommon" target="1.8" />
+      <module name="QueueShiro" target="1.8" />
+      <module name="QueueSocket" target="1.8" />
+      <module name="QueueUp" target="1.8" />
+      <module name="QueueWeb" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

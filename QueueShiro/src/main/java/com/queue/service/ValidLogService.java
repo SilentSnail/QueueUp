@@ -16,4 +16,6 @@ import java.util.Map;
 public interface ValidLogService extends IService<ValidLog> {
 
     ValidLog searchByParam(Map<String, Object> param);
+
+    void saveValidByEntity(ValidLog valid);
 }

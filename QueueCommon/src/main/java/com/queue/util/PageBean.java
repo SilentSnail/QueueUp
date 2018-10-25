@@ -2,7 +2,7 @@ package com.queue.util;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.util.StringUtil;
+import org.apache.shiro.util.StringUtils;
 
 import java.util.List;
 
@@ -13,23 +13,23 @@ import java.util.List;
 public class PageBean<T> {
 
     //总数据条数
-    private long totalCount;
+    private long totalCount = 0;
     //查询页
-    private int currentPage;
+    private int currentPage = 1;
     //总页数
-    private long pageSize;
+    private long pageSize = 0;
     //每页数据条数
-    private int dataSize;
+    private int dataSize = 10;
     //列表数据
     private List<T> list;
 
     public PageBean(){
-        String pageNumStr = HttpContextUtils.getRequest().getParameter("page.pageNum");
+        String pageNumStr = HttpContextUtils.getRequest().getParameter("page.pageNo");
         String dataSizeStr = HttpContextUtils.getRequest().getParameter("page.pageSize");
-        if(StringUtil.isEmpty(pageNumStr)){
+        if(StringUtils.hasLength(pageNumStr)){
             this.currentPage = Integer.parseInt(pageNumStr);
         }
-        if(StringUtil.isEmpty(dataSizeStr)){
+        if(StringUtils.hasLength(dataSizeStr)){
             this.dataSize = Integer.parseInt(dataSizeStr);
         }
         PageHelper.startPage(this.currentPage, this.dataSize);

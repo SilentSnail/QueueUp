@@ -1,8 +1,13 @@
 package com.test;
 
+import com.alibaba.fastjson.JSONObject;
+import com.queue.entity.Loan;
+import com.queue.entity.RoleUser;
+import com.queue.entity.dto.SysUserDto;
+import com.queue.entity.vo.LoanSearchVo;
 import com.queue.mail.entity.MailMessage;
-import com.queue.mail.service.MailMessageService;
-import com.queue.mail.util.SendMail;
+import com.queue.service.LoanService;
+import com.queue.service.RoleUserService;
 import com.queue.util.RedisUtils;
 import com.queue.util.SecurityUtils;
 import com.queue.util.SerializeUtils;
@@ -13,6 +18,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.ObjectUtils;
 
+import java.util.List;
+
 /**
  * Created by liusong on 2018/4/8.
  */
@@ -22,13 +29,24 @@ import org.springframework.util.ObjectUtils;
 public class SpringTest {
 
     @Autowired
-    private MailMessageService mailService;
+    private RoleUserService userService;
     @Autowired
     private RedisUtils<String, byte[]> redisUtil;
+    @Autowired
+    private LoanService loanService;
+
+    @Test
+    public void loanTest(){
+        List<Loan> list = this.loanService.searchByParam(new LoanSearchVo());
+//        Loan loan = this.loanService.getById('1');
+        System.out.println(JSONObject.toJSONString(list));
+    }
 
     @Test
     public void test(){
-        this.mailService.getMailPool().setRunnable(new SendMail());
+        List<SysUserDto> list = this.userService.getUserByParam(new RoleUser());
+//        RoleUser user = this.userService.getById("1");
+        System.out.println(JSONObject.toJSONString(list));
     }
 
     @Test
