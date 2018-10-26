@@ -1,5 +1,7 @@
 package com.queue.entity.vo;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDateTime;
 
 /**
@@ -10,7 +12,11 @@ public class LoanSearchVo {
     private String name;
     private Integer type;
     private Integer status;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime startTime;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime endTime;
 
     public String getName() {

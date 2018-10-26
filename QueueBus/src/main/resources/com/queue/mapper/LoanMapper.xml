@@ -33,7 +33,7 @@
             AND loan_type = #{type}
         </if>
         <if test="status != null">
-            AND loan_type = #{status}
+            AND status = #{status}
         </if>
         <if test="startTime != null">
             AND load_time &gt; #{startTime}

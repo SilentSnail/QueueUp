@@ -14,8 +14,12 @@
         <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />
     </context:component-scan>
 
-    <!--向spring容器注册：AutowiredAnnotationBeanPostProcessor CommonAnnotationBeanPostProcessor
-    PersistenceAnnotationBeanPostProcessor RequiredAnnotationBeanPostProcessor 四个Bean-->
+    <!--向spring容器注册：
+        AutowiredAnnotationBeanPostProcessor
+        CommonAnnotationBeanPostProcessor
+        PersistenceAnnotationBeanPostProcessor
+        RequiredAnnotationBeanPostProcessor
+    -->
     <context:annotation-config />
 
     <!-- fastjson配置 -->

@@ -70,7 +70,7 @@
                     </div>
                     <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-filter="side-menu">
                         <li class="layui-nav-item layui-nav-itemed">
-                            <a href="/pages/admin/admin.html" lay-tips="主页" lay-direction="2">
+                            <a lay-href="/pages/admin/main.html" lay-tips="主页" lay-direction="2">
                                 <i class="layui-icon layui-icon-home"></i>
                                 <cite>主页</cite>
                             </a>
@@ -126,23 +126,23 @@
                                 <dd>
                                     <a href="javascript:;">内容系统</a>
                                     <dl class="layui-nav-child">
-                                        <dd><a lay-href="app/content/list.html">文章列表</a></dd>
-                                        <dd><a lay-href="app/content/tags.html">分类管理</a></dd>
-                                        <dd><a lay-href="app/content/comment.html">评论管理</a></dd>
+                                        <dd><a lay-href="">文章列表</a></dd>
+                                        <dd><a lay-href="">分类管理</a></dd>
+                                        <dd><a lay-href="">评论管理</a></dd>
                                     </dl>
                                 </dd>
                                 <dd>
                                     <a href="javascript:;">社区系统</a>
                                     <dl class="layui-nav-child">
-                                        <dd><a lay-href="app/forum/list.html">帖子列表</a></dd>
-                                        <dd><a lay-href="app/forum/replys.html">回帖列表</a></dd>
+                                        <dd><a lay-href="">帖子列表</a></dd>
+                                        <dd><a lay-href="">回帖列表</a></dd>
                                     </dl>
                                 </dd>
                                 <dd>
-                                    <a lay-href="app/message/index.html">消息中心</a>
+                                    <a lay-href="">消息中心</a>
                                 </dd>
                                 <dd>
-                                    <a lay-href="app/workorder/list.html">工单系统</a>
+                                    <a lay-href="">工单系统</a>
                                 </dd>
                             </dl>
                         </li>
@@ -153,14 +153,11 @@
                             </a>
                             <dl class="layui-nav-child">
                                 <dd>
-                                    <a layadmin-event="im">LayIM 通讯系统</a>
-                                </dd>
-                                <dd>
                                     <a href="javascript:;">Echarts集成</a>
                                     <dl class="layui-nav-child">
-                                        <dd><a lay-href="senior/echarts/line.html">折线图</a></dd>
-                                        <dd><a lay-href="senior/echarts/bar.html">柱状图</a></dd>
-                                        <dd><a lay-href="senior/echarts/map.html">地图</a></dd>
+                                        <dd><a lay-href="">折线图</a></dd>
+                                        <dd><a lay-href="">柱状图</a></dd>
+                                        <dd><a lay-href="">地图</a></dd>
                                     </dl>
                                 </dd>
                             </dl>
@@ -216,8 +213,8 @@
             </div>
             <!-- 页面标签 -->
             <div class="layadmin-pagetabs">
-                <div class="layui-icon layadmin-tabs-control layui-icon-prev" layadmin-event="leftPage"></div>
-                <div class="layui-icon layadmin-tabs-control layui-icon-next" layadmin-event="rightPage"></div>
+                <div class="layui-icon layadmin-tabs-control layui-icon-prev"></div>
+                <div class="layui-icon layadmin-tabs-control layui-icon-next"></div>
                 <div class="layui-icon layadmin-tabs-control layui-icon-down">
                     <ul class="layui-nav layadmin-tabs-select" lay-filter="layadmin-pagetabs-nav">
                         <li class="layui-nav-item" lay-unselect>
@@ -232,7 +229,9 @@
                 </div>
                 <div class="layui-tab" lay-unauto lay-allowClose="true" lay-filter="layadmin-layout-tabs">
                     <ul class="layui-tab-title">
-                        <li lay-id="/pages/admin/main.html"><i class="layui-icon layui-icon-home"></i></li>
+                        <li lay-id="/pages/admin/main.html" name="home">
+                            <i class="layui-icon layui-icon-home"></i>
+                        </li>
                         <li lay-id="/pages/loan/loan_list.html" class="layui-this">
                             <span>借款列表</span>
                             <i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
@@ -248,6 +247,7 @@
                 <div class="layadmin-tabsbody-item layui-show">
                     <iframe src="/pages/loan/loan_list.html" frameborder="0" class="layadmin-iframe"></iframe>
                 </div>
+
             </div>
         </div>
     </div>
