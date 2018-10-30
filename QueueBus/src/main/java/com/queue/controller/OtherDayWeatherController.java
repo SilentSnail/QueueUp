@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/otherDayWeather")
-public class OtherDayWeatherController {
+public class OtherDayWeatherController extends BaseController {
 
 }
 

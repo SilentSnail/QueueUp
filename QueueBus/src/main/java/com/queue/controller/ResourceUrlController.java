@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/resourceUrl")
-public class ResourceUrlController {
+public class ResourceUrlController extends BaseController {
 
 }
 

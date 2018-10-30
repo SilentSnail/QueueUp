@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/permissions")
-public class PermissionsController {
+public class PermissionsController extends BaseController {
 
 }
 

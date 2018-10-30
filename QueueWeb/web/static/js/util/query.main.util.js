@@ -44,3 +44,17 @@ function getPageParam(data, param) {
     }
     return data;
 };
+
+function objToArr(obj) {
+    var arr = [];
+    for (var k in obj) {
+        if ($.isArray(obj[k])) {
+            for (var i = 0, len = obj[k].length; i < len; ++i) {
+                arr.push({name: k, value: obj[k][i]});
+            }
+        } else {
+            arr.push({name: k, value: obj[k]});
+        }
+    }
+    return arr;
+}

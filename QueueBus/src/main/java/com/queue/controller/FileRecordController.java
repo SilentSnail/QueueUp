@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/fileRecord")
-public class FileRecordController {
+public class FileRecordController extends BaseController {
 
 }
 

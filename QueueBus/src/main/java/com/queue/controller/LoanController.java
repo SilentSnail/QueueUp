@@ -23,7 +23,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/loan")
-public class LoanController {
+public class LoanController extends BaseController {
 
     @Autowired
     private LoanService loanService;
@@ -40,6 +40,11 @@ public class LoanController {
     public R save(Loan loan){
         loan.setCode(SecurityUtils.getUUID());
         return R.ok(this.loanService.save(loan));
+    }
+
+    @RequestMapping("/remove")
+    public R delByIds(Long id){
+        return R.ok(this.loanService.removeById(id));
     }
 }
 

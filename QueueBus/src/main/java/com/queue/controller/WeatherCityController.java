@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/weatherCity")
-public class WeatherCityController {
+public class WeatherCityController extends BaseController {
 
 }
 

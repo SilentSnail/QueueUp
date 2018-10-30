@@ -8,10 +8,11 @@ $(function () {
         //加载表格数据
         table.render({
             elem:'#showLoanList',
-            width:1590,
+            width:1705,
             height:472,
             url:'/loan/list',
             method:'POST',
+            where:{type:1, status:1},
             request:{
                 pageName:'page.pageNo',
                 limitName:'page.pageSize'
@@ -20,7 +21,7 @@ $(function () {
                 statusCode:'1'
             },
             cols:[[
-                {field: 'id', title: 'ID', type:'checkbox', fixed: 'left', hide:true},
+                {fixed: 'left', field: 'id', title: '操作', width:115, align:'center', toolbar: '#toolHtml'},
                 {field: 'id', title: 'ID', fixed: 'left', width:60},
                 {field: 'loanType', title: '类型', fixed: 'left', width:60, templet:function(d){
                     if(d.loanType == 1) return '借出'; else return '借入';
@@ -79,7 +80,24 @@ $(function () {
                     curr:1
                 }
             });
-            console.log(data.field);
+        });
+
+        table.on('tool(loanData)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'detail'){
+                layer.msg('ID：'+ data.id + ' 的查看操作');
+            } else if(obj.event === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                    ajax('/loan/remove', {id:data.id}, function (res) {
+                        layer.close(index);
+                        table.reload('showLoanList', {
+                            page:{
+                                curr:1
+                            }
+                        });
+                    });
+                });
+            }
         });
     });
     //@Angry_Snail

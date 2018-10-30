@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/currencyTbl")
-public class CurrencyTblController {
+public class CurrencyTblController extends BaseController {
 
 }
 

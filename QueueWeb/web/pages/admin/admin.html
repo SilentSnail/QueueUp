@@ -65,8 +65,8 @@
             <!-- 侧边菜单 -->
             <div class="layui-side layui-side-menu">
                 <div class="layui-side-scroll">
-                    <div class="layui-logo" lay-href="/pages/admin/main.html">
-                        <span>测试后台管理系统</span>
+                    <div class="layui-logo">
+                        <a lay-href="/pages/admin/main.html">测试后台管理系统</a>
                     </div>
                     <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-filter="side-menu">
                         <li class="layui-nav-item layui-nav-itemed">
@@ -82,17 +82,17 @@
                             </a>
                             <dl class="layui-nav-child">
                                 <dd>
-                                    <a href="javascript:;">个人消费</a>
+                                    <a href="javascript:;">消费</a>
                                     <dl class="layui-nav-child">
-                                        <dd><a lay-href="">购买</a></dd>
-                                        <dd><a lay-href="">订单</a></dd>
+                                        <dd><a lay-href="/pages/user/pay/pay.html">支出</a></dd>
+                                        <dd><a lay-href="/pages/user/pay/take.html">收入</a></dd>
                                     </dl>
                                 </dd>
                                 <dd>
                                     <a href="javascript:;">购入<span class="layui-nav-more"></span></a>
                                     <dl class="layui-nav-child">
-                                        <dd><a lay-href="" lay-text="layer 功能演示">购入列表</a></dd>
-                                        <dd><a lay-href="" lay-text="layer 特殊示例">新增购入</a></dd>
+                                        <dd><a lay-href="">购入列表</a></dd>
+                                        <dd><a lay-href="">新增购入</a></dd>
                                     </dl>
                                 </dd>
                                 <dd>
@@ -100,8 +100,6 @@
                                     <dl class="layui-nav-child">
                                         <dd><a lay-href="/pages/loan/addLoanInfo.html">新增借款</a></dd>
                                         <dd><a lay-href="/pages/loan/loan_list.html">借款列表</a></dd>
-                                        <dd><a lay-href="">借出列表</a></dd>
-                                        <dd><a lay-href="">借入列表</a></dd>
                                     </dl>
                                 </dd>
                             </dl>
@@ -229,25 +227,17 @@
                 </div>
                 <div class="layui-tab" lay-unauto lay-allowClose="true" lay-filter="layadmin-layout-tabs">
                     <ul class="layui-tab-title">
-                        <li lay-id="/pages/admin/main.html" name="home">
+                        <li lay-id="/pages/admin/main.html" class="layui-this" name="home">
                             <i class="layui-icon layui-icon-home"></i>
-                        </li>
-                        <li lay-id="/pages/loan/loan_list.html" class="layui-this">
-                            <span>借款列表</span>
-                            <i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
                         </li>
                     </ul>
                 </div>
             </div>
             <!-- 主体内容 -->
             <div class="layui-body">
-                <div class="layadmin-tabsbody-item">
+                <div class="layadmin-tabsbody-item layui-show">
                     <iframe src="/pages/admin/main.html" frameborder="0" class="layadmin-iframe"></iframe>
                 </div>
-                <div class="layadmin-tabsbody-item layui-show">
-                    <iframe src="/pages/loan/loan_list.html" frameborder="0" class="layadmin-iframe"></iframe>
-                </div>
-
             </div>
         </div>
     </div>

@@ -69,16 +69,16 @@ $(function(){
     });
 
     //点击关闭按钮
-    $(".layui-tab .layui-tab-title .layui-tab-close").click(function () {
-        var parent = $(this).parent();
-        if($(parent).next().length == 0){//没有下一个兄弟节点
-            $(parent).prev().addClass('layui-this');
-        }else{//存在下一个兄弟节点
-            $(parent).next().addClass('layui-this');
-        }
-        removeById($(this).parent().attr("lay-id"));
-        $(parent).remove();//删除
-    });
+    // $(".layui-tab .layui-tab-title .layui-tab-close").click(function () {
+    //     var parent = $(this).parent();
+    //     if($(parent).next().length == 0){//没有下一个兄弟节点
+    //         $(parent).prev().addClass('layui-this');
+    //     }else{//存在下一个兄弟节点
+    //         $(parent).next().addClass('layui-this');
+    //     }
+    //     removeById($(this).parent().attr("lay-id"));
+    //     $(parent).remove();//删除
+    // });
 
     //移除iframe
     function removeById(id){
@@ -93,11 +93,23 @@ $(function(){
         $(div).remove();
     }
 
-    //点击项，显示自身
-    $(".layui-tab .layui-tab-title li").click(function () {
+    //点击项，显示自身 动态添加的元素得这么写才会生效 否者直接.click 会出现不生效的问题
+    $(".layui-tab-title").on('click', 'li', function () {
         $(this).siblings().removeClass('layui-this');
         $(this).addClass('layui-this');
         showById($(this).attr("lay-id"));
+    });
+
+    //点击关闭按钮 动态添加的元素得这么写才会生效 否者直接.click 会出现不生效的问题
+    $(".layui-tab-title").on('click', 'li .layui-tab-close', function () {
+        var parent = $(this).parent();
+        if($(parent).next().length == 0){//没有下一个兄弟节点
+            $(parent).prev().addClass('layui-this');
+        }else{//存在下一个兄弟节点
+            $(parent).next().addClass('layui-this');
+        }
+        removeById($(this).parent().attr("lay-id"));
+        $(parent).remove();//删除
     });
 
     //显示iframe

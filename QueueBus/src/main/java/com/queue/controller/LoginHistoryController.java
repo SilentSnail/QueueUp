@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/loginHistory")
-public class LoginHistoryController {
+public class LoginHistoryController extends BaseController {
 
 }
 

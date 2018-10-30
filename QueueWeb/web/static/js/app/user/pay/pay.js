@@ -6,22 +6,15 @@ $(function () {
         //日期
         var data = layui.laydate;
         data.render({
-            elem:'#loadTime'
-        });
-        data.render({
-            elem:'#repaymentTime'
-        });
-        data.render({
-            elem:'#actualRepaymentTime'
+            elem:'#payTime',
+            type:'datetime'
         });
 
         //表单
         var form = layui.form;
         form.render();
         form.on('submit(commit)', function (data) {
-            ajax('/loan/save', data.field, function (res) {
-                console.log(res);
-            })
+            console.log(data.field);
         });
     })
 });

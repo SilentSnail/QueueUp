@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/roleInf")
-public class RoleInfController {
+public class RoleInfController extends BaseController {
 
 }
 

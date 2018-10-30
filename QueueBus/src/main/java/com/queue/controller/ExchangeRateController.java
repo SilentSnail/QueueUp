@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/exchangeRate")
-public class ExchangeRateController {
+public class ExchangeRateController extends BaseController {
 
 }
 

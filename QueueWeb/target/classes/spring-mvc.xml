@@ -37,24 +37,34 @@
         </property>
     </bean>
 
+    <bean id="timeConverter" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.queue.interceptor.ConvertLocalDateTime" />
+            </set>
+        </property>
+    </bean>
+
     <!-- 扩充注解，自动注册RequestMappingHandlerMapping与RequestMappingHandlerAdapter -->
     <!-- Controller配置注解之后 annotation-driven REST 需要进行配置Fastjson的 -->
-    <mvc:annotation-driven>
+    <mvc:annotation-driven conversion-service="timeConverter">
         <mvc:message-converters register-defaults="true">
             <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
                 <property name="supportedMediaTypes">
                     <list>
                         <!-- 顺序不推荐更改 -->
                         <value>text/html;charset=UTF-8</value>
-                        <value>text/plain;charset=utf-8</value>
+                        <value>text/plain;charset=UTF-8</value>
                         <value>application/json;charset=UTF-8</value>
-                        <value>application/xml;charset=utf-8</value>
+                        <value>application/xml;charset=UTF-8</value>
                     </list>
                 </property>
                 <property name="fastJsonConfig" ref="fastJsonConfig" />
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+
+
 
     <!-- 静态资源处理 -->
     <!--<mvc:resources mapping="/static/**" location="/static/" />-->
