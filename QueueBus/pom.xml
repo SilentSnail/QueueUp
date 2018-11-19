@@ -14,8 +14,8 @@
     <dependencies>
         <dependency>
             <groupId>com.queueUp</groupId>
-            <artifactId>common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <artifactId>QueueShiro</artifactId>
+            <version>${queue-model}</version>
         </dependency>
     </dependencies>
 

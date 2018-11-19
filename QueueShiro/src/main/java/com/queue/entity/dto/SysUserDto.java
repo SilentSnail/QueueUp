@@ -1,30 +1,18 @@
 package com.queue.entity.dto;
 
+import java.time.LocalDateTime;
+
 /**
  * Created by liusong on 2018/10/17.
  */
 public class SysUserDto {
 
-    private Long userId;
     private String userCode;
-    private String username;
-    private String password;
-    private String phone;
-    private String email;
-    private Integer roleId;
-    private Integer isDelete;
-    private String createTime;
-    private String creator;
-    private String updateTime;
-    private String reviser;
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
+    private String userName;
+    private String roleName;
+    private Integer status;
+    private Boolean delStatus;
+    private LocalDateTime createTime;
 
     public String getUserCode() {
         return userCode;
@@ -34,83 +22,43 @@ public class SysUserDto {
         this.userCode = userCode;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getPassword() {
-        return password;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
-    public String getPhone() {
-        return phone;
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
-    public String getEmail() {
-        return email;
+    public Boolean getDelStatus() {
+        return delStatus;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDelStatus(Boolean delStatus) {
+        this.delStatus = delStatus;
     }
 
-    public Integer getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
-    }
-
-    public Integer getIsDelete() {
-        return isDelete;
-    }
-
-    public void setIsDelete(Integer isDelete) {
-        this.isDelete = isDelete;
-    }
-
-    public String getCreateTime() {
+    public LocalDateTime getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
-    public String getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(String updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public String getReviser() {
-        return reviser;
-    }
-
-    public void setReviser(String reviser) {
-        this.reviser = reviser;
     }
 }

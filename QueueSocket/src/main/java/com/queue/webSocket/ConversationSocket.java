@@ -2,7 +2,7 @@ package com.queue.webSocket;
 
 import com.alibaba.fastjson.JSONObject;
 import com.queue.entity.WebSocket;
-import com.queue.util.CheckSumBuilder;
+import com.queue.utils.CheckSumBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

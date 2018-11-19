@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.queue.mapper.AuthorityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.queue.entity.Authority">
+        <id column="id" property="id" />
+        <result column="code" property="code" />
+        <result column="role_id" property="roleId" />
+        <result column="user_id" property="userId" />
+        <result column="res_id" property="resId" />
+        <result column="create_time" property="createTime" />
+        <result column="creator" property="creator" />
+        <result column="status" property="status" />
+        <result column="update_time" property="updateTime" />
+        <result column="reviser" property="reviser" />
+        <result column="del_status" property="delStatus" />
+        <result column="describe_inf" property="describeInf" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, code, role_id, user_id, res_id, create_time, creator, status, update_time, reviser, del_status, describe_inf
+    </sql>
+
+</mapper>

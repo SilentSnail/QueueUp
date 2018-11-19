@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.queue.mapper.DirectoriesMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.queue.entity.Directories">
+        <id column="id" property="id" />
+        <result column="user_code" property="userCode" />
+        <result column="name" property="name" />
+        <result column="birthday" property="birthday" />
+        <result column="sex" property="sex" />
+        <result column="id_card" property="idCard" />
+        <result column="phone" property="phone" />
+        <result column="email" property="email" />
+        <result column="qq_no" property="qqNo" />
+        <result column="we_chat" property="weChat" />
+        <result column="address" property="address" />
+        <result column="remark" property="remark" />
+        <result column="sign" property="sign" />
+        <result column="status" property="status" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="del_status" property="delStatus" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_code, name, birthday, sex, id_card, phone, email, qq_no, we_chat, address, remark, sign, status, create_time, update_time, del_status
+    </sql>
+
+    <select id="findBySearchVo" parameterType="com.queue.entity.vo.DirectorSearchVo" resultMap="BaseResultMap">
+        select d.* from directories d where d.del_status = false
+        <if test="name != null and name != ''">
+            and d.name like concat('%', #{name},'%')
+        </if>
+        <if test="type != null">
+            and d.sign = #{type}
+        </if>
+        <if test="phone != null and phone != ''">
+            and d.phone like concat('%', #{phone},'%')
+        </if>
+        <if test="startTime != null">
+            and d.create_time &gt;= #{startTime}
+        </if>
+        <if test="endTime != null">
+            and d.create_time &lt;= #{endTime}
+        </if>
+    </select>
+
+    <update id="delByCode" parameterType="java.lang.String">
+        update directories set del_status = true where user_code = #{code};
+    </update>
+
+</mapper>

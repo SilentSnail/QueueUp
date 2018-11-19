@@ -78,70 +78,32 @@
                         <li class="layui-nav-item">
                             <a href="javascript:;" lay-tips="消费管理" lay-direction="2">
                                 <i class="layui-icon layui-icon-component"></i>
-                                <cite>消费管理</cite>
+                                <cite>帐务信息</cite>
                             </a>
                             <dl class="layui-nav-child">
-                                <dd>
-                                    <a href="javascript:;">消费</a>
-                                    <dl class="layui-nav-child">
-                                        <dd><a lay-href="/pages/user/pay/pay.html">支出</a></dd>
-                                        <dd><a lay-href="/pages/user/pay/take.html">收入</a></dd>
-                                    </dl>
-                                </dd>
-                                <dd>
-                                    <a href="javascript:;">购入<span class="layui-nav-more"></span></a>
-                                    <dl class="layui-nav-child">
-                                        <dd><a lay-href="">购入列表</a></dd>
-                                        <dd><a lay-href="">新增购入</a></dd>
-                                    </dl>
-                                </dd>
-                                <dd>
-                                    <a href="javascript:;">借款</a>
-                                    <dl class="layui-nav-child">
-                                        <dd><a lay-href="/pages/loan/addLoanInfo.html">新增借款</a></dd>
-                                        <dd><a lay-href="/pages/loan/loan_list.html">借款列表</a></dd>
-                                    </dl>
-                                </dd>
+                                <dd><a lay-href="/pages/loan/loan_list.html">债务管理</a></dd>
+                                <dd><a lay-href="/pages/loan/pay/take.html">收入管理</a></dd>
+                                <dd><a lay-href="/pages/loan/pay/pay.html">支出管理</a></dd>
                             </dl>
                         </li>
                         <li class="layui-nav-item">
                             <a href="javascript:;" lay-tips="客户信息" lay-direction="2">
                                 <i class="layui-icon layui-icon-template"></i>
-                                <cite>客户信息</cite>
+                                <cite>联系人</cite>
                             </a>
                             <dl class="layui-nav-child">
-                                <dd><a lay-href="">客户列表</a></dd>
-                                <dd><a lay-href="">信息维护</a></dd>
-                                <dd><a lay-href="">新增客户</a></dd>
+                                <dd><a lay-href="/pages/contact/contManage.html">联系人管理</a></dd>
                             </dl>
                         </li>
                         <li class="layui-nav-item">
-                            <a href="javascript:;" lay-tips="应用" lay-direction="2">
+                            <a href="javascript:;" lay-tips="饲料管理" lay-direction="2">
                                 <i class="layui-icon layui-icon-app"></i>
-                                <cite>应用</cite>
+                                <cite>饲料管理</cite>
                             </a>
                             <dl class="layui-nav-child">
-                                <dd>
-                                    <a href="javascript:;">内容系统</a>
-                                    <dl class="layui-nav-child">
-                                        <dd><a lay-href="">文章列表</a></dd>
-                                        <dd><a lay-href="">分类管理</a></dd>
-                                        <dd><a lay-href="">评论管理</a></dd>
-                                    </dl>
-                                </dd>
-                                <dd>
-                                    <a href="javascript:;">社区系统</a>
-                                    <dl class="layui-nav-child">
-                                        <dd><a lay-href="">帖子列表</a></dd>
-                                        <dd><a lay-href="">回帖列表</a></dd>
-                                    </dl>
-                                </dd>
-                                <dd>
-                                    <a lay-href="">消息中心</a>
-                                </dd>
-                                <dd>
-                                    <a lay-href="">工单系统</a>
-                                </dd>
+                                <dd><a lay-href="/pages/forage/addForage.html">饲料入库</a></dd>
+                                <dd><a lay-href="/pages/forage/forageTypeMag.html">种类管理</a></dd>
+                                <dd><a lay-href="/pages/forage/forageCnt.html">饲料盘点</a></dd>
                             </dl>
                         </li>
                         <li class="layui-nav-item">
@@ -166,15 +128,9 @@
                                 <cite>用户</cite>
                             </a>
                             <dl class="layui-nav-child">
-                                <dd>
-                                    <a lay-href="">用户列表</a>
-                                </dd>
-                                <dd>
-                                    <a lay-href="">新增用户</a>
-                                </dd>
-                                <dd>
-                                    <a lay-href="">信息维护</a>
-                                </dd>
+                                <dd><a lay-href="/pages/user/list.html">用户列表</a></dd>
+                                <dd><a lay-href="/pages/user/addUser.html">新增用户</a></dd>
+                                <dd><a lay-href="/pages/user/changeInfo.html">信息维护</a></dd>
                             </dl>
                         </li>
                         <li class="layui-nav-item">
@@ -186,9 +142,9 @@
                                 <dd>
                                     <a href="javascript:;">系统设置</a>
                                     <dl class="layui-nav-child">
-                                        <dd><a lay-href="">权限维护</a></dd>
-                                        <dd><a lay-href="">邮箱维护</a></dd>
-                                        <dd><a lay-href="">搜索设置</a></dd>
+                                        <dd><a lay-href="/pages/settings/permissionSetup.html">权限维护</a></dd>
+                                        <dd><a lay-href="/pages/settings/mailSetup.html">邮箱维护</a></dd>
+                                        <dd><a lay-href="/pages/settings/searchSetup.html">搜索设置</a></dd>
                                     </dl>
                                 </dd>
                                 <dd>

@@ -4,36 +4,43 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.queue.entity.RoleUser">
-        <id column="user_code" property="userCode" />
-        <result column="user_id" property="userId" />
+        <id column="user_id" property="userId" />
+        <result column="user_code" property="userCode" />
         <result column="username" property="username" />
         <result column="password" property="password" />
         <result column="phone" property="phone" />
         <result column="email" property="email" />
         <result column="role_id" property="roleId" />
-        <result column="is_delete" property="isDelete" />
-        <result column="create_time" property="createTime" />
-        <result column="creator" property="creator" />
-        <result column="update_time" property="updateTime" />
-        <result column="reviser" property="reviser" />
+        <result column="del_status" property="delStatus" />
+        <result column="status" property="status" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        user_id, user_code, username, password, phone, email, role_id, is_delete, create_time, creator, update_time, reviser
+        user_id, user_code, username, password, phone, email, role_id, del_status, status
     </sql>
 
-    <select id="getUserByParam" parameterType="com.queue.entity.RoleUser" resultType="com.queue.entity.dto.SysUserDto">
-        select user_id, user_code, username, phone, email, role_id, is_delete, create_time, creator, update_time, reviser from ROLE_USER WHERE 1 = 1
-        <if test="username != null and username != ''">
-            and USERNAME = #{username,jdbcType=CHAR}
+    <select id="getUserByParam" parameterType="com.queue.entity.vo.UserSearchVo" resultType="com.queue.entity.dto.SysUserDto">
+        select u.user_code as userCode, u.status, u.del_status as delStatus,
+               d.create_time as createTime, d.name as userName,
+               r.name as roleName
+        from role_user u
+        left join user_info d on u.user_code = d.user_code
+        left join role r on u.role_id = r.id
+        where 1 = 1
+        <if test="roleId != null">
+            and u.role_id = #{roleId}
         </if>
-        <if test="email != null and email != ''">
-            and email = #{email,jdbcType=VARCHAR}
+        <if test="userName != null and userName != ''">
+            and d.name like '%'||#{userName}||'%'
         </if>
     </select>
 
-    <update id="changePassword">
-        UPDATE ROLE_USER SET PASSWORD = #{password} WHERE USER_ID = #{userId}
-    </update>
+    <!--<select id="searchByParam" parameterType="java.util.HashMap" resultMap="BaseResultMap">-->
+        <!--select * from valid_log where code = #{code} and sign = #{sign} and effective_time &gt;= now()-->
+    <!--</select>-->
+
+    <!--<insert id="saveValidByEntity">-->
+        <!--insert into valid_log (code, log_ip, user_id, sign, effective_time) values (#{code}, #{logIp}, #{userId}, #{sign}, #{effectiveTime});-->
+    <!--</insert>-->
 </mapper>

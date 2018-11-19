@@ -1,6 +1,6 @@
 package com.test;
 
-import com.queue.util.SecurityUtils;
+import com.queue.utils.SecurityEncryptUtils;
 
 import java.sql.*;
 import java.util.*;
@@ -117,7 +117,7 @@ public class DBHelper {
 
     public static String saveSource(String source){
         Map v = new HashMap();
-        String uuid = SecurityUtils.getUUID();
+        String uuid = SecurityEncryptUtils.getUUID();
         v.put(keys[0], uuid);
         v.put(keys[1], source);
         v.put(keys[2], 1);

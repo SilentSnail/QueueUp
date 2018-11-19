@@ -9,7 +9,7 @@ import java.util.Map;
 public class UserInfo {
 
     private String name;
-    private String six;
+    private String sex;
     private Integer age;
     private Double price;
     private List<Map<String, Object>> list;
@@ -21,44 +21,44 @@ public class UserInfo {
         this.name = name;
     }
 
-    public UserInfo(String name, String six) {
+    public UserInfo(String name, String sex) {
         this.name = name;
-        this.six = six;
+        this.sex = sex;
     }
 
-    public UserInfo(String name, String six, Integer age) {
+    public UserInfo(String name, String sex, Integer age) {
         this.name = name;
-        this.six = six;
+        this.sex = sex;
         this.age = age;
     }
 
-    public UserInfo(String name, String six, Integer age, Double price) {
+    public UserInfo(String name, String sex, Integer age, Double price) {
         this.name = name;
-        this.six = six;
+        this.sex = sex;
         this.age = age;
         this.price = price;
     }
 
-    public UserInfo(String name, String six, Integer age, Double price, List<Map<String, Object>> list) {
+    public UserInfo(String name, String sex, Integer age, Double price, List<Map<String, Object>> list) {
         this.name = name;
-        this.six = six;
+        this.sex = sex;
         this.age = age;
         this.price = price;
         this.list = list;
     }
 
-    public UserInfo(String name, String six, Integer age, Double price, List<Map<String, Object>> list, Map<String, Object> map) {
+    public UserInfo(String name, String sex, Integer age, Double price, List<Map<String, Object>> list, Map<String, Object> map) {
         this.name = name;
-        this.six = six;
+        this.sex = sex;
         this.age = age;
         this.price = price;
         this.list = list;
         this.map = map;
     }
 
-    public UserInfo(String name, String six, Integer age, Double price, List<Map<String, Object>> list, Map<String, Object> map, String[] array) {
+    public UserInfo(String name, String sex, Integer age, Double price, List<Map<String, Object>> list, Map<String, Object> map, String[] array) {
         this.name = name;
-        this.six = six;
+        this.sex = sex;
         this.age = age;
         this.price = price;
         this.list = list;
@@ -66,9 +66,9 @@ public class UserInfo {
         this.array = array;
     }
 
-    public UserInfo(String name, String six, Integer age, Double price, List<Map<String, Object>> list, Map<String, Object> map, String[] array, Long time) {
+    public UserInfo(String name, String sex, Integer age, Double price, List<Map<String, Object>> list, Map<String, Object> map, String[] array, Long time) {
         this.name = name;
-        this.six = six;
+        this.sex = sex;
         this.age = age;
         this.price = price;
         this.list = list;

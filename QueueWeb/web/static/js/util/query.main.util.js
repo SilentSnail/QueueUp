@@ -33,11 +33,18 @@ ajax = function (url, data, callFun, param, options) {
             console.log(XMLHttpRequest);
             console.log(textStatus);
             console.log(errorThrown);
+            console.log(this);
         }
     });
 };
 
-function getPageParam(data, param) {
+/**
+ * 获取分页参数
+ * @param data
+ * @param param
+ * @returns {*}
+ */
+getPageParam = function (data, param) {
     if (param) {
         data['page.pageNo'] = param.currentPage;
         data['page.pageSize'] = param.dataSize;
@@ -45,6 +52,11 @@ function getPageParam(data, param) {
     return data;
 };
 
+/**
+ * 对象转数组
+ * @param obj
+ * @returns {Array}
+ */
 function objToArr(obj) {
     var arr = [];
     for (var k in obj) {
@@ -58,3 +70,33 @@ function objToArr(obj) {
     }
     return arr;
 }
+
+/**
+ * 格式化日期，去掉日期后面的时间
+ * @param str
+ * @returns {*}
+ */
+parseDate = function (str) {
+    if(str){
+        return /\d{4}-\d{1,2}-\d{1,2}/g.exec(str);
+    }
+    return '';
+};
+
+/**
+ * 获取URL参数
+ * @param name 参数名
+ * @param url 需要获取参数的URL
+ * @returns {*}
+ */
+urlParam = function (name, url) {
+    var reg = new RegExp('(\\?|\\&)' + name + '=([^&]*)(&|$)');
+    var r = null;
+    if (url) {
+        r = url.substr(1).match(reg);
+    } else {
+        r = window.location.search.substr(1).match(reg);
+    }
+    if (r != null) return decodeURI(r[2]);
+    return null;
+};

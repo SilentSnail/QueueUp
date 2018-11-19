@@ -1,6 +1,6 @@
 package com.test;
 
-import com.queue.util.DateUtils;
+import com.queue.utils.DateUtils;
 
 import java.time.LocalDate;
 

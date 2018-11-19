@@ -1,15 +1,13 @@
 package com.queue.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.queue.entity.RoleUser;
-import com.queue.entity.ValidLog;
+import com.queue.entity.vo.UserSearchVo;
 import com.queue.service.RoleUserService;
-import com.queue.service.ValidLogService;
 import com.queue.shiro.bean.SecurityUserEntity;
-import com.queue.util.DateUtils;
-import com.queue.util.PageBean;
-import com.queue.util.R;
-import com.queue.util.SecurityUtils;
+import com.queue.utils.PageBean;
+import com.queue.utils.R;
+import com.queue.utils.SecurityEncryptUtils;
+import com.queue.utils.ShiroUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,18 +23,16 @@ public class UserController extends BaseController {
 
     @Autowired
     private RoleUserService userService;
-    @Autowired
-    private ValidLogService validLogService;
 
     /**
-     * 查询用户信息
-     * @param user
+     * 查询用户列表
+     * @param search
      * @return
      */
     @RequestMapping("/searchList")
-    public R searchUserByParam(RoleUser user){
+    public R searchUserByParam(UserSearchVo search){
         PageBean page = new PageBean();
-        page.setData(this.userService.getUserByParam(user));
+        page.setData(this.userService.getUserByParam(search));
         return R.okPage(page);
     }
 
@@ -49,16 +45,17 @@ public class UserController extends BaseController {
     public R checkPassword(@RequestParam("checkPwd") String password){
         SecurityUserEntity securityUser = (SecurityUserEntity) org.apache.shiro.SecurityUtils.getSubject().getPrincipal();
         RoleUser user = securityUser.getUser();
-        if(!user.getPassword().equals(SecurityUtils.toMD5(password))){
+        if(!user.getPassword().equals(SecurityEncryptUtils.toMD5(password))){
             //5次密码不匹配应该直接踢出登录
             return R.error("密码不匹配");
         }
-        String sign = SecurityUtils.getUUID();
-        ValidLog valid = new ValidLog();
-        valid.setCode(sign).setUserId(user.getUserId());
-        valid.setEffectiveTime(DateUtils.getPlusTime(10L));
-        this.validLogService.save(valid);
-        return R.ok(sign);
+//        String sign = SecurityEncryptUtils.getUUID();
+//        ValidLog valid = new ValidLog();
+//        valid.setCode(sign).setUserId(user.getUserId());
+//        valid.setEffectiveTime(DateUtils.getPlusTime(10L));
+//        this.validLogService.save(valid);
+//        return R.ok(sign);
+        return R.ok();
     }
 
     /**
@@ -69,15 +66,14 @@ public class UserController extends BaseController {
      */
     @RequestMapping("/updatePwd")
     public R updatePassword(String code, String password, String checkPwd){
-        SecurityUserEntity securityUser = (SecurityUserEntity) org.apache.shiro.SecurityUtils.getSubject().getPrincipal();
-        RoleUser user = securityUser.getUser();
-        if(user.getPassword().equals(SecurityUtils.toMD5(checkPwd))){
-            ValidLog valid = this.validLogService.getOne(new QueryWrapper<ValidLog>().eq("code", code));
-            if(valid.getUserId().equals(user.getUserId())){
-                user.setPassword(SecurityUtils.toMD5(password));
-                this.userService.updateById(user);
-                return R.ok();
-            }
+        RoleUser user = ShiroUtils.getLoginUser();
+        if(user.getPassword().equals(SecurityEncryptUtils.toMD5(checkPwd))){//两次输入的密码需要一致
+//            ValidLog valid = this.validLogService.getOne(new QueryWrapper<ValidLog>().eq("code", code));
+//            if(valid.getUserId().equals(user.getUserId())){
+//                user.setPassword(SecurityEncryptUtils.toMD5(password));
+//                this.userService.updateById(user);
+//                return R.ok();
+//            }
         }
         return R.error("数据不匹配");
     }

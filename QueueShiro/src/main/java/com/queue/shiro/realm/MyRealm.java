@@ -50,9 +50,9 @@ public class MyRealm extends AuthorizingRealm {
         SecurityUserEntity entity = (SecurityUserEntity) token;
         RoleUser user = this.userService.getOne(new QueryWrapper<RoleUser>().eq("username", entity.getUsername()));
         if(user == null){
-            throw new UnknownAccountException("用户或或密码不正确");
+            throw new UnknownAccountException("用户名或密码不正确");
         }
-        if(user.getIsDelete() == 1){
+        if(user.getStatus() == 0){
             throw new LockedAccountException("用户已被锁定，请联系管理员。");
         }
         entity.setUser(user);

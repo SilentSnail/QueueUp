@@ -8,7 +8,6 @@ $(function () {
         //加载表格数据
         table.render({
             elem:'#showLoanList',
-            width:1705,
             height:472,
             url:'/loan/list',
             method:'POST',
@@ -21,27 +20,18 @@ $(function () {
                 statusCode:'1'
             },
             cols:[[
-                {fixed: 'left', field: 'id', title: '操作', width:115, align:'center', toolbar: '#toolHtml'},
-                {field: 'id', title: 'ID', fixed: 'left', width:60},
-                {field: 'loanType', title: '类型', fixed: 'left', width:60, templet:function(d){
+                {field: 'loanType', title: '类型', width:60, templet:function(d){
                     if(d.loanType == 1) return '借出'; else return '借入';
                 }},
-                {field: 'loadName', title: '姓名', fixed: 'left', width:80},
-                {field: 'idCard', title: '身份证号', fixed: 'left', width:180},
-                {field: 'phone', title: '手机号', fixed: 'left', width:140},
-                {field: 'amount', title: '金额', fixed: 'left', width:120},
-                {field: 'loadTime', title: '借款时间', fixed: 'left', width:180},
-                {field: 'repaymentTime', title: '还款时间', fixed: 'left', width:180},
-                {field: 'status', title: '状态', fixed: 'left', width:80, templet:function(d){
-                    if(d.status == '1') return "有效";
-                    else if(d.status == '0') return '无效';
-                    else if(d.status == '-1') return '删除';
+                {field: 'name', title: '姓名', width:80},
+                {field: 'sex', title: '性别', width:80, templet:function(d){
+                    if(d.sex == 'female') return '女';
+                    else return '男';
                 }},
-                {field: 'isIou', title: '借据', fixed: 'left', width:80, templet:function(d){
-                    if(d.isIou == 0) return '无'; else return '有';
-                }},
-                {field: 'actualRepaymentTime', title: '最终还款时间', fixed: 'left', width:180},
-                {field: 'remark', title: '备注', fixed: 'left', width:240}
+                {field: 'phone', title: '手机号', width:140},
+                {field: 'amount', title: '金额', width:120},
+                {field: 'address', title: '联系地址', width:180},
+                {fixed: 'right', field: 'id', title: '操作', width:115, align:'center', toolbar: '#toolHtml'}
             ]],
             parseData:function (res) {
                 return {
@@ -84,18 +74,30 @@ $(function () {
 
         table.on('tool(loanData)', function(obj){
             var data = obj.data;
-            if(obj.event === 'detail'){
-                layer.msg('ID：'+ data.id + ' 的查看操作');
-            } else if(obj.event === 'del'){
-                layer.confirm('真的删除行么', function(index){
-                    ajax('/loan/remove', {id:data.id}, function (res) {
-                        layer.close(index);
-                        table.reload('showLoanList', {
-                            page:{
-                                curr:1
-                            }
-                        });
-                    });
+            if(obj.event === 'detail'){//查看
+                parent.layer.open({
+                    type: 2,
+                    title:'查看借款',
+                    area: ['660px', '450px'],
+                    fixed: false, //不固定
+                    maxmin: true,
+                    content: '/pages/loan/loan_detail.html',
+                    success:function(layero, index){//调用子页面的方法
+                        $(layero).find('iframe')[0].contentWindow.loadDT(data.id);
+                    }
+                });
+            } else if(obj.event === 'change'){//编辑
+                parent.layer.open({
+                    type: 2,
+                    title:'修改借款',
+                    area: ['660px', '450px'],
+                    fixed: false, //不固定
+                    maxmin: true,
+                    content: '/pages/loan/editLoanInfo.html',
+                    success:function(layero, index){
+                        //调用子页面的方法
+                        $(layero).find('iframe')[0].contentWindow.loadDT(data.id);
+                    }
                 });
             }
         });

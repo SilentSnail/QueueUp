@@ -7,13 +7,11 @@
         <id column="id" property="id" />
         <result column="code" property="code" />
         <result column="loan_type" property="loanType" />
-        <result column="load_name" property="loadName" />
-        <result column="id_card" property="idCard" />
-        <result column="phone" property="phone" />
+        <result column="user_id" property="userId" />
         <result column="amount" property="amount" />
         <result column="load_time" property="loadTime" />
         <result column="repayment_time" property="repaymentTime" />
-        <result column="actual_repayment_time" property="actualRepaymentTime" />
+        <result column="actual_time" property="actualTime" />
         <result column="status" property="status" />
         <result column="remark" property="remark" />
         <result column="is_iou" property="isIou" />
@@ -21,25 +19,32 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, code, loan_type, load_name, id_card, phone, amount, load_time, repayment_time, actual_repayment_time, status, remark, is_iou
+        id, code, loan_type, user_id, amount, load_time, repayment_time, actual_time, status, remark, is_iou
     </sql>
 
-    <select id="searchByParam" parameterType="com.queue.entity.vo.LoanSearchVo" resultType="com.queue.entity.Loan">
-        SELECT * FROM LOAN WHERE 1 = 1
+    <select id="searchByParam" parameterType="com.queue.entity.vo.LoanSearchVo" resultType="com.queue.entity.dto.LoanDto">
+        select d.id, d.name, d.sex, d.phone, d.address, l.loan_type, sum(l.amount) as amount
+        from loan l
+        left join directories d on d.id = l.user_id
+        where d.del_status = false
+        and d.status = 1
+        and l.status = 1
         <if test="name != null and name != ''">
-            AND load_name = #{name}
+            AND d.name like '%'||#{name}||'%'
         </if>
-        <if test="type > 0">
-            AND loan_type = #{type}
+        <if test="type != null">
+            AND l.loan_type = #{type}
         </if>
         <if test="status != null">
-            AND status = #{status}
+            AND l.status = #{status}
         </if>
         <if test="startTime != null">
-            AND load_time &gt; #{startTime}
+            AND l.load_time &gt; #{startTime}
         </if>
         <if test="endTime != null">
-            AND load_time &lt; #{endTime}
+            AND l.load_time &lt; #{endTime}
         </if>
+        group by d.id, d.name, d.sex, d.phone, d.address, l.loan_type;
     </select>
+
 </mapper>

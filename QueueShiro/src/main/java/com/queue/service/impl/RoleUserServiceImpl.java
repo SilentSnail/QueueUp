@@ -3,9 +3,9 @@ package com.queue.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.queue.entity.RoleUser;
 import com.queue.entity.dto.SysUserDto;
+import com.queue.entity.vo.UserSearchVo;
 import com.queue.mapper.RoleUserMapper;
 import com.queue.service.RoleUserService;
-import com.queue.util.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,19 +17,16 @@ import java.util.List;
  * </p>
  *
  * @author liusong
- * @since 2018-10-17
+ * @since 2018-11-09
  */
 @Service
 public class RoleUserServiceImpl extends ServiceImpl<RoleUserMapper, RoleUser> implements RoleUserService {
 
     @Autowired
-    private RoleUserMapper userMapper;
+    private RoleUserMapper roleUserMapper;
 
-    public List<SysUserDto> getUserByParam(RoleUser user) {
-        return this.userMapper.getUserByParam(user);
-    }
-
-    public void changePassword(Long id) {
-        this.userMapper.changePassword(id, SecurityUtils.toMD5("123456"));
+    @Override
+    public List<SysUserDto> getUserByParam(UserSearchVo search) {
+        return this.roleUserMapper.getUserByParam(search);
     }
 }

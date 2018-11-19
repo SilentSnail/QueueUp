@@ -3,13 +3,11 @@ package com.queue.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.queue.entity.RoleUser;
-import com.queue.entity.ValidLog;
 import com.queue.mail.entity.MailMessage;
 import com.queue.mail.service.MailMessageService;
 import com.queue.service.RoleUserService;
-import com.queue.service.ValidLogService;
 import com.queue.shiro.bean.SecurityUserEntity;
-import com.queue.util.*;
+import com.queue.utils.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
@@ -40,9 +38,14 @@ public class ValidController {
     private RoleUserService userService;
     @Autowired
     private MailMessageService mailService;
-    @Autowired
-    private ValidLogService validLogService;
 
+    /**
+     * 登录
+     * @param username
+     * @param password
+     * @param member
+     * @return
+     */
     @RequestMapping("/login")
     public R login(String username, String password, @RequestParam(defaultValue = "0") String member){
         try {
@@ -52,7 +55,7 @@ public class ValidController {
             return R.error(e.getMessage());
         }
         System.out.println(member);
-        SecurityUserEntity token = new SecurityUserEntity(username, SecurityUtils.toMD5(password));
+        SecurityUserEntity token = new SecurityUserEntity(username, SecurityEncryptUtils.toMD5(password));
         Subject subject = org.apache.shiro.SecurityUtils.getSubject();
         try {
             subject.login(token);
@@ -68,20 +71,12 @@ public class ValidController {
         }
     }
 
-    @RequestMapping("/register")
-    public R register(RoleUser user){
-        try {
-            if(this.userService.save(user)){
-                return R.ok();
-            }else{
-                return R.error("保存失败");
-            }
-        } catch (Exception e) {
-            log.error(e);
-            return R.error("系统异常，请联系管理员");
-        }
-    }
-
+    /**
+     * 忘记密码
+     * @param email
+     * @param request
+     * @return
+     */
     @RequestMapping("/rePassword")
     public R rePassword(@RequestParam(value = "email") String email, HttpServletRequest request){
         try {
@@ -92,26 +87,31 @@ public class ValidController {
             if(ObjectUtils.isEmpty(user)){
                 return R.error("该邮箱尚未注册，请确认邮箱是否正确");
             }
-            String uuid = SecurityUtils.getUUID();
-            String sign = SecurityUtils.toMD5(JSONObject.toJSONString(user));
+            String uuid = SecurityEncryptUtils.getUUID();
+            String sign = SecurityEncryptUtils.toMD5(JSONObject.toJSONString(user));
             //保存
-            ValidLog valid = new ValidLog();
-            valid.setCode(uuid).setLogIp(HttpContextUtils.getIpAddress(request));
-            valid.setSign(sign).setUserId(user.getUserId());
-            valid.setEffectiveTime(DateUtils.getPlusTime(10L));
-            this.validLogService.saveValidByEntity(valid);
+//            ValidLog valid = new ValidLog();
+//            valid.setCode(uuid).setLogIp(HttpContextUtils.getIpAddress(request));
+//            valid.setSign(sign).setUserId(user.getUserId());
+//            valid.setEffectiveTime(DateUtils.getPlusTime(10L));
+//            this.validLogService.saveValidByEntity(valid);
             //开始发邮件
             String url = "http://localhost:8080/valid/change/" + uuid + "/" + sign;
             String content = "密码重置链接：" + url + "<br/> 链接十分钟内有效";
             MailMessage mail = new MailMessage("密码重置", content, email);
-//            this.mailService.sendMail(mail);//邮件先不发
-            return R.ok(mail);
+            this.mailService.sendMail(mail);//邮件先不发
+            return R.ok();
         } catch (Exception e) {
             log.error(e);
             return R.error("未知错误");
         }
     }
 
+    /**
+     * 验证用户名
+     * @param name
+     * @return
+     */
     @RequestMapping("/checkName")
     public R checkUser(@RequestParam(value = "username") String name){
         try {
@@ -126,21 +126,32 @@ public class ValidController {
         }
     }
 
+    /**
+     * 重置密码，这里默认的是123456
+     * @param id
+     * @param code
+     * @return
+     */
     @RequestMapping("/change/{id}/{code}")
     public R initPwd(@PathVariable String id, @PathVariable String code){
         Map<String,Object> param = new HashMap<String, Object>();
         param.put("code", id);
         param.put("sign", code);
         try {
-            ValidLog valid = this.validLogService.searchByParam(param);
-            if(ObjectUtils.isEmpty(valid)){
-                return R.error("验证已过期");
-            }
-            this.userService.changePassword(valid.getUserId());
+//            ValidLog valid = this.validLogService.searchByParam(param);
+//            if(ObjectUtils.isEmpty(valid)){
+//                return R.error("验证已过期");
+//            }
             return R.ok();
         } catch (Exception e) {
             log.error(e);
             return R.error("未知错误");
         }
+    }
+
+    @RequestMapping("/capt")
+    public R getCaptchaImage(){
+
+        return R.ok();
     }
 }

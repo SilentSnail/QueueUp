@@ -1,25 +1,16 @@
 /**
  * Created by liusong on 2018/4/17.
  */
-$(function () {
-    var DATA = {
-        data:{
+var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
 
-        }
-    };
-
-    $("#logout").click(function(){
-        ajax("/user/logout", {}, function () {
-            window.location = "/pages/login.html";
-        });
+//依据ID加载数据
+function loadDT(id) {
+    ajax('/loan/find', {id:id}, function (res) {
+        console.log(res);
     });
+}
 
-    function load(){
-        ajax("/loan/Detail", DATA.data, function (res) {
-            $("#show").innerHTML = res.data;
-            $("#DetailShow").html(res.data);//借还记录
-        });
-    }
-    load();
+$(function () {
+
     //@Angry_Snail
 });

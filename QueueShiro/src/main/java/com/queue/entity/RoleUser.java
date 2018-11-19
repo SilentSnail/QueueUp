@@ -1,11 +1,9 @@
 package com.queue.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-
+import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -13,7 +11,7 @@ import java.time.LocalDateTime;
  * </p>
  *
  * @author liusong
- * @since 2018-10-17
+ * @since 2018-11-09
  */
 public class RoleUser extends Model<RoleUser> {
 
@@ -22,16 +20,16 @@ public class RoleUser extends Model<RoleUser> {
         /**
      * 用户ID
      */
-         private Long userId;
+         @TableId(value = "user_id", type = IdType.AUTO)
+    private Long userId;
 
         /**
-     * 主键id 唯一标识
+     * 唯一标识
      */
-         @TableId(value = "user_code", type = IdType.AUTO)
-    private String userCode;
+         private String userCode;
 
         /**
-     * 登陆名
+     * 用户名
      */
          private String username;
 
@@ -41,7 +39,7 @@ public class RoleUser extends Model<RoleUser> {
          private String password;
 
         /**
-     * 手机号码
+     * 手机号
      */
          private String phone;
 
@@ -51,34 +49,19 @@ public class RoleUser extends Model<RoleUser> {
          private String email;
 
         /**
-     * 角色ID 默认为0
+     * 角色ID
      */
          private Integer roleId;
 
         /**
-     * 是否删除 1：删除 0：未删除
+     * true:删除 false:未删除
      */
-         private Integer isDelete;
+         private Boolean delStatus;
 
         /**
-     * 创建时间
+     * 状态 1有效 0锁定 -1无效
      */
-         private LocalDateTime createTime;
-
-        /**
-     * 创建人
-     */
-         private String creator;
-
-        /**
-     * 更新时间
-     */
-         private LocalDateTime updateTime;
-
-        /**
-     * 修改人
-     */
-         private String reviser;
+         private Integer status;
 
 
     public Long getUserId() {
@@ -144,54 +127,27 @@ public class RoleUser extends Model<RoleUser> {
         return this;
     }
 
-    public Integer getIsDelete() {
-        return isDelete;
+    public Boolean getDelStatus() {
+        return delStatus;
     }
 
-    public RoleUser setIsDelete(Integer isDelete) {
-        this.isDelete = isDelete;
+    public RoleUser setDelStatus(Boolean delStatus) {
+        this.delStatus = delStatus;
         return this;
     }
 
-    public LocalDateTime getCreateTime() {
-        return createTime;
+    public Integer getStatus() {
+        return status;
     }
 
-    public RoleUser setCreateTime(LocalDateTime createTime) {
-        this.createTime = createTime;
-        return this;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public RoleUser setCreator(String creator) {
-        this.creator = creator;
-        return this;
-    }
-
-    public LocalDateTime getUpdateTime() {
-        return updateTime;
-    }
-
-    public RoleUser setUpdateTime(LocalDateTime updateTime) {
-        this.updateTime = updateTime;
-        return this;
-    }
-
-    public String getReviser() {
-        return reviser;
-    }
-
-    public RoleUser setReviser(String reviser) {
-        this.reviser = reviser;
+    public RoleUser setStatus(Integer status) {
+        this.status = status;
         return this;
     }
 
     @Override
     protected Serializable pkVal() {
-        return this.userCode;
+        return this.userId;
     }
 
     @Override
@@ -204,11 +160,8 @@ public class RoleUser extends Model<RoleUser> {
         ", phone=" + phone +
         ", email=" + email +
         ", roleId=" + roleId +
-        ", isDelete=" + isDelete +
-        ", createTime=" + createTime +
-        ", creator=" + creator +
-        ", updateTime=" + updateTime +
-        ", reviser=" + reviser +
+        ", delStatus=" + delStatus +
+        ", status=" + status +
         "}";
     }
 }

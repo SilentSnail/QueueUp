@@ -3,6 +3,7 @@ package com.queue.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.queue.entity.RoleUser;
 import com.queue.entity.dto.SysUserDto;
+import com.queue.entity.vo.UserSearchVo;
 
 import java.util.List;
 
@@ -12,11 +13,14 @@ import java.util.List;
  * </p>
  *
  * @author liusong
- * @since 2018-10-16
+ * @since 2018-11-09
  */
 public interface RoleUserService extends IService<RoleUser> {
 
-    List<SysUserDto> getUserByParam(RoleUser user);
-
-    void changePassword(Long id);
+    /**
+     * 获取用户信息
+     * @param search
+     * @return
+     */
+    List<SysUserDto> getUserByParam(UserSearchVo search);
 }
