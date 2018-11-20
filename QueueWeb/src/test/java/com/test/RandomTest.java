@@ -1,18 +1,12 @@
 package com.test;
 
-import com.queue.utils.DateUtils;
-
-import java.time.LocalDate;
-
 /**
  * Created by liusong on 2018/7/11.
  */
 public class RandomTest {
 
     public static void main(String[] args) {
-        String text = "2018-10-12 12:12:12";
-        text = "2018-10-12";
-        System.out.println(DateUtils.parseDateTime(text));
-        LocalDate date = DateUtils.parseDate(text);
+        double a = 0.0;
+        System.out.println(a * -1);
     }
 }

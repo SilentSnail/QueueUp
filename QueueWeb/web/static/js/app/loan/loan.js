@@ -11,7 +11,7 @@ $(function () {
             height:472,
             url:'/loan/list',
             method:'POST',
-            where:{type:1, status:1},
+            where:{type:0, status:1},
             request:{
                 pageName:'page.pageNo',
                 limitName:'page.pageSize'
@@ -20,17 +20,20 @@ $(function () {
                 statusCode:'1'
             },
             cols:[[
-                {field: 'loanType', title: '类型', width:60, templet:function(d){
-                    if(d.loanType == 1) return '借出'; else return '借入';
-                }},
                 {field: 'name', title: '姓名', width:80},
                 {field: 'sex', title: '性别', width:80, templet:function(d){
                     if(d.sex == 'female') return '女';
                     else return '男';
                 }},
                 {field: 'phone', title: '手机号', width:140},
-                {field: 'amount', title: '金额', width:120},
-                {field: 'address', title: '联系地址', width:180},
+                {field: 'loanType', title: '类型', width:60, templet:function(d){
+                    if(d.loanType == 0) return '借出'; else return '借入';
+                }},
+                {field: 'amount', title: '金额', width:140},
+                {field: 'status', title: '状态', width:60, templet:function(d){
+                    if(d.status == 0) return '无效'; else return '有效';
+                }},
+                {field: 'address', title: '联系地址', width:240},
                 {fixed: 'right', field: 'id', title: '操作', width:115, align:'center', toolbar: '#toolHtml'}
             ]],
             parseData:function (res) {
@@ -86,17 +89,10 @@ $(function () {
                         $(layero).find('iframe')[0].contentWindow.loadDT(data.id);
                     }
                 });
-            } else if(obj.event === 'change'){//编辑
-                parent.layer.open({
-                    type: 2,
-                    title:'修改借款',
-                    area: ['660px', '450px'],
-                    fixed: false, //不固定
-                    maxmin: true,
-                    content: '/pages/loan/editLoanInfo.html',
-                    success:function(layero, index){
-                        //调用子页面的方法
-                        $(layero).find('iframe')[0].contentWindow.loadDT(data.id);
+            } else if(obj.event === 'del'){//删除
+                ajax("/loan/del", {code:data.code}, function(data){
+                    if(data.code == 1){
+                        layer.msg("OK");
                     }
                 });
             }

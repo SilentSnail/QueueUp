@@ -2,7 +2,6 @@ package com.test;
 
 import com.alibaba.fastjson.JSONObject;
 import com.queue.entity.dto.SysUserDto;
-import com.queue.entity.vo.LoanSearchVo;
 import com.queue.entity.vo.UserSearchVo;
 import com.queue.mail.entity.MailMessage;
 import com.queue.service.RoleUserService;
@@ -30,15 +29,6 @@ public class SpringTest {
     private RoleUserService userService;
     @Autowired
     private RedisUtils<String, byte[]> redisUtil;
-    @Autowired
-    private LoanService loanService;
-
-    @Test
-    public void loanTest(){
-        List<Loan> list = this.loanService.searchByParam(new LoanSearchVo());
-//        Loan loan = this.loanService.getById('1');
-        System.out.println(JSONObject.toJSONString(list));
-    }
 
     @Test
     public void test(){

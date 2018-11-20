@@ -13,12 +13,6 @@
 </head>
 <body>
     <div class="layui-form" style="margin-top: 10px;">
-        <div class="layui-form-item" >
-            <label class="layui-form-label">借款单类型</label>
-            <div class="layui-input-inline">
-                <input type="checkbox" name="loanType" lay-skin="switch" lay-text="借出|借入">
-            </div>
-        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">借款金额</label>
             <div class="layui-input-inline">
@@ -28,7 +22,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">借款时间</label>
             <div class="layui-input-inline">
-                <input type="text" name="loadTime" id="loadTime" lay-verify="required" class="layui-input" readonly>
+                <input type="text" name="loanTime" id="loanTime" lay-verify="required" class="layui-input" readonly>
             </div>
         </div>
         <div class="layui-form-item">
@@ -37,16 +31,28 @@
                 <input type="text" name="repaymentTime" id="repaymentTime" readonly class="layui-input">
             </div>
         </div>
-        <div class="layui-form-item" style="width: 660px;">
+        <div class="layui-form-item">
             <label class="layui-form-label">备注</label>
             <div class="layui-input-block">
                 <textarea name="remark" required  class="layui-textarea" style="width:400px;height: 150px;"></textarea>
             </div>
             <input type="hidden" name="userId" id="userId" lay-verify="required">
         </div>
+        <div class="layui-form-item" >
+            <label class="layui-form-label">借款单类型</label>
+            <div class="layui-input-inline" style="width: 100px;">
+                <input type="checkbox" lay-skin="switch" lay-filter="loanType" lay-text="借入|借出">
+                <input type="hidden" name="loanType" value="0">
+            </div>
+            <label class="layui-form-label">是否有借据</label>
+            <div class="layui-input-inline">
+                <input type="checkbox" lay-skin="switch" lay-filter="isIou" lay-text="有|无">
+                <input type="hidden" name="isIou" value="0">
+            </div>
+        </div>
         <div class="layui-form-item" style="text-align: center;">
             <div class="layui-inline">
-                <div class="layui-input-block" style="margin-right: 30px;">
+                <div class="layui-input-block">
                     <button class="layui-btn" lay-submit lay-filter="commit">保存</button>
                     <button type="reset" class="layui-btn layui-btn-primary">取消</button>
                 </div>

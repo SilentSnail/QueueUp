@@ -6,7 +6,17 @@ var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
 $(function () {
 
     layui.use(["table", 'laydate', 'form'], function () {
+        var data = layui.laydate;
+        data.render({
+            elem:'#birthday'
+        });
+
+        $('.layui-btn-primary').click(function () {
+            parent.layer.close(index);
+        });
+
         var form = layui.form;
+
         form.on('submit(commit)', function (data) {
             var hidder = layer.load(1, {shade: [0.5,'#000']});
             ajax('/director/save', data.field, function (res) {
@@ -19,15 +29,6 @@ $(function () {
                 }
             });
         });
-
-        var data = layui.laydate;
-        data.render({
-            elem:'#birthday'
-        });
-
-        $('.layui-btn-primary').click(function () {
-            parent.layer.close(index);
-        })
     });
 });
 

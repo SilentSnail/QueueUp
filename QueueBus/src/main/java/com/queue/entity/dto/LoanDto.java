@@ -12,6 +12,7 @@ public class LoanDto {
     private String address;
     private Integer loanType;
     private Double amount;
+    private Integer status;
 
     public Long getId() {
         return id;
@@ -67,5 +68,13 @@ public class LoanDto {
 
     public void setAmount(Double amount) {
         this.amount = amount;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

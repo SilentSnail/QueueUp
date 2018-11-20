@@ -2,11 +2,13 @@
  * Created by liusong on 2018/4/17.
  */
 // var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+var userId;
 
 $(function () {
     function loadDT() {
         var id = urlParam('id', window.location.href);
         ajax('/director/find', {id:id}, function (res) {
+            userId = id;
             var data = res.data;
             showData(data);
         });
@@ -27,16 +29,21 @@ $(function () {
     }
 
     $('#addLoan').click(function () {
-        parent.layer.open({
-            type: 2,
-            title:'新增借款',
-            area: ['550px', '450px'],
-            fixed: false, //不固定
-            maxmin: true,
-            content: '/pages/loan/addLoanInfo.html',
-            success:function(layero, index){
+        if(userId == undefined){
+            layer.msg("未获取到用户信息");
+            return;
+        } else {
+            parent.layer.open({
+                type: 2,
+                title:'新增借款',
+                area: ['550px', '500px'],
+                fixed: false, //不固定
+                maxmin: true,
+                content: '/pages/loan/addLoanInfo.html?userId='+userId,
+                success:function(layero, index){
 
-            }
-        });
+                }
+            });
+        }
     });
 });
