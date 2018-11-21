@@ -25,10 +25,11 @@ $(function () {
                     if(d.sex == 'female') return '女';
                     else return '男';
                 }},
-                {field: 'phone', title: '手机号', width:140},
+                {field: 'idCard', title: '身份证号', width:220},
                 {field: 'loanType', title: '类型', width:60, templet:function(d){
                     if(d.loanType == 0) return '借出'; else return '借入';
                 }},
+                {field: 'phone', title: '手机号', width:140},
                 {field: 'amount', title: '金额', width:140},
                 {field: 'status', title: '状态', width:60, templet:function(d){
                     if(d.status == 0) return '无效'; else return '有效';

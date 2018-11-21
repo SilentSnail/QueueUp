@@ -12,6 +12,9 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * <p>
  *  前端控制器
@@ -42,9 +45,11 @@ public class DirectoriesController extends BaseController {
         return R.okPage(page);
     }
 
-    @RequestMapping("/find")
-    public R findById(Long id){
-        return R.ok(this.directoriesService.getById(id));
+    @RequestMapping("/findById")
+    public R searchById(Long id){
+        Map<String, Object> result = new HashMap();
+        result.put("direInfo", this.directoriesService.getById(id));
+        return R.ok(result);
     }
 
     @RequestMapping("/del")

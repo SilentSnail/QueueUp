@@ -11,6 +11,7 @@ public class LoanDto {
     private String phone;
     private String address;
     private Integer loanType;
+    private String idCard;
     private Double amount;
     private Integer status;
 
@@ -76,5 +77,13 @@ public class LoanDto {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
     }
 }

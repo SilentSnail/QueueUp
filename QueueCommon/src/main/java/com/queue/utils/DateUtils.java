@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 /**
  * Created by liusong on 2018/7/12.
@@ -21,15 +22,6 @@ public class DateUtils {
      */
     public static String getNowFormatTime(){
         return getFormatTime(LocalDateTime.now(), DATETIME_FORMAT);
-    }
-
-    /**
-     * 依据格式，获取当前时间
-     * @param format
-     * @return
-     */
-    public static String getNowFormatTime(String format){
-         return getFormatTime(LocalDateTime.now(), format);
     }
 
     /**
@@ -85,7 +77,7 @@ public class DateUtils {
      * @param time 可以为负数，如果为负数，则是当前时间的time分钟之后的时间
      * @return
      */
-    public static LocalDateTime getDifferenceTime(Long time){
+    public static LocalDateTime getTimeDifference(Long time){
         return LocalDateTime.now().minusMinutes(time);
     }
 
@@ -96,5 +88,55 @@ public class DateUtils {
      */
     public static LocalDateTime getPlusTime(Long time){
         return LocalDateTime.now().plusMinutes(time);
+    }
+
+    /**
+     * 当前日期差
+     * @param date 开始日期
+     * @param type
+     * @return
+     */
+    public static int getDateDifference(LocalDate date, String type){
+        return getDateDifference(date, LocalDate.now(), type);
+    }
+
+    /**
+     * 获取日期差
+     * @param start 开始日期
+     * @param end 结束日期
+     * @param type
+     * @return
+     */
+    public static int getDateDifference(LocalDate start, LocalDate end, String type){
+        if("Y".equals(type.toUpperCase())){
+            return start.until(end).getYears();
+        } else if ("M".equals(type.toUpperCase())){
+            return start.until(end).getMonths();
+        } else if ("D".equals(type.toUpperCase())){
+            return start.until(end).getDays();
+        } else {
+            throw new RuntimeException("未知类型");
+        }
+    }
+
+    /**
+     * 当前时间差
+     * @param time
+     * @param unit
+     * @return
+     */
+    public static long getTimeDifference(LocalDateTime time, ChronoUnit unit){
+        return getTimeDifference(time, LocalDateTime.now(), unit);
+    }
+
+    /**
+     * 时间差 未测试
+     * @param start
+     * @param end
+     * @param unit
+     * @return
+     */
+    public static long getTimeDifference(LocalDateTime start, LocalDateTime end, ChronoUnit unit){
+        return start.until(end, unit);
     }
 }

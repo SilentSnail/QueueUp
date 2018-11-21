@@ -22,7 +22,7 @@
     </sql>
 
     <select id="searchByParam" parameterType="com.queue.entity.vo.LoanSearchVo" resultType="com.queue.entity.dto.LoanDto">
-        SELECT l.id, d.name, d.sex, d.phone, d.address, l.loan_type, abs(l.amount) as amount, l.status
+        SELECT l.id, d.name, d.sex, d.phone, d.address, l.loan_type, abs(l.amount) as amount, l.status, d.id_card
         FROM loan l LEFT JOIN directories d ON l.user_id = d.id
         where d.status = 1
         <if test="name != null and name != ''">

@@ -7,9 +7,9 @@ var userId;
 $(function () {
     function loadDT() {
         var id = urlParam('id', window.location.href);
-        ajax('/director/find', {id:id}, function (res) {
+        ajax('/director/findById', {id:id}, function (res) {
             userId = id;
-            var data = res.data;
+            var data = res.direInfo;
             showData(data);
         });
     }
@@ -30,7 +30,7 @@ $(function () {
 
     $('#addLoan').click(function () {
         if(userId == undefined){
-            layer.msg("未获取到用户信息");
+            parent.layer.alert("未获取到用户信息", {icon:2});
             return;
         } else {
             parent.layer.open({
