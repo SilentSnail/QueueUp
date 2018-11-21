@@ -1,6 +1,7 @@
 package com.queue.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.queue.entity.Loan;
 import com.queue.entity.vo.LoanSearchVo;
 import com.queue.service.LoanService;
@@ -34,9 +35,7 @@ public class LoanController extends BaseController{
      */
     @RequestMapping("/save")
     public R addEntity(Loan loan){
-        if(ObjectUtils.isEmpty(loan.getId())){
-            loan.setCode(SecurityEncryptUtils.getUUID());
-        }
+        loan.setCode(SecurityEncryptUtils.getUUID());
         if (loan.getLoanType() == 0){
             loan.setAmount(loan.getAmount()*-1);
         }
@@ -46,6 +45,11 @@ public class LoanController extends BaseController{
             System.out.println(loan.getCode());
         }
         return R.ok();
+    }
+
+    @RequestMapping("/update")
+    public R changeLoanByCode(Loan loan){
+        return R.ok(this.loanService.updateLoanByCode(loan));
     }
 
     /**
@@ -62,12 +66,26 @@ public class LoanController extends BaseController{
 
     /**
      * 删除
-     * @param id
+     * @param code
      * @return
      */
     @RequestMapping("/del")
-    public R removeById(Long id){
-        return R.ok(this.loanService.updateById(this.loanService.getById(id).setStatus(0)));
+    public R removeById(String code){
+        Loan loan = this.loanService.getOne(new QueryWrapper<Loan>().eq("code", code));
+        if(ObjectUtils.isEmpty(loan)){
+            return R.error("无此借款单");
+        }
+        return R.ok(this.loanService.updateById(loan.setStatus(0)));
+    }
+
+    /**
+     * 依据Code 查询借款单
+     * @param code
+     * @return
+     */
+    @RequestMapping("/findByCode")
+    public R searchByCode(String code){
+        return R.ok(this.loanService.searchByCode(code));
     }
 }
 

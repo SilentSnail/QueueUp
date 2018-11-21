@@ -11,66 +11,64 @@
     <script src="/static/layui/layui.js"></script>
     <script src="/static/js/util/query.main.util.js"></script>
 </head>
-<body layadmin-themealias="default">
+<body>
     <div class="layui-form" style="margin-top: 10px;">
-        <div class="layui-form-item">
+        <div class="layui-form-item" >
             <label class="layui-form-label">借款单类型</label>
             <div class="layui-input-inline">
-                <select name="loanType" lay-filter="loanType">
-                    <option value="1">借出</option>
-                    <option value="2">借入</option>
-                </select>
-            </div>
-            <label class="layui-form-label">借据</label>
-            <div class="layui-input-inline">
-                <select name="isIou" lay-filter="isIou">
-                    <option value="0">无</option>
-                    <option value="1">有</option>
-                </select>
+                <input type="checkbox" lay-skin="switch" lay-filter="loanType" lay-text="收款|借出">
+                <input type="hidden" name="loanType" value="0">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">借款人姓名</label>
-            <div class="layui-input-inline">
-                <input type="text" name="loanName" lay-verify="required" readonly class="layui-input">
-            </div>
             <label class="layui-form-label">借款金额</label>
             <div class="layui-input-inline">
-                <input type="text" name="amount" lay-verify="number" readonly class="layui-input">
+                <input type="text" name="amount" lay-verify="number" class="layui-input" readonly>
             </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">身份证号</label>
+            <label class="layui-form-label">借款途径</label>
             <div class="layui-input-inline">
-                <input type="text" name="idCard" lay-verify="identity" class="layui-input">
-            </div>
-            <label class="layui-form-label">手机号</label>
-            <div class="layui-input-inline">
-                <input type="text" name="phone" lay-verify="phone" class="layui-input">
+                <select name="loanChannel">
+                    <option value="0">无</option>
+                    <option value="1">现金</option>
+                    <option value="2">支付宝</option>
+                    <option value="3">微信</option>
+                    <option value="4">转账</option>
+                </select>
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">借款时间</label>
             <div class="layui-input-inline">
-                <input type="text" name="loanTime" id="loanTime" disabled lay-verify="required" class="layui-input" readonly>
+                <input type="text" name="loanTime" id="loanTime" lay-verify="required" class="layui-input" readonly>
             </div>
             <label class="layui-form-label">约定还款</label>
             <div class="layui-input-inline">
                 <input type="text" name="repaymentTime" id="repaymentTime" readonly class="layui-input">
             </div>
         </div>
-        <div class="layui-form-item" style="width: 660px;">
+        <div class="layui-form-item">
             <label class="layui-form-label">备注</label>
-            <div class="layui-input-block" style=" width: 76%;">
-                <textarea name="remark" class="layui-textarea"></textarea>
+            <div class="layui-input-block">
+                <textarea name="remark" required  class="layui-textarea" style="width:400px;height: 150px;"></textarea>
             </div>
         </div>
-        <input type="hidden" name="id">
-        <div class="layui-form-item">
-            <div class="layui-inline" style="text-align: center;">
-                <div class="layui-input-block" style="margin-right: 30px;">
-                    <button class="layui-btn" lay-submit lay-filter="commit">修改</button>
-                    <button class="layui-btn layui-btn-primary">取消</button>
+        <div class="layui-form-item" >
+            <label class="layui-form-label">是否有借据</label>
+            <div class="layui-input-block">
+                <input type="checkbox" lay-skin="switch" lay-filter="isIou" lay-text="有|无">
+                <input type="hidden" name="isIou" value="0">
+                <span style="margin-left: 20px;"></span>
+                <button type="button" class="layui-btn" id="upload" style="display: none">
+                    <i class="layui-icon"></i>上传文件
+                </button>
+            </div>
+            <input type="hidden" name="code" value="0">
+        </div>
+        <div class="layui-form-item" style="text-align: center;">
+            <div class="layui-inline">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="commit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">取消</button>
                 </div>
             </div>
         </div>

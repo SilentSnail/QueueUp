@@ -8,28 +8,31 @@ layui.use(['laydate', 'form'], function () {
     //日期
     var data = layui.laydate;
     data.render({
-        elem:'#loanTime'
-    });
-    data.render({
         elem:'#repaymentTime'
     });
 
     //表单
     form = layui.form;
+
+    //有无借据
+    form.on('switch(isIou)', function (data) {
+        if(this.checked){
+            $('input[name="isIou"]').val(1);
+            $("#upload").show();
+        }else {
+            $('input[name="isIou"]').val(0);
+            $("#upload").hide();
+        }
+    });
+
     form.render();
     form.on('submit(commit)', function (data) {
-        //加载遮罩
         var hidder = layer.load(1, {shade: [0.5,'#000']});
-        ajax('/loan/save', data.field, function (res) {
+        var json = data.field;
+        ajax('/loan/update', json, function (res) {
             layer.close(hidder);
-            if(res.code == 1){
-                if(res.data){
-                    status = 1;
-                }
-            }
-            if(status == 1){
+            if(res.data){
                 parent.layer.msg('保存成功');
-                parent.layer
                 parent.layer.close(index);
             } else {
                 parent.layer.msg('保存失败');
@@ -42,26 +45,33 @@ layui.use(['laydate', 'form'], function () {
     })
 });
 
-function loadDT(id) {
-    if(id)(
-        ajax('/loan/find', {id:id}, function (res) {
+function loadDT(code) {
+    if(code)(
+        ajax('/loan/findByCode', {code:code}, function (res) {
             var data = res.data;
             if(res.code == "1"){
-                form.render('select');//不知道为嘛得先加一个这个后面的才会生效，不加这个不行
-                $('select[name="loanType"]').val(data.loanType);
-                $('select[name="isIou"]').val(data.isIou);
-                $('input[name="loanName"]').val(data.loanName);
+                form.render();//不知道为嘛得先加一个这个后面的才会生效，不加这个不行
+                // $('select[name="loanChannel"]').val(data.loanChannel).attr("disabled", "disabled");
+                $('select[name="loanChannel"]').val(data.loanChannel);
                 $('input[name="amount"]').val(data.amount);
-                $('input[name="idCard"]').val(data.idCard);
-                $('input[name="phone"]').val(data.phone);
                 $('input[name="loanTime"]').val(data.loanTime);
                 $('input[name="repaymentTime"]').val(data.repaymentTime);
                 $('textarea[name="remark"]').text(data.remark);
                 $('input[name="code"]').val(data.code);
-                $('input[name="id"]').val(data.id);
-                $('input[name="actualRepaymentTime"]').val(data.actualRepaymentTime);
-                $('input[name="status"]').val(data.status);
-                form.render('select');
+                //选中
+                if(data.loanType == 1){
+                    $('input[name="loanType"]').val(data.loanType);
+                    $('input[lay-filter="loanType"]').attr("checked", true);//设置选中
+                }
+                //不允许修改单据类型
+                $('input[lay-filter="loanType"]').attr("disabled", "disabled");
+                if(data.isIou == 1){
+                    $('input[name="isIou"]').val(data.isIou);
+                    $('input[lay-filter="isIou"]').attr("checked", true);
+                    //如果有附件
+                    $('input[lay-filter="isIou"]').attr("disabled", "disabled");
+                }
+                form.render();
             }
         })
     )

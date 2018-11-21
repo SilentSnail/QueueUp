@@ -13,10 +13,27 @@
 </head>
 <body>
     <div class="layui-form" style="margin-top: 10px;">
+        <div class="layui-form-item" >
+            <label class="layui-form-label">借款单类型</label>
+            <div class="layui-input-inline">
+                <input type="checkbox" lay-skin="switch" lay-filter="loanType" lay-text="收款|借出">
+                <input type="hidden" name="loanType" value="0">
+            </div>
+        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">借款金额</label>
             <div class="layui-input-inline">
                 <input type="text" name="amount" lay-verify="number" class="layui-input">
+            </div>
+            <label class="layui-form-label">借款途径</label>
+            <div class="layui-input-inline">
+                <select name="loanChannel">
+                    <option value="0">无</option>
+                    <option value="1">现金</option>
+                    <option value="2">支付宝</option>
+                    <option value="3">微信</option>
+                    <option value="4">转账</option>
+                </select>
             </div>
         </div>
         <div class="layui-form-item">
@@ -24,8 +41,6 @@
             <div class="layui-input-inline">
                 <input type="text" name="loanTime" id="loanTime" lay-verify="required" class="layui-input" readonly>
             </div>
-        </div>
-        <div class="layui-form-item">
             <label class="layui-form-label">约定还款</label>
             <div class="layui-input-inline">
                 <input type="text" name="repaymentTime" id="repaymentTime" readonly class="layui-input">
@@ -39,15 +54,14 @@
             <input type="hidden" name="userId" id="userId" lay-verify="required">
         </div>
         <div class="layui-form-item" >
-            <label class="layui-form-label">借款单类型</label>
-            <div class="layui-input-inline" style="width: 100px;">
-                <input type="checkbox" lay-skin="switch" lay-filter="loanType" lay-text="借入|借出">
-                <input type="hidden" name="loanType" value="0">
-            </div>
             <label class="layui-form-label">是否有借据</label>
-            <div class="layui-input-inline">
+            <div class="layui-input-block">
                 <input type="checkbox" lay-skin="switch" lay-filter="isIou" lay-text="有|无">
                 <input type="hidden" name="isIou" value="0">
+                <span style="margin-left: 20px;"></span>
+                <button type="button" class="layui-btn" id="upload" style="display: none">
+                    <i class="layui-icon"></i>上传文件
+                </button>
             </div>
         </div>
         <div class="layui-form-item" style="text-align: center;">

@@ -1,58 +1,27 @@
 package com.queue.entity.dto;
 
+import java.time.LocalDate;
+
 /**
- * Created by liusong on 2018/11/13.
+ * Created by liusong on 2018/11/21.
  */
 public class LoanDto {
 
-    private Long id;
-    private String name;
-    private String sex;
-    private String phone;
-    private String address;
+    private String code;
     private Integer loanType;
-    private String idCard;
     private Double amount;
-    private Integer status;
+    private LocalDate loanTime;
+    private Integer loanChannel;
+    private LocalDate repaymentTime;
+    private String remark;
+    private Integer isIou;
 
-    public Long getId() {
-        return id;
+    public String getCode() {
+        return code;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public Integer getLoanType() {
@@ -71,19 +40,43 @@ public class LoanDto {
         this.amount = amount;
     }
 
-    public Integer getStatus() {
-        return status;
+    public LocalDate getLoanTime() {
+        return loanTime;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setLoanTime(LocalDate loanTime) {
+        this.loanTime = loanTime;
     }
 
-    public String getIdCard() {
-        return idCard;
+    public Integer getLoanChannel() {
+        return loanChannel;
     }
 
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
+    public void setLoanChannel(Integer loanChannel) {
+        this.loanChannel = loanChannel;
+    }
+
+    public LocalDate getRepaymentTime() {
+        return repaymentTime;
+    }
+
+    public void setRepaymentTime(LocalDate repaymentTime) {
+        this.repaymentTime = repaymentTime;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public Integer getIsIou() {
+        return isIou;
+    }
+
+    public void setIsIou(Integer isIou) {
+        this.isIou = isIou;
     }
 }

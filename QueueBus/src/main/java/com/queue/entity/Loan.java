@@ -19,56 +19,61 @@ public class Loan extends Model<Loan> {
 
     private static final long serialVersionUID = 1L;
 
-        /**
+    /**
      * 唯一标识
      */
-         @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-        /**
+    /**
      * 借出唯一编码
      */
-         private String code;
+    private String code;
 
-        /**
+    /**
      * 类型 0借出 1借入
      */
-         private Integer loanType;
+    private Integer loanType;
 
-        /**
+    /**
      * 借款人ID
      */
-         private Long userId;
+    private Long userId;
 
-        /**
+    /**
      * 借款金额
      */
-         private Double amount;
+    private Double amount;
 
-        /**
+    /**
      * 借款日期
      */
-         private LocalDate loanTime;
+    private LocalDate loanTime;
 
-        /**
+    /**
+     * 借款途径
+     */
+    private Integer loanChannel;
+
+    /**
      * 承诺还款时间
      */
-         private LocalDate repaymentTime;
+    private LocalDate repaymentTime;
 
-        /**
+    /**
      * 状态 1有效 0 无效
      */
-         private Integer status;
+    private Integer status;
 
-        /**
+    /**
      * 备注
      */
-         private String remark;
+    private String remark;
 
-        /**
+    /**
      * 是否有欠条
      */
-         private Integer isIou;
+    private Integer isIou;
 
 
     public Long getId() {
@@ -161,6 +166,14 @@ public class Loan extends Model<Loan> {
         return this;
     }
 
+    public Integer getLoanChannel() {
+        return loanChannel;
+    }
+
+    public void setLoanChannel(Integer loanChannel) {
+        this.loanChannel = loanChannel;
+    }
+
     @Override
     protected Serializable pkVal() {
         return this.id;
@@ -177,6 +190,7 @@ public class Loan extends Model<Loan> {
         ", loanTime=" + loanTime +
         ", repaymentTime=" + repaymentTime +
         ", status=" + status +
+        ", loanChannel=" + loanChannel +
         ", remark=" + remark +
         ", isIou=" + isIou +
         "}";

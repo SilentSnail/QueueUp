@@ -43,7 +43,7 @@ public class DateUtils {
         try {
             return LocalDateTime.parse(text, DateTimeFormatter.ofPattern(DATETIME_FORMAT));
         } catch (Exception e) {
-            return LocalDateTime.of(parseDate(text), parseTime(null));
+            return LocalDateTime.of(parseDate(text, DATE_FORMAT), parseTime(null));
         }
     }
 
@@ -52,11 +52,18 @@ public class DateUtils {
      * @param text
      * @return
      */
-    public static LocalDate parseDate(String text){
+    public static LocalDate parseDate(String text, String format){
         if(StringUtils.hasText(text)){
+            if(StringUtils.hasText(format)) {
+                return LocalDate.parse(text, DateTimeFormatter.ofPattern(format));
+            }
             return LocalDate.parse(text, DateTimeFormatter.ofPattern(DATE_FORMAT));
         }
         return LocalDate.now();
+    }
+
+    public static LocalDate parseDate(String text){
+        return parseDate(text, DATE_FORMAT);
     }
 
     /**

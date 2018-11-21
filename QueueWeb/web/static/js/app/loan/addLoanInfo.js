@@ -33,16 +33,18 @@ $(function () {
         form.on('switch(isIou)', function (data) {
             if(this.checked){
                 $('input[name="isIou"]').val(1);
+                $("#upload").show();
             }else {
                 $('input[name="isIou"]').val(0);
+                $("#upload").hide();
             }
         });
 
         form.render();
         form.on('submit(commit)', function (data) {
             var hidder = layer.load(1, {shade: [0.5,'#000']});
-            console.log(data.field);
-            ajax('/loan/save', data.field, function (res) {
+            var json = data.field;
+            ajax('/loan/save', json, function (res) {
                 layer.close(hidder);
                 if(res.code == 1){
                     parent.layer.msg('保存成功');

@@ -10,6 +10,7 @@
         <result column="user_id" property="userId" />
         <result column="amount" property="amount" />
         <result column="loan_time" property="loanTime" />
+        <result column="loan_channel" property="loanChannel" />
         <result column="repayment_time" property="repaymentTime" />
         <result column="status" property="status" />
         <result column="remark" property="remark" />
@@ -18,12 +19,14 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, code, loan_type, user_id, amount, load_time, repayment_time, status, remark, is_iou
+        id, code, loan_type, user_id, amount, loan_time, loan_channel, repayment_time, status, remark, is_iou
     </sql>
 
-    <select id="searchByParam" parameterType="com.queue.entity.vo.LoanSearchVo" resultType="com.queue.entity.dto.LoanDto">
-        SELECT l.id, d.name, d.sex, d.phone, d.address, l.loan_type, abs(l.amount) as amount, l.status, d.id_card
-        FROM loan l LEFT JOIN directories d ON l.user_id = d.id
+    <select id="searchByParam" parameterType="com.queue.entity.vo.LoanSearchVo" resultType="com.queue.entity.dto.LoanListDto">
+        select l.code, d.name, d.sex, d.phone, d.address, l.loan_type,
+               abs(l.amount) as amount, l.status, d.id_card,
+               l.loan_channel
+        from loan l left join directories d on l.user_id = d.id
         where d.status = 1
         <if test="name != null and name != ''">
             and d.name = #{name}
@@ -35,10 +38,28 @@
             and l.status = #{status}
         </if>
         <if test="startTime != null">
-            and l.load_time &gt;= #{startTime}
+            and l.loan_time &gt;= #{startTime}
         </if>
         <if test="endTime != null">
-            and l.load_time &lt;= #{endTime}
+            and l.loan_time &lt;= #{endTime}
         </if>
+    </select>
+
+    <select id="searchByCode" resultType="com.queue.entity.dto.LoanDto">
+        select code, loan_type, abs(amount) as amount, loan_time, loan_channel, repayment_time, remark, is_iou
+        from loan where status = 1 and code = #{code}
+    </select>
+
+    <update id="updateLoanByCode" parameterType="com.queue.entity.Loan">
+        update loan
+        set repayment_time = #{repaymentTime},
+            remark = #{remark},
+            loan_channel = #{loanChannel},
+            is_iou = #{isIou}
+        where code = #{code}
+    </update>
+
+    <select id="getFundingCount" resultType="java.lang.Double">
+        select sum(amount) as amount from loan where status = 1 and user_id = #{id};
     </select>
 </mapper>

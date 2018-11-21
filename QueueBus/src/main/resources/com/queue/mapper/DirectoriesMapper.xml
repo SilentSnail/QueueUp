@@ -28,8 +28,9 @@
         id, user_code, name, birthday, sex, id_card, phone, email, qq_no, we_chat, address, remark, sign, status, create_time, update_time, del_status
     </sql>
 
-    <select id="findBySearchVo" parameterType="com.queue.entity.vo.DirectorSearchVo" resultMap="BaseResultMap">
-        select d.* from directories d where d.del_status = false
+    <select id="findBySearchVo" parameterType="com.queue.entity.vo.DirectorSearchVo" resultType="com.queue.entity.dto.DirectorListDto">
+        select d.user_code, d.name, d.birthday, d.sex, d.phone, d.email, d.address, d.sign
+          from directories d where d.del_status = false
         <if test="name != null and name != ''">
             and d.name like concat('%', #{name},'%')
         </if>
@@ -47,8 +48,19 @@
         </if>
     </select>
 
+    <select id="searchByCode" resultType="com.queue.entity.dto.DirectorDto">
+        select id, user_code, name, birthday, sex, id_card, phone, email, qq_no, we_chat, address, remark, sign
+        from directories where del_status = false and user_code = #{code}
+    </select>
+
     <update id="delByCode" parameterType="java.lang.String">
         update directories set del_status = true where user_code = #{code};
     </update>
 
+    <update id="updateDireByCode">
+        update directories d
+        set d.id_card = #{idCard}, d.phone = #{phone}, d.email = #{email}, d.birthday = #{birthday}, d.qq_no = #{qqNo},
+        d.we_chat = #{weChat}, d.address = #{address}, d.remark = #{remark}, d.sign = #{sign}, d.update_time = now()
+        where user_code = #{userCode}
+    </update>
 </mapper>

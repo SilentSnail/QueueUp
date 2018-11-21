@@ -6,10 +6,11 @@ var userId;
 
 $(function () {
     function loadDT() {
-        var id = urlParam('id', window.location.href);
-        ajax('/director/findById', {id:id}, function (res) {
-            userId = id;
+        var id = urlParam('code', window.location.href);
+        ajax('/director/findByCode', {code:id}, function (res) {
             var data = res.direInfo;
+            userId = data.id;
+            console.log(res.amount);
             showData(data);
         });
     }
@@ -17,7 +18,11 @@ $(function () {
 
     function showData(data) {
         $("#info_name").text(data.name);
-        $("#info_sex").text(data.sex);
+        var sex = "男";
+        if(data.sex == "female"){
+            sex = "女";
+        }
+        $("#info_sex").text(sex);
         $("#info_age").text(data.name);
         $("#info_birthday").text(data.birthday);
         $("#info_idCard").text(data.idCard);
@@ -36,7 +41,7 @@ $(function () {
             parent.layer.open({
                 type: 2,
                 title:'新增借款',
-                area: ['550px', '500px'],
+                area: ['660px', '500px'],
                 fixed: false, //不固定
                 maxmin: true,
                 content: '/pages/loan/addLoanInfo.html?userId='+userId,

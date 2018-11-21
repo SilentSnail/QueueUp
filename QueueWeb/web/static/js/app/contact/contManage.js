@@ -20,6 +20,7 @@ $(function () {
                 statusCode:'1'
             },
             cols:[[
+                {fixed: 'left', field: 'userCode', title: '操作', width:115, align:'center', toolbar: '#editHtml'},
                 {field: 'sign', title: '标记', width:60, templet:function(d){
                     if(d.sign == 1) return '亲友';
                     else if(d.sign == 2) return '好友';
@@ -37,8 +38,7 @@ $(function () {
                 }},
                 {field: 'phone', title: '手机号', width:120},
                 {field: 'email', title: '邮箱', width:120},
-                {field: 'address', title: '地址', width:300},
-                {fixed: 'right', field: 'id', title: '操作', width:115, align:'center', toolbar: '#editHtml'}
+                {field: 'address', title: '地址', width:300}
             ]],
             parseData:function (res) {
                 return {
@@ -105,7 +105,7 @@ $(function () {
             var data = obj.data;
             if(obj.event === 'detail'){//查看
                 //调用父页面方法
-                window.parent.addItem('/pages/contact/linkmanDetail.html?id='+data.id, data.name+'详情');
+                window.parent.addItem('/pages/contact/linkmanDetail.html?code='+data.userCode, data.name+'详情');
             } else if(obj.event === 'change'){//编辑
                 parent.layer.open({
                     type: 2,
@@ -116,7 +116,7 @@ $(function () {
                     content: '/pages/contact/editLinkman.html',
                     success:function(page, index){
                         //调用子页面的方法
-                        $(page).find('iframe')[0].contentWindow.loadDT(data.id);
+                        $(page).find('iframe')[0].contentWindow.loadDT(data.userCode);
                     },
                     end: function(){
                         reLoad({});
