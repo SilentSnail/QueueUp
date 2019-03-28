@@ -73,7 +73,7 @@ public class ConvertUtils {
      */
     public static Object convertMapToObj(Map<String, Object> map,Class clazz) throws InstantiationException, IllegalAccessException, SecurityException, NoSuchFieldException{
         Object obj=clazz.newInstance();
-        ConvertUtils.setObjectValue(obj, map);
+        ConvertUtils.setObjectValue(clazz.newInstance(), map);
         return obj;
     }
 

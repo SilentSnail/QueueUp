@@ -12,5 +12,4 @@ function loadDT(id) {
 
 $(function () {
 
-    //@Angry_Snail
 });

@@ -61,7 +61,8 @@
 
     <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
         <property name="connectionFactory" ref="jedisFactory" />
-        <property name="enableDefaultSerializer" value="false" /><!-- 是否开启Redis默认序列化方式 -->
+        <!-- 是否开启Redis默认序列化方式，此处若为false，则必须手动指定序列化方式。否者会报空指针异常 -->
+        <property name="enableDefaultSerializer" value="false" />
         <property name="keySerializer">
             <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
         </property>

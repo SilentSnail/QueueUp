@@ -1,5 +1,6 @@
 package com.queue.utils;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -13,8 +14,9 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class RedisUtils<K, V> {
 
+    @Autowired
     private RedisTemplate<K, V> redisTemplate;
-    private static final Long TIME_OUT = 3600L;
+    private static final Long TIME_OUT = 3600L;//单位：秒
     private static final TimeUnit TIME_UNIT_DEFAULT = TimeUnit.SECONDS;
 
     public void setValue(K key, V value){

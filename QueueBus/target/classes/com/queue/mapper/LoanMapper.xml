@@ -29,7 +29,7 @@
         from loan l left join directories d on l.user_id = d.id
         where d.status = 1
         <if test="name != null and name != ''">
-            and d.name = #{name}
+            and d.name like concat('%', #{name},'%')
         </if>
         <if test="type != null">
             and l.loan_type = #{type}

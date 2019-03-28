@@ -38,6 +38,7 @@
         <redis-data>2.1.0.RELEASE</redis-data>
         <protostuff-version>1.5.9</protostuff-version>
         <javamail-version>1.4.7</javamail-version>
+        <gif-encoder>0.9.1</gif-encoder>
         <!-- 以下是jdk版本配置 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -249,5 +250,6 @@
             <artifactId>jedis</artifactId>
             <version>${jedis-version}</version>
         </dependency>
+
     </dependencies>
 </project>

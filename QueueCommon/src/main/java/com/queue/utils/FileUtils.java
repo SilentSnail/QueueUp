@@ -1,6 +1,8 @@
 package com.queue.utils;
 
 import org.apache.commons.lang.ArrayUtils;
+import org.springframework.util.ObjectUtils;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
 
@@ -9,11 +11,6 @@ import java.io.*;
  * Created by liusong on 2018/5/2.
  */
 public class FileUtils {
-
-    public static final String FILE_HEAD_XLS = "D0CF11E0A1B11AE1";//Excel 2003文件头
-    public static final String FILE_HEAD_XLSX = "504B030414000600";//Excel 2007文件头
-    public static final String FILE_HEAD_RAR = "526172211A0700";//RAR压缩文件的文件头
-    public static final String FILE_HEAD_ZIP = "504B0304140000";//ZIP压缩文件的文件头
 
     /**
      * 获取文件头，默认头8位
@@ -65,7 +62,7 @@ public class FileUtils {
      * @param filePath 文件路径
      * @param context 写入内容
      */
-    public synchronized static void writeStrToFile(String filePath, String context) {
+    public static void writeFileToPath(String filePath, String context) {
         File file = new File(filePath);
         BufferedWriter out = null;
         try {
@@ -80,5 +77,72 @@ public class FileUtils {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 重命名文件
+     * @param oldFileName
+     * @return
+     */
+    public static String getNewFileName(String oldFileName){
+        StringBuffer str = new StringBuffer();
+        synchronized (oldFileName){
+            str.append(SecurityEncryptUtils.getUUID());
+            try {
+                str.append(oldFileName.substring(oldFileName.lastIndexOf("."), oldFileName.length()));
+            } catch (Exception e) {
+                str = new StringBuffer();
+            }
+            return str.toString();
+        }
+    }
+
+    /**
+     * 文件路径转换（有种多此一举的感觉）
+     * @param path 文件路径
+     * @return 格式化后的文件路径
+     */
+    public static String convertFilePath(String path){
+        StringBuffer newPath = new StringBuffer();
+        synchronized (newPath){
+            String[] names;
+            if(path.indexOf("\\") == -1){
+                names = path.split("/");
+                newPath.append("/");
+            }else{
+                names = path.split("\\\\");
+            }
+            for (String name : names) {
+                if(ObjectUtils.isEmpty(name)){
+                    continue;
+                }
+                newPath.append(name);
+                newPath.append(File.separator);
+            }
+            return newPath.toString();
+        }
+    }
+
+    /**
+     * spring文件上传
+     * @param file
+     * @param savePath
+     * @throws IOException
+     */
+    public static String saveFile(MultipartFile file, String savePath) throws IOException {
+        if(file.isEmpty()){
+            throw new FileNotFoundException("文件为空");
+        }
+        String saveName = FileUtils.getNewFileName(file.getOriginalFilename());
+        if(ObjectUtils.isEmpty(saveName)){
+            throw new RuntimeException("文件名错误");
+        }
+        savePath = convertFilePath(savePath);
+        File saveFile = new File(savePath + saveName);
+        if(!saveFile.exists()){
+            saveFile.mkdirs();
+        }
+        file.transferTo(saveFile);
+        return saveName;
     }
 }

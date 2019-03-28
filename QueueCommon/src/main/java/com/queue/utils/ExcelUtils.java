@@ -1,5 +1,6 @@
 package com.queue.utils;
 
+import com.queue.enums.FileType;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -7,7 +8,7 @@ import org.apache.xmlbeans.impl.piccolo.io.FileFormatException;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -43,7 +44,7 @@ public class ExcelUtils {
      * @return
      */
     private static List<Map<String, String>> readSheet(Sheet sheet, FormulaEvaluator evaluator, String[] keys){
-        List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+        List<Map<String, String>> list = new LinkedList<>();
         Map<String, String> map;
         for (Row row : sheet) {
             map = new ConcurrentHashMap<String, String>();
@@ -68,9 +69,9 @@ public class ExcelUtils {
         Asserts.isNull(stream,"读取文件失败，文件路径错误");
         String head = FileUtils.getFileHeader(stream);
         //这里应该关闭InputStream，未测试关闭后是否还能获取到Workbook,故此处未添加关闭代码
-        if(FileUtils.FILE_HEAD_XLS.equals(head)) {
+        if(FileType.XLS.equals(head)) {
             return new HSSFWorkbook(stream);
-        } else if (FileUtils.FILE_HEAD_XLSX.equals(head)) {
+        } else if (FileType.XLSX.equals(head)) {
             return new XSSFWorkbook(stream);
         } else {
             throw new FileFormatException("文件类型不真确,Excel无法解析");

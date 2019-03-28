@@ -55,7 +55,7 @@ public class SerializeUtils {
      * @return
      */
     public static <T> T deSerialize(byte[] bytes, Class<T> classType){
-        return deSerialize(bytes, classType, false);
+        return deSerialize(bytes, classType, true);
     }
 
     /**
@@ -69,7 +69,7 @@ public class SerializeUtils {
     public static <T> T deSerialize(byte[] bytes, Class<T> classType, Boolean isSort){
         try {
             Constructor<T>[] cons = (Constructor<T>[]) classType.getConstructors();
-            if(isSort){//是否排序
+            if(isSort){//是否排序 排序后 使用无参构造，否者随机获取构造方法
                 Integer[] sort = new Integer[cons.length];
                 for (int i = 0; i < sort.length; i++) {
                     sort[i] = cons[i].getParameterTypes().length;

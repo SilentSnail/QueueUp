@@ -1,5 +1,7 @@
 package com.queue.interceptor;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.lang.Nullable;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,8 +15,11 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class SysStaticInterceptor implements HandlerInterceptor {
 
+    private Logger log = LogManager.getLogger(this.getClass());
+
     //执行顺序1
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception{
+        //交由shiro管理
         return true;//执行顺序2
     }
 

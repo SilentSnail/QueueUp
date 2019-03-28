@@ -21,7 +21,7 @@
         <param-value>classpath:spring-context.xml,classpath:spring-shiro.xml</param-value>
     </context-param>
 
-    <!-- 安全框架使用Shiro -->
+    <!-- spring安全框架 -->
     <filter>
         <filter-name>securityFilter</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>

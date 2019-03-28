@@ -50,6 +50,7 @@ public class SendMailPool implements Runnable {
                         this.queue.remove(thread);
                         log.debug("发送邮件线程已经开始执行");
                     }
+                    //此处应该还有满了如何处理，暂时先不考虑
                 }
             } catch (Exception e) {
                 log.error(e.getMessage());

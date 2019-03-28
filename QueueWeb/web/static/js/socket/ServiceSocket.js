@@ -12,7 +12,7 @@ function ServiceSocket() {
         }
         var username = document.getElementById("username").value;
         if(username){
-            var url = "ws://localhost:8080/socket/service/" + username;
+            var url = "ws://localhost:8080/ws/socket/service/" + username;
             createConn(url);
         }else{
             alert("请输入用户名");

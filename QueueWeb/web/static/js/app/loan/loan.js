@@ -35,6 +35,7 @@ $(function () {
                     else if(d.loanChannel == 2) return '支付宝';
                     else if(d.loanChannel == 3) return '微信';
                     else if(d.loanChannel == 4) return '转账';
+                    else if(d.loanChannel == 0) return '其他';
                     else return '无';
                 }},
                 {field: 'phone', title: '手机号', width:120},
@@ -75,17 +76,21 @@ $(function () {
         //表单
         var form = layui.form;
         form.on('submit(search)', function (data) {
+            reLoad(data.field)
+        });
+
+        function reLoad(param){
             table.reload('showLoanList', {
-                where:data.field,
+                where:param,
                 page:{
                     curr:1
                 }
             });
-        });
+        }
 
         table.on('tool(loanData)', function(obj){
             var data = obj.data;
-            if(obj.event === 'detail'){//查看
+            if(obj.event === 'detail'){//修改
                 parent.layer.open({
                     type: 2,
                     title:'修改借款',
@@ -95,21 +100,19 @@ $(function () {
                     content: '/pages/loan/editLoanInfo.html',
                     success:function(layero, index){//调用子页面的方法
                         $(layero).find('iframe')[0].contentWindow.loadDT(data.code);
+                    },
+                    end: function(){
+                        reLoad({});
                     }
                 });
             } else if(obj.event === 'del'){//删除
                 ajax("/loan/del", {code:data.code}, function(data){
                     if(data.code == 1){
                         parent.layer.alert("OK", {icon:1});
-                        table.reload('showLoanList', {
-                            page:{
-                                curr:1
-                            }
-                        });
+                        reLoad({});
                     }
                 });
             }
         });
     });
-    //@Angry_Snail
 });

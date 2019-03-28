@@ -22,6 +22,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,6 +41,29 @@ public class ValidController {
     private RoleUserService userService;
     @Autowired
     private MailMessageService mailService;
+    @Autowired
+    private RedisUtils<String, byte[]> redisUtils;
+
+    /**
+     * 获取验证码
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/validCode")
+    public void getValidCode(HttpServletRequest request, HttpServletResponse response) {
+        response.setContentType("image/jpeg");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Cache-Control", "no-cache");
+        response.setDateHeader("Expires", 0);
+        String codeId = SecurityEncryptUtils.getUUID();
+        request.getSession().setAttribute("codeId", codeId);//先保存Session，如果验证码创建失败，则该ID无效
+        try {
+            String code = VerifyCodeUtil.getVerifyCode(response.getOutputStream());
+            this.redisUtils.setValue(codeId, SerializeUtils.toSerialize(code.toLowerCase()), 120L);//120秒失效
+        } catch (IOException e) {
+            log.error(e);
+        }
+    }
 
     /**
      * 登录
@@ -47,28 +73,39 @@ public class ValidController {
      * @return
      */
     @RequestMapping("/login")
-    public R login(String username, String password, @RequestParam(defaultValue = "0") String member){
-        try {
-            Asserts.isEmpty(username, "用户名不能为空");
-            Asserts.isEmpty(password, "密码不能为空");
-        }catch (Exception e){
-            return R.error(e.getMessage());
+    public R login(String username, String password, String verifyCode, @RequestParam(defaultValue = "0") String member, HttpSession session){
+        Object attr = session.getAttribute("codeId");
+        if(ObjectUtils.isEmpty(attr)){//当前session未找到ID
+            return R.error("验证码已失效");
         }
-        System.out.println(member);
-        SecurityUserEntity token = new SecurityUserEntity(username, SecurityEncryptUtils.toMD5(password));
-        Subject subject = org.apache.shiro.SecurityUtils.getSubject();
-        try {
-            subject.login(token);
-            return R.ok();
-        } catch (UnknownAccountException e){
-            return R.error("未知账号");
-        } catch (IncorrectCredentialsException e){
-            return R.error("密码错误");
-        } catch (ExcessiveAttemptsException e){
-            return R.error("账户已锁定");
-        } catch (Exception e){
-            return R.error("未知错误");
+        String saveCode = SerializeUtils.deSerialize(redisUtils.get(String.valueOf(attr)), String.class);
+        if(ObjectUtils.isEmpty(saveCode)){
+            return R.error("验证码已失效");
         }
+        if(verifyCode.toLowerCase().equals(saveCode)){
+            try {
+                Asserts.isEmpty(username, "用户名不能为空");
+                Asserts.isEmpty(password, "密码不能为空");
+            }catch (Exception e){
+                return R.error(e.getMessage());
+            }
+            log.info(member);
+            SecurityUserEntity token = new SecurityUserEntity(username, SecurityEncryptUtils.toMD5(password));
+            Subject subject = org.apache.shiro.SecurityUtils.getSubject();
+            try {
+                subject.login(token);
+                return R.ok();
+            } catch (UnknownAccountException e){
+                return R.error("未知账号");
+            } catch (IncorrectCredentialsException e){
+                return R.error("密码错误");
+            } catch (ExcessiveAttemptsException e){
+                return R.error("账户已锁定");
+            } catch (Exception e){
+                return R.error("未知错误");
+            }
+        }
+        return R.error("验证码错误");
     }
 
     /**

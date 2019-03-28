@@ -6,6 +6,7 @@ import com.queue.entity.dto.SysUserDto;
 import com.queue.entity.vo.UserSearchVo;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * <p>
@@ -23,4 +24,18 @@ public interface RoleUserService extends IService<RoleUser> {
      * @return
      */
     List<SysUserDto> getUserByParam(UserSearchVo search);
+
+    /**
+     * 依据ID获取角色
+     * @param id
+     * @return
+     */
+    Set<String> getUserRoles(String id);
+
+    /**
+     * 依据ID获取权限
+     * @param id
+     * @return
+     */
+    Set<String> getUserPermissions(String id);
 }

@@ -12,7 +12,7 @@ function socketConnection() {
         }
         var username = document.getElementById("username").value;
         if(username){
-            var url = "ws://localhost:8080/socket/custom/" + username;
+            var url = "ws://localhost:8080/ws/socket/custom/" + username;
             createConn(url);
         }else{
             alert("请输入用户名");

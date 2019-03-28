@@ -2,6 +2,11 @@
  * Created by liusong on 2018/4/17.
  */
 $(function () {
+
+    $("#checkCode").click(function () {
+        this.src = "/valid/validCode";
+    });
+
     layui.use('form', function () {
         var form = layui.form;
         form.on('submit(submit)', function(res){
@@ -11,9 +16,9 @@ $(function () {
                 if(data.code == 1){
                     window.location = "/pages/admin/admin.html";
                 }else{
-                    layer.alert('用户名或密码错误', {icon: 5});
+                    layer.alert(data.data, {icon: 5});
                 }
             });
         });
-    })
+    });
 });

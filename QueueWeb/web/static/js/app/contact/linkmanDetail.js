@@ -10,8 +10,15 @@ $(function () {
         ajax('/director/findByCode', {code:id}, function (res) {
             var data = res.direInfo;
             userId = data.id;
-            console.log(res.amount);
+
             showData(data);
+            if(res.amount > 0){
+                $("#loan_Info").text("欠款：" + res.amount + "元");
+            }else if(res.amount < 0){
+                $("#loan_Info").text("当前已借出：" + Math.abs(res.amount));
+            }else{
+                $("#loan_Info").text("");
+            }
         });
     }
     loadDT();
@@ -23,7 +30,7 @@ $(function () {
             sex = "女";
         }
         $("#info_sex").text(sex);
-        $("#info_age").text(data.name);
+        $("#info_age").text(data.age);
         $("#info_birthday").text(data.birthday);
         $("#info_idCard").text(data.idCard);
         $("#info_address").text(data.address);

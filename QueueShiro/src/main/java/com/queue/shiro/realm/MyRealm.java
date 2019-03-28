@@ -35,8 +35,12 @@ public class MyRealm extends AuthorizingRealm {
      * @return
      */
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
+        SimpleAuthorizationInfo author = new SimpleAuthorizationInfo();
         log.info("Shiro开始角色授权");
-        return new SimpleAuthorizationInfo();
+        String id = (String) principals.getPrimaryPrincipal();
+        author.setRoles(userService.getUserRoles(id));
+        author.setStringPermissions(userService.getUserPermissions(id));
+        return author;
     }
 
     /**
@@ -64,6 +68,7 @@ public class MyRealm extends AuthorizingRealm {
     public void onLogout(PrincipalCollection principal){
         super.clearCachedAuthorizationInfo(principal);
         SecurityUserEntity user = (SecurityUserEntity) principal.getPrimaryPrincipal();
+        log.info(user.getLoginName() + "提出登录");
         removeUserCache(user);
     }
 
@@ -74,6 +79,6 @@ public class MyRealm extends AuthorizingRealm {
     public void removeUserCache(String loginName){
         SimplePrincipalCollection authen = new SimplePrincipalCollection();
         authen.add(loginName, super.getName());
-        super.clearCachedAuthenticationInfo(authen);
+        super.clearCachedAuthenticationInfo(authen);//清除shiro缓存的用户信息
     }
 }

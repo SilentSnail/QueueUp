@@ -48,12 +48,7 @@ public class IMUtils {
     private static List<NameValuePair> list;
 
     public static void main(String[] args) {
-//        String account = "admin";
-//        String token = refreshToken(account);
-//        System.out.println(token);
-//        System.out.println(JSONObject.toJSONString(urls));
-
-        list = new ArrayList<NameValuePair>();
+        list = new ArrayList<>();
         list.add(new BasicNameValuePair("from","admin"));
         list.add(new BasicNameValuePair("to","account"));
         list.add(new BasicNameValuePair("ope", "0"));

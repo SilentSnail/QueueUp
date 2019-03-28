@@ -1,17 +1,15 @@
 package com.test;
 
-import com.queue.utils.DateUtils;
-import org.apache.shiro.util.StringUtils;
-
 /**
  * Created by liusong on 2018/7/11.
  */
 public class RandomTest {
 
     public static void main(String[] args) {
-        String idCard = "429005200201261800";
-        if(StringUtils.hasText(idCard)){
-            System.out.println(DateUtils.parseDate(idCard.substring(6, 14), "yyyyMMdd"));
+        int[] ints = new int[]{80, 650, 900, 500, 520, 600, 300, 440, 680};
+        int result = 1340;
+        for (int i = 0; i < ints.length; i++) {
+            System.out.println(result - ints[i]);
         }
     }
 }
