@@ -1,12 +1,13 @@
 package com.queue.webSocket;
 
-import com.alibaba.fastjson.JSONObject;
 import com.queue.entity.SocketSession;
 import com.queue.entity.WebSocket;
+import com.queue.utils.CheckSumBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -19,33 +20,31 @@ public class ChatRoomSocket {
     //对话
     private static Map<String, SocketSession> sessionMap = new ConcurrentHashMap<String, SocketSession>();
 
-    public static void open(String token, WebSocket cusSocket){
-        JSONObject json = new JSONObject();;
-        if(checkConnection(token)){//未连接过
-            WebSocket serSocket = CustomServiceSocket.getClient();//获取一个在线的客服人员
+    public static final int CLIENT = 1;
+    public static final int SERVER = 0;
+
+    public static boolean open(WebSocket cusSocket){
+        if(checkConnection(cusSocket.getToken())){//未连接过
+            WebSocket serSocket = ServiceSocket.getClient();//获取一个在线的客服人员
             if(serSocket == null){//如果没有有空闲的客服人员，向客户发送一条消息
-                json.put("msg","目前坐席繁忙，请您稍后再试");
-                ConversationSocket.sendMessageTo(token, json.toJSONString());
-            }else{
-                //消息发起人在线，且有空闲的客服人员
+                return false;
+            }else{//消息发起人在线，且有空闲的客服人员
+                String token = CheckSumBuilder.getMD5(UUID.randomUUID().toString());
                 SocketSession socket = new SocketSession(token);
+                cusSocket.setRoomToken(socket.getToken());
+                serSocket.setRoomToken(socket.getToken());
                 socket.setCusSocket(cusSocket);
                 socket.setSerSocket(serSocket);
                 sessionMap.put(token, socket);
-                json = new JSONObject();
-                json.put("custom", "客户"+cusSocket.getUserName()+"请求协助");
-                json.put("service", "客服人员"+serSocket.getUserName()+"为您服务");
-                json.put("token", token);
-                cusSocket.sendMessage(json.toJSONString());
-                serSocket.sendMessage(json.toJSONString());
             }
         }
+        return true;
     }
 
     /**
      * 获取链接
      * @param token 链接ID
-     * @param curType 1：当前是客服  0：当前是客户
+     * @param curType 1：获取客户端  0：获取服务端
      * @return 对应的链接
      */
     public static WebSocket getClient(String token, Integer curType){
@@ -53,20 +52,33 @@ public class ChatRoomSocket {
         if(session == null){
             return null;
         }
-        if(curType == 1){//代表当前是客服
+        if(curType == 1){//代表当获取客户端
             return session.getCusSocket();
-        }else if(curType == 0){//单标当前是客户
+        }else if(curType == 0){//代表当前获取服务端
             return session.getSerSocket();
         }else{
             return null;
         }
     }
 
+    /**
+     * 发送信息
+     * @param msg 消息主体
+     * @param token 房间号
+     * @param curType 发送类型
+     */
+    public static boolean sendMessageTo(String msg, String token, int curType){
+        WebSocket socket = ChatRoomSocket.getClient(token, curType);
+        if(socket != null){
+            socket.sendMessage(msg);
+            return false;
+        }
+        return true;
+    }
+
     public static synchronized void close(String token){
         if(checkConnection(token) == false){
             sessionMap.get(token).getSerSocket().setStatus(0);
-            sessionMap.get(token).getSerSocket().sendMessage("会话已关闭");
-            sessionMap.get(token).getCusSocket().sendMessage("会话已关闭");
             sessionMap.remove(token);
         }
     }
@@ -74,14 +86,12 @@ public class ChatRoomSocket {
     public static synchronized void closeService(String username){
         for(SocketSession session : sessionMap.values()){
             if(username.equals(session.getSerSocket().getUserName())){
-                session.getSerSocket().sendMessage("会话已关闭");
-                session.getCusSocket().sendMessage("会话已关闭");
                 sessionMap.remove(session);
             }
         }
     }
 
-    private static synchronized boolean checkConnection(String token){
+    public static synchronized boolean checkConnection(String token){
         return sessionMap.get(token) == null ? true : false;
     }
 

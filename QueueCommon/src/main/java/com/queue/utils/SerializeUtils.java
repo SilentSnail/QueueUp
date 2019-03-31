@@ -48,7 +48,7 @@ public class SerializeUtils {
     }
 
     /**
-     * 随机反序列化类的构造参数
+     * 反序列化类的构造参数，默认使用最少参数构造
      * @param bytes 数据
      * @param classType 构造类型
      * @param <T> 返回构造类型对应的实体类
@@ -67,6 +67,9 @@ public class SerializeUtils {
      * @return
      */
     public static <T> T deSerialize(byte[] bytes, Class<T> classType, Boolean isSort){
+        if(null == bytes){
+            return null;
+        }
         try {
             Constructor<T>[] cons = (Constructor<T>[]) classType.getConstructors();
             if(isSort){//是否排序 排序后 使用无参构造，否者随机获取构造方法

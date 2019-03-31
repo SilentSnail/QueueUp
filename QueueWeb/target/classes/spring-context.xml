@@ -140,12 +140,12 @@
             <tx:method name="query*" read-only="true" />
             <tx:method name="find*" read-only="true" />
             <tx:method name="create*" propagation="REQUIRED" />
-            <tx:method name="save*" propagation="REQUIRED" />
             <tx:method name="insert*" propagation="REQUIRED" />
-            <tx:method name="update*" propagation="REQUIRED" />
-            <tx:method name="delete*" propagation="REQUIRED" />
-            <tx:method name="change*" propagation="REQUIRED" />
             <tx:method name="add*" propagation="REQUIRED" />
+            <tx:method name="save*" propagation="REQUIRED" />
+            <tx:method name="update*" propagation="REQUIRED" />
+            <tx:method name="change*" propagation="REQUIRED" />
+            <tx:method name="del*" propagation="REQUIRED" />
             <tx:method name="*" read-only="true"/>
         </tx:attributes>
     </tx:advice>
@@ -154,7 +154,6 @@
     <aop:config proxy-target-class="true" expose-proxy="true">
         <aop:pointcut id="transactionPointcut" expression="execution(* com.queue..service.*+.*(..))" />
         <aop:advisor advice-ref="txAdvice" pointcut-ref="transactionPointcut" order="1" />
-        <aop:advisor id="duridAdvice" advice-ref="duridStatInterceptor" pointcut-ref="transactionPointcut" order="2" />
     </aop:config>
 
     <!-- 配置durid监控 -->

@@ -3,7 +3,9 @@ package com.queue.utils;
 //import com.queue.utils.verify.GifEncoder;
 
 import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -20,9 +22,13 @@ public class VerifyCodeUtil {
     private static final short HEIGHT = 40;
     private static final short CODE_COUNT = 5;
     private static final Random random = new Random();
-//    private static String savePath = "/Volumes/TEST_HD/Temp/imgTmp/";
 
-    public static BufferedImage getImage(char[] code){
+    /**
+     * 生成验证码图片
+     * @param code 验证码内容
+     * @return 验证码图片对象
+     */
+    private static BufferedImage getImage(char[] code){
         BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);//创建图片
         Graphics grap = image.getGraphics();//获取图片的绘制器
         grap.setColor(Color.WHITE);//设置画笔颜色
@@ -31,7 +37,13 @@ public class VerifyCodeUtil {
         //绘制内容
         grap.setColor(Color.GRAY);//重新设置画笔颜色
         int address = 20;
+        Font font = new Font(null, Font.PLAIN, 20);
+        AffineTransform atf;
         for (int i = 0; i < code.length; i++) {
+            atf = new AffineTransform();
+            atf.rotate(Math.toRadians(45), 0, 0);
+            font.deriveFont(atf);
+            grap.setFont(font);
             grap.drawChars(code, i, 1, address, 20);//绘制内容
             address+=20;
         }
@@ -57,39 +69,50 @@ public class VerifyCodeUtil {
     }
 
     /**
-     * 获取验证码字符
+     * 获取指定长度的随机字符
+     * @param length
      * @return
      */
-    public static char[] getCode(){
-        char[] codes = new char[CODE_COUNT];
-        for (int i = 0; i < CODE_COUNT; i++) {
+    public static char[] getCode(int length){
+        char[] codes = new char[length];
+        for (int i = 0; i < length; i++) {
             codes[i] = CODE_SEQUENCE[random.nextInt(CODE_SEQUENCE.length)];
         }
         return codes;
     }
 
-//    public static String getImageCode(OutputStream os) throws IOException {
-//        char[] codes = getCode();
-//        ImageIO.write(getImage(codes), "png", os);
-//        os.flush();
-//        return new StringBuffer().append(codes).toString();
-//    }
-
+    /**
+     * 向流中写入图片数据
+     * @param osm
+     * @return 验证码明文
+     * @throws IOException
+     */
     public static String getVerifyCode(OutputStream osm) throws IOException {
-        char[] codes = getCode();
-        ImageIO.write(getImage(codes), "png", osm);
+        return getVerifyCode(osm, CODE_COUNT);
+    }
+
+    public static String getVerifyCode(OutputStream osm, int length) throws IOException {
+        char[] codes = getCode(length);
+        ImageIO.write(getImage(codes), "jpg", osm);
         return new StringBuffer().append(codes).toString();
     }
 
-//    public static void main(String[] args) {
-//        try {
-//            String saveName = SecurityEncryptUtils.getUUID()+ ".png";
-//            File file = new File(savePath+saveName);
-//            FileOutputStream os = new FileOutputStream(file);
-//            String code = VerifyCodeUtil.getImageCode(os);
-//            System.out.println(code);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    /**
+     * 向客户端发送验证码
+     * @param response
+     * @return 验证码明文
+     * @throws IOException
+     */
+    public static String getVerifyCode(HttpServletResponse response) throws IOException {
+        return getVerifyCode(response, CODE_COUNT);
+    }
+
+    public static String getVerifyCode(HttpServletResponse response, int lengt) throws IOException {
+        response.setContentType("image/jpeg");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Cache-Control", "no-cache");
+        response.setDateHeader("Expires", 0);
+        return getVerifyCode(response.getOutputStream(), lengt);
+    }
+
 }

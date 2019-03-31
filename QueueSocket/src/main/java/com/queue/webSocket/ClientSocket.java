@@ -18,9 +18,9 @@ import java.util.concurrent.ConcurrentHashMap;
  * Created by liusong on 2018/4/17.
  */
 @ServerEndpoint("/ws/socket/custom/{username}")
-public class ConversationSocket {
+public class ClientSocket {
 
-    private Logger log = LogManager.getLogger(ConversationSocket.class);
+    private Logger log = LogManager.getLogger(ClientSocket.class);
 
     //用户在线集合
     private static Map<String, WebSocket> clients = new ConcurrentHashMap<String, WebSocket>();
@@ -43,7 +43,7 @@ public class ConversationSocket {
             clients.put(username, socket);
             addOnlineCount();
             json.put("token", token);
-            json.put("msg", "目前客服在线人数：" + CustomServiceSocket.getOnlineClient());
+            json.put("msg", "目前客服在线人数：" + ServiceSocket.getOnlineClient());
             socket.sendMessage(json.toJSONString());
             log.info(username+"上线了");
         }else{
@@ -62,6 +62,7 @@ public class ConversationSocket {
             clients.remove(username);
             removeOnlineCount();
             log.info(username+"下线了");
+
         }
     }
 
@@ -92,20 +93,28 @@ public class ConversationSocket {
             JSONObject json = JSONObject.parseObject(message);
             String token = json.getString("token");
             String msg = json.getString("msg");
-            if("Y".equals(json.getString("conn"))){//开启链接
-                ChatRoomSocket.open(token, curSocket);
-                result.put("msg","对话链接已开启");
-                curSocket.sendMessage(result.toJSONString());
-            }else if("N".equals(json.getString("conn"))){//关闭链接
-                ChatRoomSocket.close(token);
+            String conn = json.getString("conn");
+            if("Y".equals(conn)){//开启链接
+                if(ChatRoomSocket.open(curSocket)){
+                    result.put("msg","对话链接已开启");
+                    ChatRoomSocket.sendMessageTo(result.toJSONString(), curSocket.getRoomToken(), ChatRoomSocket.CLIENT);
+                    result.put("msg", username + "请求协助");
+                    ChatRoomSocket.sendMessageTo(result.toJSONString(), curSocket.getRoomToken(), ChatRoomSocket.SERVER);
+                }else {
+                    result.put("msg","当前坐席繁忙，请您稍后再试");
+                    curSocket.sendMessage(result.toJSONString());
+                }
+            }else if("N".equals(conn)){//关闭链接
                 result.put("msg","对话链接已关闭");
-                curSocket.sendMessage(result.toJSONString());
-            }else if("S".equals(json.getString("conn"))){//发送消息
-                WebSocket socket = ChatRoomSocket.getClient(token, 0);
-                if(socket != null){
-                    result.put("msg", msg);
-                    socket.sendMessage(result.toJSONString());
-                }else{
+                if(ChatRoomSocket.checkConnection(curSocket.getRoomToken()) == false){
+                    ChatRoomSocket.sendMessageTo(result.toJSONString(), curSocket.getRoomToken(), ChatRoomSocket.CLIENT);
+                    ChatRoomSocket.sendMessageTo(result.toJSONString(), curSocket.getRoomToken(), ChatRoomSocket.SERVER);
+                    ChatRoomSocket.close(token);
+                }else {
+                    curSocket.sendMessage(result.toJSONString());
+                }
+            }else if("S".equals(conn)){//发送消息
+                if(ChatRoomSocket.sendMessageTo(msg, curSocket.getRoomToken(), ChatRoomSocket.SERVER)){
                     result.put("msg","会话已断开或应答码错误");
                     curSocket.sendMessage(result.toJSONString());
                 }

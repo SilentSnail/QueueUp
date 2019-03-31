@@ -10,6 +10,7 @@ public class WebSocket {
     private Session session;
     private String userName;//用户名
     private String token;
+    private String roomToken;
     private Integer status;
 
     public WebSocket(){
@@ -56,5 +57,13 @@ public class WebSocket {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public String getRoomToken() {
+        return roomToken;
+    }
+
+    public void setRoomToken(String roomToken) {
+        this.roomToken = roomToken;
     }
 }

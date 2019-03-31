@@ -42,6 +42,12 @@ public class MailUtil {
         }
     }
 
+    /**
+     * 发送邮件
+     * @param mail
+     * @throws RuntimeException
+     * @throws MessagingException
+     */
     public static void sendMail(MailMessage mail) throws RuntimeException, MessagingException {
         Message msg;//声明消息对象
         try {
@@ -76,6 +82,12 @@ public class MailUtil {
         return msg;
     }
 
+    /**
+     * 设置收件人信息
+     * @param acc
+     * @return
+     * @throws AddressException
+     */
     private static Address[] getParseAddress(String[] acc) throws AddressException {
         if(acc == null || acc.length <= 0){
             return null;
@@ -87,6 +99,13 @@ public class MailUtil {
         return accs;
     }
 
+    /**
+     * 设置附件
+     * @param message
+     * @param files
+     * @return
+     * @throws MessagingException
+     */
     private static Multipart getParseMultipart(String message, String[] files) throws MessagingException {
         Multipart mult = new MimeMultipart();//创建多重消息对象
         BodyPart body = new MimeBodyPart();

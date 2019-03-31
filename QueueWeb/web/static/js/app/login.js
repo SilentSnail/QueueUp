@@ -4,7 +4,9 @@
 $(function () {
 
     $("#checkCode").click(function () {
-        this.src = "/valid/validCode";
+        console.log("刷新验证码");
+        this.src = "";
+        this.src = "/valid/loginCheckCode?t=" + Math.random();
     });
 
     layui.use('form', function () {

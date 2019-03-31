@@ -78,8 +78,12 @@ function sendMessage(conn){
     if(socket){
         var msg = document.getElementById("message").value;
         var sendMsg = '{"conn":"' + conn +'","token":"' + token + '","msg":"'+msg+'"}';
-        if(msg){
+        if("Y" == conn || "N" == conn){
             socket.send(sendMsg);
+        } else {
+            if(msg){
+                socket.send(sendMsg);
+            }
         }
     }else{
         showMessage("链接已关闭");

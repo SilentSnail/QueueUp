@@ -101,8 +101,9 @@ $(function () {
                     success:function(layero, index){//调用子页面的方法
                         $(layero).find('iframe')[0].contentWindow.loadDT(data.code);
                     },
-                    end: function(){
-                        reLoad({});
+                    end: function(v){
+                        console.log(v);
+                        // reLoad({});
                     }
                 });
             } else if(obj.event === 'del'){//删除

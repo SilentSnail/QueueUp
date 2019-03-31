@@ -1,6 +1,5 @@
 package com.queue.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.queue.entity.RoleUser;
 import com.queue.mail.entity.MailMessage;
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
@@ -46,20 +44,32 @@ public class ValidController {
 
     /**
      * 获取验证码
-     * @param request
      * @param response
      */
-    @RequestMapping("/validCode")
-    public void getValidCode(HttpServletRequest request, HttpServletResponse response) {
-        response.setContentType("image/jpeg");
-        response.setHeader("Pragma", "no-cache");
-        response.setHeader("Cache-Control", "no-cache");
-        response.setDateHeader("Expires", 0);
+    @RequestMapping("/loginCheckCode")
+    public void getValidCode(HttpServletResponse response) {
         String codeId = SecurityEncryptUtils.getUUID();
-        request.getSession().setAttribute("codeId", codeId);//先保存Session，如果验证码创建失败，则该ID无效
+        ShiroUtils.getSession().setAttribute("loginValidCode", codeId);//先保存Session，如果验证码创建失败，则该ID无效
         try {
-            String code = VerifyCodeUtil.getVerifyCode(response.getOutputStream());
+            String code = VerifyCodeUtil.getVerifyCode(response);
             this.redisUtils.setValue(codeId, SerializeUtils.toSerialize(code.toLowerCase()), 120L);//120秒失效
+        } catch (IOException e) {
+            log.error(e);
+        }
+    }
+
+    /**
+     * 获取找回密码界面验证码
+     * @param response
+     * @return
+     */
+    @RequestMapping("/rePassValidCode")
+    public void getCaptchaImage(HttpServletResponse response){
+        String codeId = SecurityEncryptUtils.getUUID();
+        ShiroUtils.getSession().setAttribute("rePassCode", codeId);//先保存Session，如果验证码创建失败，则该ID无效
+        try {
+            String code = VerifyCodeUtil.getVerifyCode(response);
+            this.redisUtils.setValue(codeId, SerializeUtils.toSerialize(code.toLowerCase()), 180L);//120秒失效
         } catch (IOException e) {
             log.error(e);
         }
@@ -69,16 +79,16 @@ public class ValidController {
      * 登录
      * @param username
      * @param password
-     * @param member
+     * @param remember
      * @return
      */
     @RequestMapping("/login")
-    public R login(String username, String password, String verifyCode, @RequestParam(defaultValue = "0") String member, HttpSession session){
-        Object attr = session.getAttribute("codeId");
+    public R login(String username, String password, String verifyCode, String remember, HttpSession session){
+        Object attr = ShiroUtils.getSession().getAttribute("loginValidCode");
         if(ObjectUtils.isEmpty(attr)){//当前session未找到ID
             return R.error("验证码已失效");
         }
-        String saveCode = SerializeUtils.deSerialize(redisUtils.get(String.valueOf(attr)), String.class);
+        String saveCode = SerializeUtils.deSerialize(this.redisUtils.get(String.valueOf(attr)), String.class);
         if(ObjectUtils.isEmpty(saveCode)){
             return R.error("验证码已失效");
         }
@@ -89,10 +99,12 @@ public class ValidController {
             }catch (Exception e){
                 return R.error(e.getMessage());
             }
-            log.info(member);
             SecurityUserEntity token = new SecurityUserEntity(username, SecurityEncryptUtils.toMD5(password));
             Subject subject = org.apache.shiro.SecurityUtils.getSubject();
             try {
+                if(!ObjectUtils.isEmpty(remember)){
+                    token.setRememberMe(true);
+                }
                 subject.login(token);
                 return R.ok();
             } catch (UnknownAccountException e){
@@ -111,33 +123,39 @@ public class ValidController {
     /**
      * 忘记密码
      * @param email
-     * @param request
      * @return
      */
     @RequestMapping("/rePassword")
-    public R rePassword(@RequestParam(value = "email") String email, HttpServletRequest request){
+    public R rePassword(@RequestParam(value = "email") String email, String checkCode){
         try {
             Asserts.isEmpty(email, "邮箱不能为空");
-            RoleUser user = new RoleUser();
-            user.setEmail(email);
-            user = this.userService.getOne(new QueryWrapper<RoleUser>().eq("email", email));
-            if(ObjectUtils.isEmpty(user)){
-                return R.error("该邮箱尚未注册，请确认邮箱是否正确");
+            Object attr = ShiroUtils.getSession().getAttribute("rePassCode");
+            if(ObjectUtils.isEmpty(attr)){//当前session未找到ID
+                return R.error("验证码已失效");
             }
-            String uuid = SecurityEncryptUtils.getUUID();
-            String sign = SecurityEncryptUtils.toMD5(JSONObject.toJSONString(user));
-            //保存
-//            ValidLog valid = new ValidLog();
-//            valid.setCode(uuid).setLogIp(HttpContextUtils.getIpAddress(request));
-//            valid.setSign(sign).setUserId(user.getUserId());
-//            valid.setEffectiveTime(DateUtils.getPlusTime(10L));
-//            this.validLogService.saveValidByEntity(valid);
-            //开始发邮件
-            String url = "http://localhost:8080/valid/change/" + uuid + "/" + sign;
-            String content = "密码重置链接：" + url + "<br/> 链接十分钟内有效";
-            MailMessage mail = new MailMessage("密码重置", content, email);
-            this.mailService.sendMail(mail);//邮件先不发
-            return R.ok();
+            String saveCode = SerializeUtils.deSerialize(this.redisUtils.get(String.valueOf(attr)), String.class);
+            if(ObjectUtils.isEmpty(saveCode)){
+                return R.error("验证码已失效");
+            }
+            if(checkCode.toLowerCase().equals(saveCode)){
+                RoleUser user = new RoleUser();
+                user.setEmail(email);
+                user = this.userService.getOne(new QueryWrapper<RoleUser>().eq("email", email));
+                if(ObjectUtils.isEmpty(user)){
+                    return R.error("该邮箱尚未注册，请确认邮箱是否正确");
+                }
+                //开始发邮件
+                String code = new StringBuffer().append(VerifyCodeUtil.getCode(8)).toString();
+//                String url = "http://localhost:8080/valid/change/" + uuid + "/" + sign;
+                String content = "您的密码重置验证码为" + code + "<br/> 验证码五分钟内有效";
+                String mailValidCodeId = SecurityEncryptUtils.getUUID();
+                this.redisUtils.setValue(mailValidCodeId, SerializeUtils.toSerialize(mailValidCodeId), 300L);
+                ShiroUtils.getSession().setAttribute("mailValidCodeId", mailValidCodeId);
+                MailMessage mail = new MailMessage("密码重置", content, email);
+                this.mailService.sendMail(mail);//发邮件需要先配置账号密码
+                return R.ok();
+            }
+            return R.error("验证码错误");
         } catch (Exception e) {
             log.error(e);
             return R.error("未知错误");
@@ -145,33 +163,53 @@ public class ValidController {
     }
 
     /**
-     * 验证用户名
-     * @param name
+     * 获取修改密码令牌
+     * @param email
+     * @param verCode
+     * @param validCode
      * @return
      */
-    @RequestMapping("/checkName")
-    public R checkUser(@RequestParam(value = "username") String name){
-        try {
-            RoleUser user = this.userService.getOne(new QueryWrapper<RoleUser>().eq("userName", name));
-            if(ObjectUtils.isEmpty(user)){
-                return R.ok();
-            }
-            return R.error("用户已存在");
-        } catch (Exception e) {
-            log.error(e);
-            return R.error();
+    @RequestMapping("/getSubject")
+    public R checkValidCode(String email, String verCode, String validCode){
+        Object mailAttr = ShiroUtils.getSession().getAttribute("mailValidCodeId");
+        Object codeAttr = ShiroUtils.getSession().getAttribute("rePassCode");
+        Asserts.isNull(mailAttr, "验证码已失效");
+        Asserts.isNull(codeAttr, "验证码已失效");
+        String savVerCode = SerializeUtils.deSerialize(this.redisUtils.get(String.valueOf(mailAttr)), String.class);
+        String savValidCode = SerializeUtils.deSerialize(this.redisUtils.get(String.valueOf(codeAttr)), String.class);
+        Asserts.isEmpty(savVerCode, "验证码已过期");
+        Asserts.isEmpty(savValidCode, "验证码已过期");
+        if(savVerCode.equals(verCode) & savValidCode.equals(validCode)){
+            String subject = SecurityEncryptUtils.getUUID();
+            //这里保存用户对象会好一点，图简单
+            this.redisUtils.setValue(subject, SerializeUtils.toSerialize(email), 600L);
+            return R.ok(subject);
         }
+        return R.error("验证码错误");
     }
 
     /**
-     * 重置密码，这里默认的是123456
+     * 重置密码
+     * @return
+     */
+    @RequestMapping("/rePassChange")
+    public R initPwd(@RequestParam String code, @RequestParam String password, String repass){
+        String sbj = SerializeUtils.deSerialize(this.redisUtils.get(code), String.class);
+        Asserts.isEmpty(sbj, "令牌已失效");
+        //开始修改密码业务
+        return R.ok();
+    }
+
+    /**
+     * 重置密码 该功能已废弃
      * @param id
      * @param code
      * @return
      */
     @RequestMapping("/change/{id}/{code}")
+    @Deprecated
     public R initPwd(@PathVariable String id, @PathVariable String code){
-        Map<String,Object> param = new HashMap<String, Object>();
+        Map<String,Object> param = new HashMap();
         param.put("code", id);
         param.put("sign", code);
         try {
@@ -184,11 +222,5 @@ public class ValidController {
             log.error(e);
             return R.error("未知错误");
         }
-    }
-
-    @RequestMapping("/capt")
-    public R getCaptchaImage(){
-
-        return R.ok();
     }
 }

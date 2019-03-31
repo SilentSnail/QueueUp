@@ -2,6 +2,7 @@ package com.queue.webSocket;
 
 import com.alibaba.fastjson.JSONObject;
 import com.queue.entity.WebSocket;
+import com.queue.utils.CheckSumBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,6 +10,7 @@ import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -16,9 +18,9 @@ import java.util.concurrent.ConcurrentHashMap;
  * 客服集合
  */
 @ServerEndpoint("/ws/socket/service/{username}")
-public class CustomServiceSocket {
+public class ServiceSocket {
 
-    private Logger log = LogManager.getLogger(CustomServiceSocket.class);
+    private Logger log = LogManager.getLogger(ServiceSocket.class);
 
     //客服人员在线集合
     private static Map<String, WebSocket> clients = new ConcurrentHashMap<String, WebSocket>();
@@ -28,14 +30,17 @@ public class CustomServiceSocket {
     @OnOpen
     public void open(@PathParam("username") String username, Session session){
         if(checkOnline(username)){
-            clients.put(username, new WebSocket(username, session));
+            WebSocket socket = new WebSocket(username, session);
+            String token = CheckSumBuilder.getMD5(username + UUID.randomUUID().toString());
+            socket.setToken(token);
+            clients.put(username, socket);
             addOnlineClient();
             JSONObject result = new JSONObject();
-            result.put("msg", "目前客户在线人数" + ConversationSocket.getOnlineCount());
+            result.put("token", token);
+            result.put("msg", "目前客户在线人数：" + ClientSocket.getOnlineCount());
             sendMessageTo(username, result.toJSONString());
-
-            result.put("msg", "目前客服在线人数" + getOnlineClient());
-            ConversationSocket.sendMessageAll(result.toJSONString());
+            result.put("msg", "目前客服在线人数：" + getOnlineClient());
+            ClientSocket.sendMessageAll(result.toJSONString());
             log.info("客服人员："+username+"上线了");
         }else{
             log.info("客服人员："+username+"已经在线了");
@@ -43,7 +48,7 @@ public class CustomServiceSocket {
     }
 
     /**
-     *
+     * 发送消息
      * @param username
      * @param message {"msg":"", "token":"", "conn":""}
      */
@@ -56,21 +61,41 @@ public class CustomServiceSocket {
         String token = json.getString("token");
         String conn = json.getString("conn");
         if("N".equals(conn)){
-            ChatRoomSocket.close(token);
             result.put("msg","对话链接已关闭");
-            serSocket.sendMessage(result.toJSONString());
-        }else if("S".equals(conn)){
-            WebSocket socket = ChatRoomSocket.getClient(token, 1);
+            serSocket.setStatus(0);
+            if(ChatRoomSocket.checkConnection(serSocket.getToken())){
+                ChatRoomSocket.sendMessageTo(result.toJSONString(), serSocket.getRoomToken(), ChatRoomSocket.CLIENT);
+                ChatRoomSocket.sendMessageTo(result.toJSONString(), serSocket.getRoomToken(), ChatRoomSocket.SERVER);
+                ChatRoomSocket.close(serSocket.getRoomToken());
+            } else {
+                serSocket.sendMessage(result.toJSONString());
+            }
+
+        } else if("S".equals(conn)){
+            WebSocket socket = ChatRoomSocket.getClient(token, ChatRoomSocket.CLIENT);
             if(socket == null){
                 result.put("msg","链接已断开或应答码错误");
                 serSocket.sendMessage(result.toJSONString());
-            }else{
+            } else {
                 result.put("msg", msg);
                 socket.sendMessage(result.toJSONString());
             }
-        }else{
+        } else {
             result.put("msg","-1");
             serSocket.sendMessage(result.toJSONString());
+        }
+    }
+
+    /**
+     * 服务端群发消息
+     * @param msg
+     */
+    public static void sendAllMessage(String msg){
+        for (String key : clients.keySet()) {
+            WebSocket socket = clients.get(key);
+            JSONObject json = new JSONObject();
+            json.put("msg", msg);
+            socket.sendMessage(json.toJSONString());
         }
     }
 
@@ -116,7 +141,7 @@ public class CustomServiceSocket {
                     socket.setStatus(1);
                     return socket;
                 }else{
-                    clients.remove(socket);
+                    clients.remove(socket.getUserName());
                     removeOnlineClient();
                 }
             }

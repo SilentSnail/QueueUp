@@ -16,8 +16,8 @@ public class SendMailPool implements Runnable {
     private Logger log = LogManager.getLogger(this.getClass());
 
     private ThreadPoolExecutor pool;//执行线程池
-    private static int poolSize = 3;//线程池大小
-    private static int maxPoolSize = 5;//线程池最大大小
+    private static int poolSize = 3;//最小线程数
+    private static int maxPoolSize = 5;//最大线程数
     private static Long keepLiveTime = 30000L;//线程没有任务执行时最多保持多久时间会终止
     private static TimeUnit unit = TimeUnit.MILLISECONDS;//keepLiveTime的时间单位
     private LinkedBlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>();//阻塞队列

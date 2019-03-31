@@ -3,9 +3,7 @@
     <CLASSES>
       <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/org/apache/poi/poi-ooxml-schemas/3.17/poi-ooxml-schemas-3.17.jar!/" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/org/apache/poi/poi-ooxml-schemas/3.17/poi-ooxml-schemas-3.17-javadoc.jar!/" />
-    </JAVADOC>
+    <JAVADOC />
     <SOURCES>
       <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/org/apache/poi/poi-ooxml-schemas/3.17/poi-ooxml-schemas-3.17-sources.jar!/" />
     </SOURCES>
