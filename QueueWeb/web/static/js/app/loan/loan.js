@@ -8,10 +8,10 @@ $(function () {
         //加载表格数据
         table.render({
             elem:'#showLoanList',
-            height:472,
+            height:275,
             url:'/loan/list',
             method:'POST',
-            where:{type:0, status:1},
+            where:{type:"", status:""},
             request:{
                 pageName:'page.pageNo',
                 limitName:'page.pageSize'
@@ -20,30 +20,21 @@ $(function () {
                 statusCode:'1'
             },
             cols:[[
-                {fixed: 'left', field: 'code', title: '操作', width:115, align:'center', toolbar: '#toolHtml'},
                 {field: 'name', title: '姓名', width:80},
                 {field: 'sex', title: '性别', width:80, templet:function(d){
                     if(d.sex == 'female') return '女';
                     else return '男';
                 }},
                 {field: 'idCard', title: '身份证号', width:180},
-                {field: 'loanType', title: '类型', width:60, templet:function(d){
-                    if(d.loanType == 0) return '借出'; else return '收款';
-                }},
                 {field: 'loanType', title: '类型', width:80, templet:function(d){
-                    if(d.loanChannel == 1) return '现金';
-                    else if(d.loanChannel == 2) return '支付宝';
-                    else if(d.loanChannel == 3) return '微信';
-                    else if(d.loanChannel == 4) return '转账';
-                    else if(d.loanChannel == 0) return '其他';
-                    else return '无';
+                    if(d.loanType == 1) return '借款';
+                    if(d.loanType == 0) return '已两清';
+                    else return '借出';
                 }},
                 {field: 'phone', title: '手机号', width:120},
                 {field: 'amount', title: '金额', width:120},
-                {field: 'status', title: '状态', width:60, templet:function(d){
-                    if(d.status == 0) return '无效'; else return '有效';
-                }},
-                {field: 'address', title: '联系地址', width:240}
+                {field: 'address', title: '联系地址', width:240},
+                {fixed: 'right', field: 'code', title: '操作', width:95, align:'center', toolbar: '#toolHtml'}
             ]],
             parseData:function (res) {
                 return {
@@ -59,8 +50,8 @@ $(function () {
                 first:'首页',
                 last:'尾页',
                 groups:5,
-                limits:[5, 10, 15, 20, 50],
-                limit:10
+                limits:[5, 10, 20, 50],
+                limit:5
             }
         });
 
@@ -88,30 +79,43 @@ $(function () {
             });
         }
 
+        $('.addLoan').click(function () {
+            parent.layer.open({
+                type: 2,
+                title:'借款/还款',
+                area: ['660px', '500px'],
+                fixed: false, //不固定
+                maxmin: true,
+                content: '/pages/loan/addLoanInfo.html',
+                success:function(layero, index){
+
+                }
+            });
+        });
+
         table.on('tool(loanData)', function(obj){
             var data = obj.data;
             if(obj.event === 'detail'){//修改
+                // parent.layer.open({
+                //     type: 2,
+                //     title:'修改借款',
+                //     area: ['660px', '500px'],
+                //     fixed: false, //不固定
+                //     maxmin: true,
+                //     content: '/pages/loan/editLoanInfo.html',
+                //     success:function(layero, index){//调用子页面的方法
+                //         $(layero).find('iframe')[0].contentWindow.loadDT(data.code);
+                //     }
+                // });
+                window.parent.addItem('/pages/contact/linkmanDetail.html?code='+data.code, data.name+'详情');
+            } else if(obj.event === 'repay'){//还款
                 parent.layer.open({
                     type: 2,
-                    title:'修改借款',
+                    title:'还款',
                     area: ['660px', '500px'],
                     fixed: false, //不固定
                     maxmin: true,
-                    content: '/pages/loan/editLoanInfo.html',
-                    success:function(layero, index){//调用子页面的方法
-                        $(layero).find('iframe')[0].contentWindow.loadDT(data.code);
-                    },
-                    end: function(v){
-                        console.log(v);
-                        // reLoad({});
-                    }
-                });
-            } else if(obj.event === 'del'){//删除
-                ajax("/loan/del", {code:data.code}, function(data){
-                    if(data.code == 1){
-                        parent.layer.alert("OK", {icon:1});
-                        reLoad({});
-                    }
+                    content: '/pages/loan/addLoanInfo.html?type=1&userId=' + data.code
                 });
             }
         });

@@ -6,10 +6,11 @@ package com.test;
 public class RandomTest {
 
     public static void main(String[] args) {
-        int[] ints = new int[]{80, 650, 900, 500, 520, 600, 300, 440, 680};
-        int result = 1340;
-        for (int i = 0; i < ints.length; i++) {
-            System.out.println(result - ints[i]);
-        }
+        System.out.println(String.valueOf(-13) + " -- " + String.valueOf(Integer.toBinaryString(-13)));
+        System.out.println(String.valueOf(-13 >> 1) + " -- " + String.valueOf(Integer.toBinaryString(-13 >> 1)));
+        System.out.println(String.valueOf(-13 >> 2) + " -- " + String.valueOf(Integer.toBinaryString(-13 >> 2)));
+        System.out.println(String.valueOf(-13 >> 3) + " -- " + String.valueOf(Integer.toBinaryString(-13 >> 3)));
+        System.out.println(String.valueOf(-13 >> 4) + " -- " + String.valueOf(Integer.toBinaryString(-13 >> 4)));
+        System.out.println(String.valueOf(-13 >> 5) + " -- " + String.valueOf(Integer.toBinaryString(-13 >> 5)));
     }
 }

@@ -4,9 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Iterator;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * Created by liusong on 2018/6/9.
@@ -14,7 +12,10 @@ import java.util.concurrent.TimeUnit;
 public class SendMailPool implements Runnable {
 
     private Logger log = LogManager.getLogger(this.getClass());
-
+//    Executors.newCachedThreadPool();//创建预定义可缓存线程池
+//    Executors.newFixedThreadPool(100);//创建预定义定长线程池
+//    Executors.newScheduledThreadPool(100);//创建预定义定长线程池,支持定时以及周期性任务执行
+//    Executors.newSingleThreadExecutor();//创建一个单线程化线程池，用唯一的线程来执行任务，保证任务按指定顺序执行
     private ThreadPoolExecutor pool;//执行线程池
     private static int poolSize = 3;//最小线程数
     private static int maxPoolSize = 5;//最大线程数
@@ -116,7 +117,7 @@ public class SendMailPool implements Runnable {
 
     public SendMailPool(int poolSize, int maxPoolSize, Long keepLiveTime, TimeUnit unit){
         if(pool == null) {
-            pool = new ThreadPoolExecutor(poolSize, maxPoolSize, keepLiveTime, unit, queue);
+            pool = new ThreadPoolExecutor(poolSize, maxPoolSize, keepLiveTime, unit, queue);//自定义线程池
         }
     }
 

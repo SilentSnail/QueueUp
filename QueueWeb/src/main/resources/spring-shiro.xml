@@ -18,6 +18,7 @@
         <property name="cacheManager" ref="springCacheManager" />
     </bean>
 
+    <!-- Shiro Session 持久化 -->
     <bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO">
         <property name="cacheManager" ref="shiroCache" />
         <property name="sessionIdGenerator">
@@ -26,16 +27,20 @@
         <property name="activeSessionsCacheName" value="activeSessionCache" />
     </bean>
 
+    <!-- session配置 -->
     <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
         <property name="globalSessionTimeout" value="${shiro.session.timeout}" />
         <property name="sessionDAO" ref="sessionDAO" />
     </bean>
 
+    <!-- 安全管理对象 -->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="myRealm" />
         <property name="sessionManager" ref="sessionManager" />
+        <!--<property name="rememberMeManager" ref="rememberMeManager" />-->
     </bean>
 
+    <!-- Shiro 过滤器配置 -->
     <bean id="securityFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager" />
         <property name="loginUrl" value="/pages/login.html" />
@@ -49,6 +54,18 @@
                 /** = authc
             </value>
         </property>
+    </bean>
+
+    <!-- 手动指定Cookie参数 -->
+    <bean id="rememberMeCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg value="rememberMe" />
+        <property name="httpOnly" value="true" />
+        <property name="value" value="604800" /> <!-- 7*24*3600 设置Cookie有效期 -->
+    </bean>
+
+    <!--Cookie管理-->
+    <bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+        <property name="cookie" ref="rememberMeCookie" />
     </bean>
 
     <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">

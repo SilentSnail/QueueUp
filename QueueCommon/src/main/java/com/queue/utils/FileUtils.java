@@ -1,5 +1,6 @@
 package com.queue.utils;
 
+import com.queue.enums.FileType;
 import org.apache.commons.lang.ArrayUtils;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -86,11 +87,13 @@ public class FileUtils {
      */
     public static String getNewFileName(String oldFileName){
         StringBuffer str = new StringBuffer();
-        synchronized (oldFileName){
+        synchronized (str){
             str.append(SecurityEncryptUtils.getUUID());
             try {
-                str.append(oldFileName.substring(oldFileName.lastIndexOf("."), oldFileName.length()));
+                str.append(oldFileName.substring(oldFileName.lastIndexOf(".")));
             } catch (Exception e) {
+                throw e;
+            } finally {
                 str = new StringBuffer();
             }
             return str.toString();
@@ -104,13 +107,14 @@ public class FileUtils {
      */
     public static String convertFilePath(String path){
         StringBuffer newPath = new StringBuffer();
+        newPath.append("/");
         synchronized (newPath){
             String[] names;
             if(path.indexOf("\\") == -1){
                 names = path.split("/");
-                newPath.append("/");
             }else{
                 names = path.split("\\\\");
+                names[0] = null;
             }
             for (String name : names) {
                 if(ObjectUtils.isEmpty(name)){
@@ -121,6 +125,13 @@ public class FileUtils {
             }
             return newPath.toString();
         }
+    }
+
+    public static boolean checkFileType(FileType type, String head){
+        if (type.getType().equals(head)){
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -137,7 +148,6 @@ public class FileUtils {
         if(ObjectUtils.isEmpty(saveName)){
             throw new RuntimeException("文件名错误");
         }
-        savePath = convertFilePath(savePath);
         File saveFile = new File(savePath + saveName);
         if(!saveFile.exists()){
             saveFile.mkdirs();

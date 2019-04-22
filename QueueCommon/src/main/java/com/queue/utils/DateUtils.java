@@ -37,7 +37,7 @@ public class DateUtils {
     /**
      * 依据默认格式 格式化时间
      * @param text 日期字符串
-     * @return
+     * @return 格式化后的时间
      */
     public static LocalDateTime parseDateTime(String text){
         try {
@@ -49,8 +49,9 @@ public class DateUtils {
 
     /**
      * 依据日期格式 格式化日期
-     * @param text
-     * @return
+     * @param text 日期字符串 如果为空 返回当前时间
+     * @param format 日期格式，如果为空，将使用默认格式
+     * @return 格式化后的时间，默认为当前时间
      */
     public static LocalDate parseDate(String text, String format){
         if(StringUtils.hasText(text)){
@@ -69,7 +70,7 @@ public class DateUtils {
     /**
      * 格式化时间
      * @param text 时间字符串
-     * @return
+     * @return 格式化后的时间 默认为0：0：0
      */
     public static LocalTime parseTime(String text){
         if(StringUtils.hasText(text)){
@@ -111,8 +112,8 @@ public class DateUtils {
      * 获取日期差
      * @param start 开始日期
      * @param end 结束日期
-     * @param type
-     * @return
+     * @param type 获取类型
+     * @return 差值
      */
     public static int getDateDifference(LocalDate start, LocalDate end, String type){
         if("Y".equals(type.toUpperCase())){
@@ -128,9 +129,9 @@ public class DateUtils {
 
     /**
      * 当前时间差
-     * @param time
-     * @param unit
-     * @return
+     * @param time 开始时间
+     * @param unit 差值类型
+     * @return 差值
      */
     public static long getTimeDifference(LocalDateTime time, ChronoUnit unit){
         return getTimeDifference(time, LocalDateTime.now(), unit);
@@ -138,10 +139,10 @@ public class DateUtils {
 
     /**
      * 时间差 未测试
-     * @param start
-     * @param end
-     * @param unit
-     * @return
+     * @param start 开始时间
+     * @param end 结束时间
+     * @param unit 差值类型
+     * @return 差值
      */
     public static long getTimeDifference(LocalDateTime start, LocalDateTime end, ChronoUnit unit){
         return start.until(end, unit);

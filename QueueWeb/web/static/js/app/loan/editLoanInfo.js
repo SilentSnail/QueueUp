@@ -46,11 +46,11 @@ layui.use(['laydate', 'form'], function () {
 });
 
 function loadDT(code) {
-    if(code)(
+    if(code){
         ajax('/loan/findByCode', {code:code}, function (res) {
             var data = res.data;
             if(res.code == "1"){
-                form.render();//不知道为嘛得先加一个这个后面的才会生效，不加这个不行
+                form.render();//form需要重新渲染
                 // $('select[name="loanChannel"]').val(data.loanChannel).attr("disabled", "disabled");
                 $('select[name="loanChannel"]').val(data.loanChannel);
                 $('input[name="amount"]').val(data.amount);
@@ -73,7 +73,6 @@ function loadDT(code) {
                 }
                 form.render();
             }
-        })
-    )
-
-}
+        });
+    }
+};

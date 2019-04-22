@@ -33,13 +33,9 @@ public class LoanServiceImpl extends ServiceImpl<LoanMapper, Loan> implements Lo
 
     @Override
     public boolean updateLoanByCode(Loan loan) {
-        try {
-            Integer count = this.loanMapper.updateLoanByCode(loan);
-            if(count == 1){
-                return true;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        Integer count = this.loanMapper.updateLoanByCode(loan);
+        if(count == 1){
+            return true;
         }
         return false;
     }

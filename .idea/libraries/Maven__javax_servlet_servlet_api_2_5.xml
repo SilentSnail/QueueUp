@@ -3,7 +3,9 @@
     <CLASSES>
       <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/javax/servlet/servlet-api/2.5/servlet-api-2.5-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/" />
     </SOURCES>

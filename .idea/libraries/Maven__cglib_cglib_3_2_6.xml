@@ -3,7 +3,9 @@
     <CLASSES>
       <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/cglib/cglib/3.2.6/cglib-3.2.6.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/cglib/cglib/3.2.6/cglib-3.2.6-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/cglib/cglib/3.2.6/cglib-3.2.6-sources.jar!/" />
     </SOURCES>

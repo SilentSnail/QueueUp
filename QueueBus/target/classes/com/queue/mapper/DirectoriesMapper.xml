@@ -29,7 +29,7 @@
     </sql>
 
     <select id="findBySearchVo" parameterType="com.queue.entity.vo.DirectorSearchVo" resultType="com.queue.entity.dto.DirectorListDto">
-        select d.user_code, d.name, d.birthday, d.sex, d.phone, d.email, d.address, d.sign
+        select d.id, d.user_code, d.name, d.birthday, d.sex, d.phone, d.email, d.address, d.sign
           from directories d where d.del_status = false
         <if test="name != null and name != ''">
             and d.name like concat('%', #{name},'%')

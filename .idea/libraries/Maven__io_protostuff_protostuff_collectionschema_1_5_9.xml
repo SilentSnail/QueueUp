@@ -3,7 +3,9 @@
     <CLASSES>
       <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/io/protostuff/protostuff-collectionschema/1.5.9/protostuff-collectionschema-1.5.9.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/io/protostuff/protostuff-collectionschema/1.5.9/protostuff-collectionschema-1.5.9-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/io/protostuff/protostuff-collectionschema/1.5.9/protostuff-collectionschema-1.5.9-sources.jar!/" />
     </SOURCES>

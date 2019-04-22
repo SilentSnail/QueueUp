@@ -20,6 +20,7 @@ import java.time.LocalDateTime;
 public class BaseController {
 
     protected Logger log = LogManager.getLogger(this.getClass());
+
     @Autowired
     private RedisUtils<String, byte[]> redisUtils;
 
@@ -38,7 +39,7 @@ public class BaseController {
      * @param content
      * @return
      */
-    protected String set(Class content){
+    protected String setObject(Class content){
         String uuid = SecurityEncryptUtils.getUUID();
         this.redisUtils.setValue(uuid, SerializeUtils.toSerialize(content));
         return uuid;

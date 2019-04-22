@@ -10,11 +10,9 @@ public class LoanListDto {
     private String sex;
     private String phone;
     private String address;
-    private Integer loanType;
     private String idCard;
     private Double amount;
-    private Integer status;
-    private Integer loanChannel;
+    private Integer loanType;
 
     public String getCode() {
         return code;
@@ -56,14 +54,6 @@ public class LoanListDto {
         this.address = address;
     }
 
-    public Integer getLoanType() {
-        return loanType;
-    }
-
-    public void setLoanType(Integer loanType) {
-        this.loanType = loanType;
-    }
-
     public Double getAmount() {
         return amount;
     }
@@ -72,12 +62,12 @@ public class LoanListDto {
         this.amount = amount;
     }
 
-    public Integer getStatus() {
-        return status;
+    public Integer getLoanType() {
+        return loanType;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setLoanType(Integer loanType) {
+        this.loanType = loanType;
     }
 
     public String getIdCard() {
@@ -88,11 +78,4 @@ public class LoanListDto {
         this.idCard = idCard;
     }
 
-    public Integer getLoanChannel() {
-        return loanChannel;
-    }
-
-    public void setLoanChannel(Integer loanChannel) {
-        this.loanChannel = loanChannel;
-    }
 }

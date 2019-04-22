@@ -19,7 +19,6 @@ public class SysStaticInterceptor implements HandlerInterceptor {
 
     //执行顺序1
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception{
-        //交由shiro管理
         return true;//执行顺序2
     }
 

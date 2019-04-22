@@ -3,7 +3,9 @@
     <CLASSES>
       <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21-sources.jar!/" />
     </SOURCES>

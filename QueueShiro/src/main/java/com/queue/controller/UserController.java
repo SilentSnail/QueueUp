@@ -3,12 +3,10 @@ package com.queue.controller;
 import com.queue.entity.RoleUser;
 import com.queue.entity.vo.UserSearchVo;
 import com.queue.service.RoleUserService;
-import com.queue.shiro.bean.SecurityUserEntity;
 import com.queue.utils.PageBean;
 import com.queue.utils.R;
 import com.queue.utils.SecurityEncryptUtils;
 import com.queue.utils.ShiroUtils;
-import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -43,8 +41,7 @@ public class UserController extends BaseController {
      */
     @RequestMapping("/checkPwd")
     public R checkPassword(@RequestParam("checkPwd") String password){
-        SecurityUserEntity securityUser = (SecurityUserEntity) org.apache.shiro.SecurityUtils.getSubject().getPrincipal();
-        RoleUser user = securityUser.getUser();
+        RoleUser user = ShiroUtils.getLoginUser();
         if(!user.getPassword().equals(SecurityEncryptUtils.toMD5(password))){
             //5次密码不匹配应该直接踢出登录
             return R.error("密码不匹配");
@@ -84,8 +81,7 @@ public class UserController extends BaseController {
      */
     @RequestMapping("/logout")
     public R logout(){
-        Subject subject = org.apache.shiro.SecurityUtils.getSubject();
-        subject.logout();
+        ShiroUtils.getSubject().logout();
         return R.ok();
     }
 }

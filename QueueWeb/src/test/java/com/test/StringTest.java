@@ -1,9 +1,14 @@
 package com.test;
 
 import com.queue.utils.SecurityEncryptUtils;
+import com.test.tool.CheckTest;
 import com.test.tool.UserInfo;
 
 import java.lang.reflect.Constructor;
+import java.util.Arrays;
+import java.util.IdentityHashMap;
+import java.util.Map;
+import java.util.stream.Stream;
 
 /**
  * Created by liusong on 2018/8/20.
@@ -11,7 +16,29 @@ import java.lang.reflect.Constructor;
 public class StringTest {
 
     public static void main(String[] args) {
-        System.out.println(SecurityEncryptUtils.getUUID());
+        String[] strs = new String[]{"1","tom","2","tom","3","tom","4","jack"};
+
+        //lambda方式
+        String uuid = lambdaToolFunction(strs, (p)-> p.equals("tom"));
+        System.out.println(uuid);
+
+        //Stream API方式
+        Stream stream = Arrays.stream(strs);//构建一个Stream
+        stream.filter((p)-> p.equals("tom"));//进行数据筛选和转换
+        stream.limit(strs.length);//返回stream前面的n个元素
+//        stream.skip(2);//与limit相反，忽略掉前N个元素（或者说去掉前N个元素）
+        stream.forEach(System.out::println);//输出
+
+        Map map = new IdentityHashMap<>();
+    }
+
+    public static String lambdaToolFunction(String[] ids, CheckTest<String> ck){
+        for (String id: ids) {
+            if(ck.test(id)){
+                return SecurityEncryptUtils.getUUID();
+            }
+        }
+        return "";
     }
 
     public static void getSql(){
@@ -22,7 +49,6 @@ public class StringTest {
             System.out.println("insert into city (sign, code, name, postalcode, parent_id) values ('sign', 'code', 'name', 'postalcode', 'parent_id');");
         }
     }
-
 
     public static void constructor(){
         Constructor<?>[] cons = UserInfo.class.getConstructors();

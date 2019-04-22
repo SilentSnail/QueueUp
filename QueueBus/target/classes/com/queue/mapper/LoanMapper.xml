@@ -23,25 +23,38 @@
     </sql>
 
     <select id="searchByParam" parameterType="com.queue.entity.vo.LoanSearchVo" resultType="com.queue.entity.dto.LoanListDto">
-        select l.code, d.name, d.sex, d.phone, d.address, l.loan_type,
-               abs(l.amount) as amount, l.status, d.id_card,
-               l.loan_channel
-        from loan l left join directories d on l.user_id = d.id
+        select d.user_code as code, d.name, d.sex, d.phone, d.address, abs(l.amount) as amount, d.id_card,
+        case when l.amount &gt; 0 then 1
+             when l.amount &lt; 0 then -1
+             else 0 end as loanType
+        from (select user_id, sum(amount) as amount from loan n
+            where 1 = 1
+            <if test="status != null">
+                and n.status = #{status}
+            </if>
+            <if test="startTime != null">
+                and n.loan_time &gt; #{startTime}
+            </if>
+            <if test="endTime != null">
+                and n.loan_time &lt; #{endTime}
+            </if>
+            group by user_id) l
+        left join
+        directories d on l.user_id = d.id
         where d.status = 1
         <if test="name != null and name != ''">
             and d.name like concat('%', #{name},'%')
         </if>
         <if test="type != null">
-            and l.loan_type = #{type}
-        </if>
-        <if test="status != null">
-            and l.status = #{status}
-        </if>
-        <if test="startTime != null">
-            and l.loan_time &gt;= #{startTime}
-        </if>
-        <if test="endTime != null">
-            and l.loan_time &lt;= #{endTime}
+            <if test="type = 1">
+                and l.amount &gt; 0
+            </if>
+            <if test="type = 0">
+                and l.amount = 0
+            </if>
+            <if test="type = -1">
+                and l.amount &lt; 0
+            </if>
         </if>
     </select>
 

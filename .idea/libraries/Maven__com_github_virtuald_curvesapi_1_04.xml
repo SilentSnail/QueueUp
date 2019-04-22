@@ -3,7 +3,9 @@
     <CLASSES>
       <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/com/github/virtuald/curvesapi/1.04/curvesapi-1.04.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/com/github/virtuald/curvesapi/1.04/curvesapi-1.04-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar:///Volumes/TEST_HD/Document/mavenRepository/com/github/virtuald/curvesapi/1.04/curvesapi-1.04-sources.jar!/" />
     </SOURCES>

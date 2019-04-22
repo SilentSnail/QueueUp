@@ -7,6 +7,7 @@ import com.queue.entity.vo.UserSearchVo;
 import com.queue.mapper.RoleUserMapper;
 import com.queue.service.RoleUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedHashSet;
@@ -27,11 +28,13 @@ public class RoleUserServiceImpl extends ServiceImpl<RoleUserMapper, RoleUser> i
     @Autowired
     private RoleUserMapper roleUserMapper;
 
+
     @Override
     public List<SysUserDto> getUserByParam(UserSearchVo search) {
         return this.roleUserMapper.getUserByParam(search);
     }
 
+    @Cacheable(value = "defaultCache", key = "#id")
     @Override
     public Set<String> getUserRoles(String id) {
         return new LinkedHashSet<>();
