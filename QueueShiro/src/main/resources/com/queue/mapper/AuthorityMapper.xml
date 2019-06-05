@@ -8,7 +8,8 @@
         <result column="code" property="code" />
         <result column="role_id" property="roleId" />
         <result column="user_id" property="userId" />
-        <result column="res_id" property="resId" />
+        <result column="pms_id" property="pmsId" />
+        <result column="aut_type" property="autType" />
         <result column="create_time" property="createTime" />
         <result column="creator" property="creator" />
         <result column="status" property="status" />
@@ -20,7 +21,22 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, code, role_id, user_id, res_id, create_time, creator, status, update_time, reviser, del_status, describe_inf
+        id, code, role_id, user_id, pms_id, aut_type, create_time, creator, status, update_time, reviser, del_status, describe_inf
     </sql>
 
+    <select id="searchPermissionByInfo" parameterType="java.lang.Integer" resultType="com.queue.entity.dto.UserPermission">
+        select p.name, p.url from authority a left join permissions p on a.pms_id = p.id where a.aut_type = 0
+        union all
+        select p.name, p.url from authority a left join permissions p on a.pms_id = p.id where a.aut_type = 2 and a.user_id = #{userId}
+        union all
+        select p.name, p.url from authority a left join permissions p on a.pms_id = p.id where a.aut_type = 1 and a.role_id = #{roleId}
+    </select>
+
+    <select id="searchAuthorityList" parameterType="com.queue.entity.vo.AuthoritySearchVo" resultType="com.queue.entity.dto.AuthorityInfoDto">
+        select a.code from authority a
+         where a.del_status = false
+         <if test="code != null">
+             and a.code = #{code}
+         </if>
+    </select>
 </mapper>

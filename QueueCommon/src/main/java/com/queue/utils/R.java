@@ -42,7 +42,7 @@ public class R extends HashMap<String,Object> {
     }
 
     public static R error(String message){
-        return new R().error(500, message);
+        return new R().error(0, message);
     }
 
     public static R error(int code, String message){

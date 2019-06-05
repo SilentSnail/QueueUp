@@ -3,6 +3,7 @@ package com.queue.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.queue.entity.Loan;
+import com.queue.entity.vo.LoanSearchDetail;
 import com.queue.entity.vo.LoanSearchVo;
 import com.queue.service.LoanService;
 import com.queue.utils.PageBean;
@@ -79,13 +80,15 @@ public class LoanController extends BaseController{
     }
 
     /**
-     * 依据Code 查询借款单
-     * @param code
+     * 依据条件 查询借款单
+     * @param search 查询条件
      * @return
      */
     @RequestMapping("/findByCode")
-    public R searchByCode(String code){
-        return R.ok(this.loanService.searchByCode(code));
+    public R searchByCode(LoanSearchDetail search){
+        PageBean page = new PageBean();
+        page.setData(this.loanService.searchByCode(search));
+        return R.okPage(page);
     }
 }
 

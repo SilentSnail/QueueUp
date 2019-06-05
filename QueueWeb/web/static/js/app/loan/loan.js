@@ -11,13 +11,13 @@ $(function () {
             height:275,
             url:'/loan/list',
             method:'POST',
-            where:{type:"", status:""},
+            where:{type:"", status:1},
             request:{
                 pageName:'page.pageNo',
                 limitName:'page.pageSize'
             },
             response:{
-                statusCode:'1'
+                statusCode:'1'//返回状态码 1成功，0失败
             },
             cols:[[
                 {field: 'name', title: '姓名', width:80},

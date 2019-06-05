@@ -3,7 +3,9 @@ package com.queue.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.queue.entity.RoleUser;
 import com.queue.entity.dto.SysUserDto;
+import com.queue.entity.dto.UserPermission;
 import com.queue.entity.vo.UserSearchVo;
+import com.queue.mapper.AuthorityMapper;
 import com.queue.mapper.RoleUserMapper;
 import com.queue.service.RoleUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,14 +29,15 @@ public class RoleUserServiceImpl extends ServiceImpl<RoleUserMapper, RoleUser> i
 
     @Autowired
     private RoleUserMapper roleUserMapper;
-
+    @Autowired
+    private AuthorityMapper authorityMapper;
 
     @Override
     public List<SysUserDto> getUserByParam(UserSearchVo search) {
         return this.roleUserMapper.getUserByParam(search);
     }
 
-    @Cacheable(value = "defaultCache", key = "#id")
+    @Cacheable(value = "userRolesInfo", key = "#id")
     @Override
     public Set<String> getUserRoles(String id) {
         return new LinkedHashSet<>();
@@ -45,5 +48,10 @@ public class RoleUserServiceImpl extends ServiceImpl<RoleUserMapper, RoleUser> i
         return new LinkedHashSet<>();
     }
 
+    @Cacheable(value = "userPermissionInfo", key = "#userId")
+    @Override
+    public List<UserPermission> searchPermissionById(Integer userId, Integer roleId) {
+        return this.authorityMapper.searchPermissionByInfo(userId, roleId);
+    }
 
 }

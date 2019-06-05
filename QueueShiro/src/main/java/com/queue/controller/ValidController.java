@@ -7,8 +7,6 @@ import com.queue.mail.service.MailMessageService;
 import com.queue.service.RoleUserService;
 import com.queue.shiro.bean.SecurityUserEntity;
 import com.queue.utils.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -31,16 +29,12 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/valid")
-public class ValidController {
-
-    private static Logger log = LogManager.getLogger(ValidController.class);
+public class ValidController extends BaseController {
 
     @Autowired
     private RoleUserService userService;
     @Autowired
     private MailMessageService mailService;
-    @Autowired
-    private RedisUtils<String, byte[]> redisUtils;
 
     /**
      * 获取验证码
@@ -85,14 +79,11 @@ public class ValidController {
     @RequestMapping("/login")
     public R login(String username, String password, String verifyCode, String remember, HttpSession session){
         Object attr = ShiroUtils.getSession().getAttribute("loginValidCode");
-        if(ObjectUtils.isEmpty(attr)){//当前session未找到ID
-            return R.error("验证码已失效");
-        }
+        Asserts.isNull(attr, "验证码已失效");
         String saveCode = SerializeUtils.deSerialize(this.redisUtils.get(String.valueOf(attr)), String.class);
-        if(ObjectUtils.isEmpty(saveCode)){
-            return R.error("验证码已失效");
-        }
-        if(verifyCode.toLowerCase().equals(saveCode)){
+        Asserts.isEmpty(saveCode, "验证码已失效");
+        Asserts.isEmpty(verifyCode, "验证码错误");
+        if(saveCode.equals(verifyCode.toLowerCase())){
             try {
                 Asserts.isEmpty(username, "用户名不能为空");
                 Asserts.isEmpty(password, "密码不能为空");
@@ -130,13 +121,9 @@ public class ValidController {
         try {
             Asserts.isEmpty(email, "邮箱不能为空");
             Object attr = ShiroUtils.getSession().getAttribute("rePassCode");
-            if(ObjectUtils.isEmpty(attr)){//当前session未找到ID
-                return R.error("验证码已失效");
-            }
+            Asserts.isNull(attr, "验证码已失效");
             String saveCode = SerializeUtils.deSerialize(this.redisUtils.get(String.valueOf(attr)), String.class);
-            if(ObjectUtils.isEmpty(saveCode)){
-                return R.error("验证码已失效");
-            }
+            Asserts.isEmpty(saveCode, "验证码已失效");
             if(checkCode.toLowerCase().equals(saveCode)){
                 RoleUser user = new RoleUser();
                 user.setEmail(email);

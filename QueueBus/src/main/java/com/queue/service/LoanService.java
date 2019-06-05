@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.queue.entity.Loan;
 import com.queue.entity.dto.LoanDto;
 import com.queue.entity.dto.LoanListDto;
+import com.queue.entity.vo.LoanSearchDetail;
 import com.queue.entity.vo.LoanSearchVo;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public interface LoanService extends IService<Loan> {
 
     boolean updateLoanByCode(Loan loan);
 
-    LoanDto searchByCode(String code);
+    List<LoanDto> searchByCode(LoanSearchDetail search);
 
     Double getFundingCount(Long id);
 }

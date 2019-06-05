@@ -12,20 +12,20 @@ import java.io.Serializable;
  * </p>
  *
  * @author liusong
- * @since 2018-11-09
+ * @since 2019-05-11
  */
 public class Authority extends Model<Authority> {
 
     private static final long serialVersionUID = 1L;
 
         /**
-     * 权限ID
+     * ID
      */
          @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
         /**
-     * 权限编码
+     * 编码
      */
          private String code;
 
@@ -42,7 +42,12 @@ public class Authority extends Model<Authority> {
         /**
      * 资源ID
      */
-         private Integer resId;
+         private Integer pmsId;
+
+        /**
+     * 权限类型 0 共有权限 1 角色权限 2 用户私有权限
+     */
+         private Integer autType;
 
         /**
      * 创建时间
@@ -57,7 +62,7 @@ public class Authority extends Model<Authority> {
         /**
      * 状态1有效 0 无效
      */
-         private Integer status;
+         private Boolean status;
 
         /**
      * 更新时间
@@ -116,12 +121,21 @@ public class Authority extends Model<Authority> {
         return this;
     }
 
-    public Integer getResId() {
-        return resId;
+    public Integer getPmsId() {
+        return pmsId;
     }
 
-    public Authority setResId(Integer resId) {
-        this.resId = resId;
+    public Authority setPmsId(Integer pmsId) {
+        this.pmsId = pmsId;
+        return this;
+    }
+
+    public Integer getAutType() {
+        return autType;
+    }
+
+    public Authority setAutType(Integer autType) {
+        this.autType = autType;
         return this;
     }
 
@@ -143,11 +157,11 @@ public class Authority extends Model<Authority> {
         return this;
     }
 
-    public Integer getStatus() {
+    public Boolean getStatus() {
         return status;
     }
 
-    public Authority setStatus(Integer status) {
+    public Authority setStatus(Boolean status) {
         this.status = status;
         return this;
     }
@@ -200,7 +214,8 @@ public class Authority extends Model<Authority> {
         ", code=" + code +
         ", roleId=" + roleId +
         ", userId=" + userId +
-        ", resId=" + resId +
+        ", pmsId=" + pmsId +
+        ", autType=" + autType +
         ", createTime=" + createTime +
         ", creator=" + creator +
         ", status=" + status +

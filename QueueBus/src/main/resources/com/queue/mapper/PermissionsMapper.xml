@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.queue.mapper.PermissionsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.queue.entity.Permissions">
+        <id column="id" property="id" />
+        <result column="code" property="code" />
+        <result column="name" property="name" />
+        <result column="url" property="url" />
+        <result column="parent_id" property="parentId" />
+        <result column="pms_level" property="pmsLevel" />
+        <result column="create_time" property="createTime" />
+        <result column="creator" property="creator" />
+        <result column="update_time" property="updateTime" />
+        <result column="reviser" property="reviser" />
+        <result column="del_status" property="delStatus" />
+        <result column="icon_sign" property="iconSign" />
+        <result column="describe_inf" property="describeInf" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, code, name, url, parent_id, pms_level, create_time, creator, update_time, reviser, del_status, icon_sign, describe_inf
+    </sql>
+
+    <select id="searchListByParam" parameterType="com.queue.entity.vo.PermissionSearchVo" resultType="com.queue.entity.dto.PermissionListDto">
+        select code, name, url, parent_id, create_time, creator, reviser, describe_inf from permissions
+        where del_status = false
+        <if test="pmsName != null">
+            and name like concat('%', #{pmsName},'%')
+        </if>
+        <if test="pmsUrl != null">
+            and url like concat('%', #{pmsUrl},'%')
+        </if>
+    </select>
+
+    <select id="searchListByName" parameterType="java.lang.String" resultType="com.queue.entity.dto.PrmsBaseListDto">
+        select p.id, p.name, s.name as parentName, p.pms_level, p.describe_inf from permissions p
+        left join permissions s on p.parent_id = s.id
+        where p.del_status = false
+        <if test="name != null">
+            and p.name like concat('%', #{name},'%')
+        </if>
+    </select>
+
+    <select id="getPrmsInfoByCode" parameterType="java.lang.String" resultType="com.queue.entity.dto.PermissionDto">
+        select p.code, p.name, p.url, p.describe_inf, p.parent_id, s.name as baseName, p.icon_sign, p.pms_level from permissions p
+        left join permissions s on p.parent_id = s.id
+        where p.del_status = false
+        and p.code = #{code}
+    </select>
+</mapper>

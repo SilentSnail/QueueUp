@@ -7,14 +7,14 @@ import java.time.LocalDate;
  */
 public class LoanDto {
 
-    private String code;
-    private Integer loanType;
-    private Double amount;
-    private LocalDate loanTime;
-    private Integer loanChannel;
-    private LocalDate repaymentTime;
-    private String remark;
-    private Integer isIou;
+    private String code;//编码
+    private Integer loanType;//类型
+    private Double amount;//金额
+    private LocalDate loanTime;//借出时间
+    private Integer loanChannel;//借款途径
+    private LocalDate repaymentTime;//约定还款时间
+    private String remark;//备注
+    private Integer isIou;//是否有欠条
 
     public String getCode() {
         return code;

@@ -22,5 +22,16 @@ $(function () {
                 }
             });
         });
+
+        /**
+         * 复杂方式
+         * @param event
+         */
+        document.onkeydown = function (event) {
+            var v = event || window.event || arguments.callee.caller.arguments[0];
+            if(v && v.keyCode == 13){
+                $('#login').click();
+            }
+        };
     });
 });

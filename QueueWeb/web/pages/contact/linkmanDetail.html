@@ -24,19 +24,16 @@
                 <div class="">手机号：<span id="info_phone"></span></div>
                 <div class="">QQ号：<span id="info_qqNo"></span></div>
                 <div class="">微信号：<span id="info_wxNo"></span></div>
-            </div>
-        </div>
-        <div class="layui-card">
-            <div class="layui-card-header">其他信息</div>
-            <div class="layui-card-body">
                 <div class="">备注：<span id="info_remark"></span></div>
-                <div class=""><span id="loan_Info"></span></div>
             </div>
         </div>
         <div class="layui-card">
-            <div class="layui-card-header">其他功能</div>
+            <div class="layui-card-header">
+                其他功能
+                <span id="loan_Info" style="margin-left: 30px;"></span>
+            </div>
             <div class="layui-card-body">
-                <button class="layui-btn layui-btn-warm" id="addLoan">资金往来</button>
+                <table id="loanInfoList" lay-filter="LoanInfo" style="overflow-x:auto;overflow-y:auto"></table>
             </div>
         </div>
     </div>

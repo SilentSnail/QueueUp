@@ -16,17 +16,14 @@
             <div class="layui-form layui-card-header layuiadmin-card-header-auto"><!-- 查询条件块 -->
                 <div class="layui-form-item">
                     <div class="layui-inline">
-                        <label class="layui-form-label">权限名称</label>
+                        <label class="layui-form-label">资源名称</label>
                         <div class="layui-input-inline">
                             <input type="text" name="pmsName" autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-inline" style="margin-left: 20px;">
-                            <label class="layui-form-label">状态</label>
-                            <div class="layui-input-inline" style="width: 190px;" lay-filter="status">
-                                <select name="status">
-                                    <option value="1">有效</option>
-                                    <option value="0">无效</option>
-                                </select>
+                            <label class="layui-form-label">资源路径</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="pmsUrl" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
@@ -44,9 +41,15 @@
                 </div>
             </div>
         </div>
-        <script type="text/html" id="toolHtml">
-            <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">失效</a>
-            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="change">删除</a>
+        <script type="text/html" id="editHtml">
+            <div class="layui-btn-group">
+                <button class="layui-btn layui-btn-primary layui-btn-xs" lay-event="change">
+                    <i class="layui-icon">&#xe642;</i>
+                </button>
+                <button class="layui-btn layui-btn-primary layui-btn-xs" lay-event="remove">
+                    <i class="layui-icon">&#xe640;</i>
+                </button>
+            </div>
         </script>
     </div>
 </body>

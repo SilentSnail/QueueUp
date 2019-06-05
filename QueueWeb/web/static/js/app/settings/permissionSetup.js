@@ -5,40 +5,33 @@ $(function () {
 
     layui.use(["table", 'laydate', 'form'], function () {
 
+        var layer = layui.layer;
+
         var table = layui.table;
         //加载表格数据
         table.render({
-            elem:'#showLoanList',
+            elem:'#pmsList',
             height:472,
-            url:'/director/search',
+            url:'/permissions/list',
             method:'POST',
             request:{
                 pageName:'page.pageNo',
                 limitName:'page.pageSize'
             },
             response:{
-                statusCode:'1'
+                statusCode:'1'//返回状态码 1成功，0失败
             },
             cols:[[
-                {field: 'sign', title: '标记', width:60, templet:function(d){
-                    if(d.sign == 1) return '亲友';
-                    else if(d.sign == 2) return '好友';
-                    else if(d.sign == 3) return '客户';
-                    else if(d.sign == 4) return '供应商';
-                    else return '';
-                }},
-                {field: 'name', title: '姓名', width:80},
-                {field: 'sex', title: '性别', width:80, templet:function(d){
-                    if(d.sex == 'female') return '女';
-                    else return '男';
-                }},
-                {field: 'birthday', title: '出生年月', width:120, templet:function(d){
-                    return parseDate(d.birthday);
-                }},
-                {field: 'phone', title: '手机号', width:120},
-                {field: 'email', title: '邮箱', width:120},
-                {field: 'address', title: '地址', width:300},
-                {fixed: 'right', field: 'id', title: '操作', width:115, align:'center', toolbar: '#editHtml'}
+                {field: 'name', title: '资源名称', width:90},
+                {field: 'url', title: '资源路径', width:180},
+                {field: 'parentId', title: '上级编号', width:90},
+                {field: 'createTime', title: '创建时间', width:120, templet:function(d){
+                        return parseDateTime(d.createTime);
+                    }},
+                {field: 'creator', title: '创建人', width:90},
+                {field: 'reviser', title: '更新人', width:90},
+                {field: 'describeInf', title: '描述', width:240},
+                {fixed: 'right', field: 'code', title: '操作', width:95, align:'center', toolbar: '#editHtml'}
             ]],
             parseData:function (res) {
                 return {
@@ -61,30 +54,58 @@ $(function () {
 
         var form = layui.form;
         form.on('submit(search)', function (data) {
-            table.reload('showLoanList', {
-                where:data.field,
+            reLoad(data.field)
+        });
+
+        function reLoad(param) {
+            table.reload('pmsList', {
+                where:param,
                 page:{
                     curr:1
                 }
             });
+        }
+
+        $(document).on('click', '#addButton', function () {
+            parent.layer.open({
+                type: 2,
+                title:'新增资源',
+                area: ['650px', '450px'],
+                fixed: false, //不固定
+                maxmin: true,
+                content: '/pages/settings/editPage/editPermission.html',
+                end: function(){
+                    reLoad({});
+                }
+            });
         });
 
-        table.on('tool(linkMan)', function(obj){
+        //tool(pmsList) 修改pmsList即可
+        table.on('tool(pmsList)', function(obj){
             var data = obj.data;
-            if(obj.event === 'detail'){//查看
-                //调用父页面方法
-                window.parent.addItem('/pages/contact/linkmanDetail.html?id='+data.id, data.name+'详情');
+            if(obj.event === 'remove'){//删除
+                ajax('/permissions/delByCode', {'code':data.code}, function (data) {
+                    if(data.code == 1){
+                        layer.msg("成功");
+                        reLoad({});
+                    }else {
+                        layer.msg("失败，错误原因："+ data.data);
+                    }
+                })
             } else if(obj.event === 'change'){//编辑
                 parent.layer.open({
                     type: 2,
-                    title:'编辑',
-                    area: ['660px', '450px'],
+                    title:'编辑资源',
+                    area: ['650px', '450px'],
                     fixed: false, //不固定
                     maxmin: true,
-                    content: '/pages/contact/editLinkman.html',
+                    content: '/pages/settings/editPage/editPermission.html',
                     success:function(page, index){
                         //调用子页面的方法
-                        $(page).find('iframe')[0].contentWindow.loadDT(data.id);
+                        $(page).find('iframe')[0].contentWindow.loadDT(data.code);
+                    },
+                    end: function(){
+                        reLoad({});
                     }
                 });
             }

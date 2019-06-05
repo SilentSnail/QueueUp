@@ -60,7 +60,14 @@
 
     <select id="searchByCode" resultType="com.queue.entity.dto.LoanDto">
         select code, loan_type, abs(amount) as amount, loan_time, loan_channel, repayment_time, remark, is_iou
-        from loan where status = 1 and code = #{code}
+        from loan where status = 1
+        <if test="code != null">
+            and code = #{code}
+        </if>
+        <if test="userId != null">
+            and user_id = #{userId}
+        </if>
+        order by loan_time desc
     </select>
 
     <update id="updateLoanByCode" parameterType="com.queue.entity.Loan">

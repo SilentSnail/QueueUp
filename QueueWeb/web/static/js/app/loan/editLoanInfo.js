@@ -51,6 +51,7 @@ function loadDT(code) {
             var data = res.data;
             if(res.code == "1"){
                 form.render();//form需要重新渲染
+                data = data[0];
                 // $('select[name="loanChannel"]').val(data.loanChannel).attr("disabled", "disabled");
                 $('select[name="loanChannel"]').val(data.loanChannel);
                 $('input[name="amount"]').val(data.amount);

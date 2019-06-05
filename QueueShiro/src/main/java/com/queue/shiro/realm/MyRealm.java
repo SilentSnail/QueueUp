@@ -68,7 +68,7 @@ public class MyRealm extends AuthorizingRealm {
     public void onLogout(PrincipalCollection principal){
         super.clearCachedAuthorizationInfo(principal);
         SecurityUserEntity user = (SecurityUserEntity) principal.getPrimaryPrincipal();
-        log.info(user.getLoginName() + "提出登录");
+        log.info(user.getLoginName() + "退出登录");
         removeUserCache(user);
     }
 

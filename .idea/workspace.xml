@@ -7,140 +7,85 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cc3de32-5a58-4df8-a212-f7a5c9ba893f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/FileRecordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/FileRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/FileRecordMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/FileRecordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/FileRecordServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com/queue/mapper/FileRecordMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/config/ExceptionHandlerBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/tool/CheckTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QueueWeb/web/pages/contact/userSearch.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QueueWeb/web/static/js/app/contact/userSearch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_web_2_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/AuthorityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/PermissionsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/Permissions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/PermissionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/PermissionListDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/PrmsBaseListDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/vo/LoanSearchDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/vo/PermissionSaveVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/vo/PermissionSearchVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/PermissionsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/PermissionsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/PermissionsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com/queue/mapper/PermissionsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/editor/IntegerEditor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/editor/StringEditor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/entity/dto/AuthorityInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/entity/dto/UserPermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/entity/vo/AuthoritySearchVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueWeb/web/pages/autMagr/autList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueWeb/web/pages/settings/editPage/basePrmsSearch.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueWeb/web/pages/settings/editPage/editPermission.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueWeb/web/static/js/app/autMagr/autList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueWeb/web/static/js/app/settings/editPage/basePrmsSearch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueueWeb/web/static/js/app/settings/editPage/editPermission.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/queue.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/queue.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_3_2_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_3_2_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_47.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_47.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_3_0_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_3_0_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_0_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_0_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_0_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_0_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_0_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_0_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_generator_3_0_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_generator_3_0_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_1_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_04.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_04.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_protostuff_protostuff_api_1_5_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_protostuff_protostuff_api_1_5_9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_protostuff_protostuff_collectionschema_1_5_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_protostuff_protostuff_collectionschema_1_5_9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_protostuff_protostuff_core_1_5_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_protostuff_protostuff_core_1_5_9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_protostuff_protostuff_runtime_1_5_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_protostuff_protostuff_runtime_1_5_9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_6_0_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_6_0_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_2_10_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_2_10_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_core_2_6_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_core_2_6_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ezmorph_ezmorph_1_0_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ezmorph_ezmorph_1_0_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_json_lib_json_lib_jdk15_2_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_json_lib_json_lib_jdk15_2_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_jtds_jtds_1_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_jtds_jtds_1_3_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_1_9_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_1_9_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_launcher_1_9_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_launcher_1_9_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_11_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_11_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_17.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_3_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_3_17.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_17.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_cache_1_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_cache_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_core_1_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_core_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_ogdl_1_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_ogdl_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_core_1_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_core_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_cipher_1_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_cipher_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_core_1_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_core_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_hash_1_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_hash_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_ehcache_1_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_ehcache_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_event_1_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_event_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_lang_1_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_lang_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_spring_1_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_spring_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_web_1_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_web_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_6_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_6_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_9_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_6_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_6_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_21.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_21.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_simple_1_7_21.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_simple_1_7_21.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_0_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_1_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_1_0_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_1_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_1_0_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_1_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_1_0_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_0_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_9_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_websocket_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_websocket_5_0_4_RELEASE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueBus/QueueBus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueBus/QueueBus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/DirectorListDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/DirectorListDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/LoanListDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/LoanListDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/LoanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/LoanDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/LoanDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/LoanMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/LoanMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/LoanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/LoanService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/LoanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/LoanServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueBus/src/main/resources/com/queue/mapper/DirectoriesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com/queue/mapper/DirectoriesMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueBus/src/main/resources/com/queue/mapper/LoanMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueBus/src/main/resources/com/queue/mapper/LoanMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueBus/target/classes/com/queue/mapper/DirectoriesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueBus/target/classes/com/queue/mapper/DirectoriesMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueBus/target/classes/com/queue/mapper/LoanMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueBus/target/classes/com/queue/mapper/LoanMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueCommon/QueueCommon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueCommon/QueueCommon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueCommon/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueCommon/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/config/ExceptionHandlerBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/config/ExceptionHandlerBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/controller/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/CommonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/interceptor/SysStaticInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/interceptor/SysStaticInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/mail/util/SendMailPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/mail/util/SendMailPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/DateUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/R.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueShiro/QueueShiro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueShiro/QueueShiro.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/controller/ValidController.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/controller/ValidController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/entity/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/entity/Authority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/mapper/AuthorityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/mapper/AuthorityMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/AuthorityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/AuthorityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/RoleUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/RoleUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/impl/AuthorityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/impl/AuthorityServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/impl/RoleUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/impl/RoleUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/shiro/realm/MyRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/shiro/realm/MyRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueShiro/src/main/resources/com/queue/mapper/AuthorityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueShiro/src/main/resources/com/queue/mapper/AuthorityMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueShiro/src/main/resources/com/queue/mapper/RoleUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueShiro/src/main/resources/com/queue/mapper/RoleUserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueShiro/target/classes/com/queue/mapper/AuthorityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueShiro/target/classes/com/queue/mapper/AuthorityMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueShiro/target/classes/com/queue/mapper/RoleUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueShiro/target/classes/com/queue/mapper/RoleUserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueSocket/QueueSocket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueSocket/QueueSocket.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueUp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueUp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueWeb/QueueWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/QueueWeb.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueWeb/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueWeb/src/main/resources/ehCache-Config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/src/main/resources/ehCache-Config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueWeb/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/src/main/resources/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueWeb/src/main/resources/spring-shiro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/src/main/resources/spring-shiro.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/RandomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/RandomTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/StringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/StringTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/tool/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/tool/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueWeb/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueWeb/target/classes/ehCache-Config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/target/classes/ehCache-Config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueWeb/target/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/target/classes/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueWeb/target/classes/spring-shiro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/target/classes/spring-shiro.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueWeb/web/pages/contact/contManage.html" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/pages/contact/contManage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/ThreadPoolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/ThreadPoolTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueWeb/web/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueWeb/web/pages/admin/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/pages/admin/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueWeb/web/pages/contact/linkmanDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/pages/contact/linkmanDetail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueWeb/web/pages/loan/addLoanInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/pages/loan/addLoanInfo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueWeb/web/pages/loan/loan_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/pages/loan/loan_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueWeb/web/static/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/static/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/addLoanInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/addLoanInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueWeb/web/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/pages/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueWeb/web/pages/settings/permissionSetup.html" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/pages/settings/permissionSetup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueWeb/web/pages/userforget.html" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/pages/userforget.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueWeb/web/static/js/app/admin/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/static/js/app/admin/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueWeb/web/static/js/app/contact/contManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/static/js/app/contact/contManage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueWeb/web/static/js/app/contact/linkmanDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/static/js/app/contact/linkmanDetail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/editLoanInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/editLoanInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/loan.js" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/loan.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueWeb/web/static/js/app/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/static/js/app/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueWeb/web/static/js/app/settings/permissionSetup.js" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/static/js/app/settings/permissionSetup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueueWeb/web/static/js/util/query.main.util.js" beforeDir="false" afterPath="$PROJECT_DIR$/QueueWeb/web/static/js/util/query.main.util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="QueueUp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -398,31 +343,88 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/QueueWeb/web/pages/loan/loan_list.html">
+        <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/loan.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1230">
-              <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="41" />
+            <state relative-caret-position="120">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/QueueWeb/web/pages/contact/linkmanDetail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
               <folding>
-                <element signature="n#style#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/loan.js">
+        <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/app/contact/linkmanDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+            <state relative-caret-position="198">
+              <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+              <folding>
+                <element signature="e#1347#1371#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/LoanController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="89" column="45" selection-start-line="89" selection-start-column="45" selection-end-line="89" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/LoanServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="40" column="21" lean-forward="true" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+              <folding>
+                <element signature="e#1337#1338#0" expanded="true" />
+                <element signature="e#1396#1397#0" expanded="true" />
+                <element signature="e#1456#1457#0" expanded="true" />
+                <element signature="e#1514#1515#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/QueueWeb/web/pages/contact/contManage.html">
+        <entry file="file://$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/impl/RoleUserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+            <state relative-caret-position="163">
+              <caret line="39" column="52" lean-forward="true" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/AuthorityController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="29" column="53" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/editor/StringEditor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="20" column="5" selection-start-line="17" selection-start-column="4" selection-end-line="20" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -441,25 +443,40 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>put</find>
-      <find>&lt;&lt;</find>
-      <find>index</find>
+      <find>getPrmsInfoByCode</find>
+      <find>showUser</find>
+      <find>parentId</find>
+      <find>parentName</find>
+      <find>layer.msg</find>
+      <find>describeInf</find>
+      <find>icon_sign</find>
+      <find>600</find>
+      <find>getBaseId</find>
+      <find>app/admin/admin.js</find>
+      <find>equals</find>
+      <find>redisUtils</find>
+      <find>R.error</find>
+      <find>BaseController</find>
+      <find>docDemoTabBrief</find>
+      <find>edit</find>
+      <find>#edit</find>
+      <find>addLoan</find>
       <find>userId</find>
-      <find>layui-btn-primary</find>
-      <find>父页面</find>
-      <find>console</find>
-      <find>linkMan</find>
-      <find>window.par</find>
-      <find>tool</find>
-      <find>layer.pa</find>
-      <find>userId=</find>
+      <find>searchByCode</find>
+      <find>us</find>
+      <find>userList</find>
+      <find>findByCode</find>
+      <find>getFundingCount</find>
+      <find>loan_Info</find>
+      <find>.js</find>
       <find>searchByParam</find>
-      <find>try</find>
-      <find>multipartConfigElement</find>
-      <find>multipartResolver</find>
-      <find>FileType</find>
-      <find>amount</find>
+      <find>PropertyEditorSupport</find>
+      <find>status</find>
+      <find>@Cac</find>
     </findStrings>
+    <dirStrings>
+      <dir>/stat</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -467,57 +484,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/QueueWeb/web/pages/socket/ServiceSocket.html" />
-        <option value="$PROJECT_DIR$/QueueWeb/web/pages/admin/admin.html" />
-        <option value="$PROJECT_DIR$/QueueWeb/web/static/js/socket/CustomerSocket.js" />
-        <option value="$PROJECT_DIR$/QueueWeb/web/static/js/app/login.js" />
-        <option value="$PROJECT_DIR$/QueueWeb/web/static/js/app/userforget.js" />
-        <option value="$PROJECT_DIR$/QueueSocket/src/main/java/com/queue/entity/WebSocket.java" />
-        <option value="$PROJECT_DIR$/QueueSocket/src/main/java/com/queue/webSocket/ConversationSocket.java" />
-        <option value="$PROJECT_DIR$/QueueSocket/src/main/java/com/queue/webSocket/CustomServiceSocket.java" />
-        <option value="$PROJECT_DIR$/QueueSocket/src/main/java/com/queue/webSocket/ChatRoomSocket.java" />
-        <option value="$PROJECT_DIR$/QueueSocket/src/main/java/com/queue/webSocket/ClientSocket.java" />
-        <option value="$PROJECT_DIR$/QueueSocket/src/main/java/com/queue/webSocket/ServiceSocket.java" />
-        <option value="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/mail/util/SendMailPool.java" />
-        <option value="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/ConvertUtils.java" />
-        <option value="$PROJECT_DIR$/QueueWeb/src/main/resources/ehCache-Config.xml" />
-        <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/shiro/realm/MyRealm.java" />
-        <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/impl/RoleUserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/DirectoriesServiceImpl.java" />
-        <option value="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/DateUtils.java" />
-        <option value="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/interceptor/SysStaticInterceptor.java" />
-        <option value="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/tool/UserInfo.java" />
-        <option value="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/tool/CheckTest.java" />
-        <option value="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/StringTest.java" />
-        <option value="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/RandomTest.java" />
-        <option value="$PROJECT_DIR$/QueueWeb/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/QueueWeb/web/static/css/admin.css" />
-        <option value="$PROJECT_DIR$/QueueWeb/web/static/js/app/contact/contManage.js" />
-        <option value="$PROJECT_DIR$/QueueWeb/web/pages/contact/userSearch.html" />
-        <option value="$PROJECT_DIR$/QueueBus/src/main/resources/com/queue/mapper/DirectoriesMapper.xml" />
-        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/DirectorListDto.java" />
-        <option value="$PROJECT_DIR$/QueueWeb/web/static/js/app/contact/userSearch.js" />
-        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/LoanServiceImpl.java" />
-        <option value="$PROJECT_DIR$/QueueCommon/pom.xml" />
-        <option value="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/controller/CommonController.java" />
-        <option value="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/controller/BaseController.java" />
-        <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/editLoanInfo.js" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/PermissionsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/PermissionsMapper.java" />
+        <option value="$PROJECT_DIR$/QueueWeb/web/pages/settings/editPage/basePrmsSearch.html" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/PermissionsService.java" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/PermissionsController.java" />
+        <option value="$PROJECT_DIR$/QueueWeb/web/static/js/app/settings/editPage/editPermission.js" />
         <option value="$PROJECT_DIR$/QueueWeb/web/pages/loan/addLoanInfo.html" />
-        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/FileRecordServiceImpl.java" />
-        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/FileRecordService.java" />
-        <option value="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/FileUtils.java" />
-        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/CommonController.java" />
-        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/LoanListDto.java" />
-        <option value="$PROJECT_DIR$/QueueBus/src/main/resources/com/queue/mapper/LoanMapper.xml" />
-        <option value="$PROJECT_DIR$/QueueWeb/src/main/resources/spring-shiro.xml" />
-        <option value="$PROJECT_DIR$/QueueWeb/src/main/resources/spring-context.xml" />
-        <option value="$PROJECT_DIR$/QueueWeb/src/main/resources/spring-mvc.xml" />
-        <option value="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/config/ExceptionHandlerBean.java" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/PermissionDto.java" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/Permissions.java" />
+        <option value="$PROJECT_DIR$/QueueWeb/web/pages/userforget.html" />
+        <option value="$PROJECT_DIR$/QueueWeb/web/pages/login.html" />
+        <option value="$PROJECT_DIR$/QueueWeb/web/static/js/app/login.js" />
+        <option value="$PROJECT_DIR$/QueueWeb/web/pages/settings/editPage/editPermission.html" />
+        <option value="$PROJECT_DIR$/QueueWeb/web/static/js/app/settings/permissionSetup.js" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/PrmsBaseListDto.java" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/resources/com/queue/mapper/PermissionsMapper.xml" />
+        <option value="$PROJECT_DIR$/QueueWeb/web/static/js/app/settings/editPage/basePrmsSearch.js" />
+        <option value="$PROJECT_DIR$/QueueWeb/web/static/js/app/admin/admin.js" />
+        <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/shiro/realm/MyRealm.java" />
+        <option value="$PROJECT_DIR$/QueueWeb/web/pages/admin/admin.html" />
+        <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/AuthorityService.java" />
+        <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/impl/AuthorityServiceImpl.java" />
+        <option value="$PROJECT_DIR$/QueueWeb/src/test/java/com/test/ThreadPoolTest.java" />
+        <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/entity/vo/AuthoritySearchVo.java" />
+        <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/mapper/RoleUserMapper.java" />
+        <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/mapper/AuthorityMapper.java" />
+        <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/RoleUserService.java" />
+        <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/impl/RoleUserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/QueueShiro/src/main/resources/com/queue/mapper/AuthorityMapper.xml" />
+        <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/AuthorityController.java" />
+        <option value="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/Asserts.java" />
+        <option value="$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/controller/ValidController.java" />
+        <option value="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/editor/StringEditor.java" />
+        <option value="$PROJECT_DIR$/QueueWeb/web/pages/autMagr/autList.html" />
+        <option value="$PROJECT_DIR$/QueueWeb/web/static/js/app/autMagr/autList.js" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/LoanDto.java" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/vo/LoanSearchVo.java" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/vo/LoanSearchDetail.java" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/LoanController.java" />
+        <option value="$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/editLoanInfo.js" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/LoanService.java" />
+        <option value="$PROJECT_DIR$/QueueWeb/web/pages/contact/linkmanDetail.html" />
         <option value="$PROJECT_DIR$/QueueWeb/web/pages/loan/loan_list.html" />
-        <option value="$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/addLoanInfo.js" />
         <option value="$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/loan.js" />
-        <option value="$PROJECT_DIR$/QueueWeb/web/pages/contact/contManage.html" />
+        <option value="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/editor/IntegerEditor.java" />
+        <option value="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/controller/BaseController.java" />
+        <option value="$PROJECT_DIR$/QueueWeb/web/static/js/app/contact/linkmanDetail.js" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/resources/com/queue/mapper/LoanMapper.xml" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/LoanMapper.java" />
+        <option value="$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/LoanServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -592,256 +609,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueBus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueBus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueBus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueBus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueBus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="queue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueBus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="queue" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueBus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueBus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueCommon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueCommon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueCommon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueCommon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueCommon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="queue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueCommon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="queue" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueCommon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="queue" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueCommon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="queue" type="462c0819:PsiDirectoryNode" />
-              <item name="enums" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueCommon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="queue" type="462c0819:PsiDirectoryNode" />
-              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueShiro" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueShiro" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueShiro" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueShiro" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueShiro" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="queue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueShiro" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="queue" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueWeb" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="contact" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QueueUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QueueUp" type="462c0819:PsiDirectoryNode" />
-              <item name="QueueWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -858,8 +628,8 @@
     <property name="SearchEverywhereHistoryKey" value="imUrlConfig&#9;FILE&#9;file:///Users/liusong/Documents/workspaces/GitProject/DataReptile/QueueUp/QueueSocket/src/main/resources/imUrlConfig.properties&#10;JedisClientConfiguration&#9;PSI&#9;JAVA://org.springframework.data.redis.connection.jedis.JedisClientConfiguration" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/QueueWeb/web/static/js/app/contact" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/QueueWeb/web/static/js/app/autMagr" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15376984" />
     <property name="project.structure.side.proportion" value="0.20394088" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -869,11 +639,11 @@
       <recent name="com.queue.mapper" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/QueueWeb/web/static/js/app/autMagr" />
+      <recent name="$PROJECT_DIR$/QueueWeb/web/pages/autMagr" />
+      <recent name="$PROJECT_DIR$/QueueWeb/web/static/js/app/settings/editPage" />
+      <recent name="$PROJECT_DIR$/QueueWeb/web/pages/settings/editPage" />
       <recent name="$PROJECT_DIR$/QueueWeb/web/static/js/app/contact" />
-      <recent name="$PROJECT_DIR$/QueueWeb/web/pages/contact" />
-      <recent name="$PROJECT_DIR$/QueueWeb/web/static/css" />
-      <recent name="$PROJECT_DIR$/QueueWeb/web/static/js/app/settings" />
-      <recent name="$PROJECT_DIR$/QueueWeb/web/static/js/app/user" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.queue.utils.editor" />
@@ -881,9 +651,9 @@
       <recent name="com.test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/QueueShiro/src/main/resources/com/queue/mapper" />
       <recent name="$PROJECT_DIR$/QueueBus/src/main/resources/com/queue/mapper" />
       <recent name="$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/verify" />
-      <recent name="$PROJECT_DIR$/QueueShiro/src/main/resources/com/queue/mapper" />
       <recent name="$PROJECT_DIR$/QueueWeb/web/static/js/app/loan" />
       <recent name="$PROJECT_DIR$/QueueWeb/web/pages/loan" />
     </key>
@@ -900,7 +670,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8">
     <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1027,6 +797,20 @@
     </configuration>
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThreadPoolTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.test.ThreadPoolTest" />
+      <module name="QueueWeb" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -1338,6 +1122,11 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ThreadPoolTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration>$USER_HOME$/.subversion</configuration>
@@ -1549,7 +1338,23 @@
       <workItem from="1555558893315" duration="27594000" />
       <workItem from="1555746474514" duration="9079000" />
       <workItem from="1555942583233" duration="251000" />
-      <workItem from="1555943014664" duration="1995000" />
+      <workItem from="1555943014664" duration="4655000" />
+      <workItem from="1556024753029" duration="17471000" />
+      <workItem from="1556156784645" duration="1920000" />
+      <workItem from="1556288295634" duration="300000" />
+      <workItem from="1556288604241" duration="69000" />
+      <workItem from="1556288709659" duration="1093000" />
+      <workItem from="1556463190704" duration="10531000" />
+      <workItem from="1557411063682" duration="4279000" />
+      <workItem from="1557541043763" duration="3672000" />
+      <workItem from="1557551076129" duration="4521000" />
+      <workItem from="1557561136220" duration="8366000" />
+      <workItem from="1557587626566" duration="3098000" />
+      <workItem from="1557631817375" duration="5987000" />
+      <workItem from="1557651249028" duration="433000" />
+      <workItem from="1557823715451" duration="972000" />
+      <workItem from="1558187418622" duration="977000" />
+      <workItem from="1559741212074" duration="7576000" />
     </task>
     <task id="LOCAL-00001" summary="Project Start Success">
       <created>1529982774901</created>
@@ -1657,7 +1462,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="796747000" />
+    <option name="totallyTimeSpent" value="870672000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1670,17 +1475,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="23" width="1277" height="777" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Capture Tool" order="0" />
       <window_info id="UI Designer" order="1" />
-      <window_info id="Web" order="2" sideWeight="0.50948906" side_tool="true" weight="0.24129555" />
+      <window_info id="Web" order="2" sideWeight="0.5109489" side_tool="true" weight="0.2574899" />
       <window_info id="Favorites" order="3" sideWeight="0.5051095" side_tool="true" weight="0.19919029" />
-      <window_info content_ui="combo" id="Project" order="4" sideWeight="0.49051094" visible="true" weight="0.2534413" />
+      <window_info active="true" content_ui="combo" id="Project" order="4" sideWeight="0.4890511" visible="true" weight="0.23643725" />
       <window_info id="Structure" order="5" weight="0.25" />
       <window_info id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5060729" side_tool="true" weight="0.329927" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50526315" side_tool="true" weight="0.42335767" />
       <window_info anchor="bottom" id="Application Servers" order="1" weight="0.329927" />
       <window_info anchor="bottom" id="Messages" order="2" weight="0.36642337" />
       <window_info anchor="bottom" id="Java Enterprise" order="3" weight="0.329927" />
@@ -1690,7 +1494,7 @@
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.329927" />
       <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49392712" weight="0.329927" />
-      <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.49716598" weight="0.42335767" />
+      <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.49473685" visible="true" weight="0.3810219" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.329927" />
@@ -1733,425 +1537,436 @@
     <MESSAGE value="LocalDateTime无法转化BUG待修复" />
     <option name="LAST_COMMIT_MESSAGE" value="LocalDateTime无法转化BUG待修复" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/beans/PropertyEditorSupport.java</url>
+          <line>178</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/DirectorListDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
-          <folding>
-            <element signature="e#399#400#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#486#487#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/resources/com/queue/mapper/DirectoriesMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/app/contact/userSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/web/pages/contact/userSearch.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/util/query.main.util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/app/contact/linkmanDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="52" column="29" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/web/pages/loan/loan_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="10" column="54" lean-forward="true" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/DirectoriesServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="39" column="20" lean-forward="true" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-          <folding>
-            <element signature="e#1094#1095#0" expanded="true" />
-            <element signature="e#1158#1159#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/DirectorDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/DirectoriesService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/web/pages/loan/editLoanInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="63" column="18" lean-forward="true" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Volumes/TEST_HD/Document/mavenRepository/org/springframework/spring-web/5.0.4.RELEASE/spring-web-5.0.4.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="209" column="9" lean-forward="true" selection-start-line="209" selection-start-column="9" selection-end-line="209" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueCommon/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="154" column="50" lean-forward="true" selection-start-line="154" selection-start-column="50" selection-end-line="154" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="49" column="21" lean-forward="true" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/Directories.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/DirectoriesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="39" column="24" lean-forward="true" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/utils/ShiroUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#428#429#0" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
-            <element signature="e#566#567#0" expanded="true" />
-            <element signature="e#622#623#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="71" column="32" lean-forward="true" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Volumes/TEST_HD/Document/mavenRepository/com/baomidou/mybatis-plus-extension/3.0.5/mybatis-plus-extension-3.0.5-sources.jar!/com/baomidou/mybatisplus/extension/service/IService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/FileRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="21" column="11" lean-forward="true" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/FileRecordService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/FileRecordServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="1924" column="42" selection-start-line="1924" selection-start-column="32" selection-end-line="1924" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/FileUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="145" column="9" lean-forward="true" selection-start-line="145" selection-start-column="9" selection-end-line="145" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/CommonController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="43" column="60" lean-forward="true" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/editLoanInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="10" lean-forward="true" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Volumes/TEST_HD/Document/mavenRepository/org/mybatis/mybatis/3.4.6/mybatis-3.4.6-sources.jar!/org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="278" column="10" selection-start-line="278" selection-start-column="10" selection-end-line="278" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/interceptor/SysStaticInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/enums/FileType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-          <folding>
-            <element signature="e#262#263#0" expanded="true" />
-            <element signature="e#289#290#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/controller/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/lang/Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Volumes/TEST_HD/Document/mavenRepository/org/springframework/spring-web/5.0.4.RELEASE/spring-web-5.0.4.RELEASE-sources.jar!/org/springframework/http/HttpStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="185" column="32" lean-forward="true" selection-start-line="185" selection-start-column="32" selection-end-line="185" selection-end-column="32" />
+        <state relative-caret-position="135">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/FileRecordController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+        <state relative-caret-position="225">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/R.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+          <folding>
+            <element signature="e#878#879#0" expanded="true" />
+            <element signature="e#926#927#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Volumes/TEST_HD/Document/mavenRepository/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/util/StringUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+          <folding>
+            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Volumes/TEST_HD/Document/mavenRepository/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/util/Assert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="44" column="23" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Volumes/TEST_HD/Document/mavenRepository/org/springframework/spring-core/5.0.4.RELEASE/spring-core-5.0.4.RELEASE-sources.jar!/org/springframework/util/ObjectUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="134" column="26" lean-forward="true" selection-start-line="134" selection-start-column="26" selection-end-line="134" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Volumes/TEST_HD/Document/mavenRepository/org/apache/logging/log4j/log4j-core/2.11.0/log4j-core-2.11.0-sources.jar!/org/apache/logging/log4j/core/util/Assert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+          <folding>
+            <element signature="e#2231#2232#0" expanded="true" />
+            <element signature="e#2265#2266#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Volumes/TEST_HD/Document/mavenRepository/org/springframework/spring-core/5.0.4.RELEASE/spring-core-5.0.4.RELEASE-sources.jar!/org/springframework/util/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="119" column="26" selection-start-line="119" selection-start-column="26" selection-end-line="119" selection-end-column="26" />
+          <folding>
+            <element signature="e#4255#4256#0" expanded="true" />
+            <element signature="e#4300#4301#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Volumes/TEST_HD/Document/mavenRepository/org/springframework/spring-core/5.0.4.RELEASE/spring-core-5.0.4.RELEASE-sources.jar!/org/springframework/util/Assert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="231" column="29" selection-start-line="231" selection-start-column="29" selection-end-line="231" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/Asserts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="2866" column="18" selection-start-line="2866" selection-start-column="18" selection-end-line="2866" selection-end-column="18" />
+          <folding>
+            <element signature="e#22786#22787#0" expanded="true" />
+            <element signature="e#22821#22822#0" expanded="true" />
+            <element signature="e#23072#23073#0" expanded="true" />
+            <element signature="e#23112#23113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueWeb/src/main/resources/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/editor/LocalDateTimeEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/controller/ValidController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="85" column="54" lean-forward="true" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/entity/dto/AuthorityInfoDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/app/autMagr/autList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="53" lean-forward="true" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueWeb/web/pages/autMagr/autList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Volumes/TEST_HD/Document/mavenRepository/org/springframework/spring-webmvc/5.0.4.RELEASE/spring-webmvc-5.0.4.RELEASE-sources.jar!/org/springframework/web/servlet/handler/AbstractHandlerMapping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueWeb/src/main/resources/config.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueWeb/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/app/contact/userSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-894">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/vo/LoanSearchVo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="-78">
+          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/src/main/resources/spring-context.xml">
+    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/LoanService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="107" lean-forward="true" selection-start-line="14" selection-start-column="107" selection-end-line="14" selection-end-column="107" />
+        <state relative-caret-position="244">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/editLoanInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/vo/LoanSearchDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="26" />
+          <folding>
+            <element signature="e#145#146#0" expanded="true" />
+            <element signature="e#172#173#0" expanded="true" />
+            <element signature="e#212#213#0" expanded="true" />
+            <element signature="e#244#245#0" expanded="true" />
+            <element signature="e#278#279#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/LoanDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/app/contact/contManage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1343">
+          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueWeb/web/pages/contact/contManage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="73" column="42" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/Permissions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/PermissionsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-602">
+          <caret line="65" column="33" lean-forward="true" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-339">
+          <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/DirectoriesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="70" column="56" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueWeb/web/pages/loan/loan_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="93" column="34" lean-forward="true" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueWeb/web/pages/loan/addLoanInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="43" column="40" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/config/ExceptionHandlerBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+        <state relative-caret-position="165">
+          <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/editor/StringEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="5" selection-start-line="17" selection-start-column="4" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/src/main/resources/spring-mvc.xml">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/beans/PropertyEditorSupport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="17" column="44" lean-forward="true" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+        <state relative-caret-position="-56">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/entity/dto/LoanListDto.java">
+    <entry file="file://$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/utils/editor/IntegerEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
-            <element signature="e#1160#1161#0" expanded="true" />
-            <element signature="e#1191#1192#0" expanded="true" />
-            <element signature="e#1240#1241#0" expanded="true" />
-            <element signature="e#1280#1281#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/LoanServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/QueueCommon/src/main/java/com/queue/controller/BaseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-          <folding>
-            <element signature="e#766#767#0" expanded="true" />
-            <element signature="e#826#827#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="188">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/src/main/resources/spring-shiro.xml">
+    <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/loan.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="38" column="63" lean-forward="true" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="63" />
+        <state relative-caret-position="120">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/QueueWeb/web/pages/contact/linkmanDetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/addLoanInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="58" lean-forward="true" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/web/pages/loan/addLoanInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="88" column="41" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
+        <state relative-caret-position="287">
+          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/QueueBus/src/main/resources/com/queue/mapper/LoanMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        <state relative-caret-position="218">
+          <caret line="65" column="13" lean-forward="true" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
           <folding>
-            <element signature="e#1350#1354#0" expanded="true" />
-            <element signature="e#1392#1396#0" expanded="true" />
-            <element signature="e#1700#1704#0" expanded="true" />
-            <element signature="e#1809#1813#0" expanded="true" />
-            <element signature="e#2147#2151#0" expanded="true" />
-            <element signature="e#2341#2345#0" expanded="true" />
+            <element signature="n#if#4;n#select#0;n#mapper#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/app/contact/contManage.js">
+    <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/app/contact/linkmanDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="107" column="111" lean-forward="true" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="111" />
+        <state relative-caret-position="198">
+          <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+          <folding>
+            <element signature="e#1347#1371#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/controller/ValidController.java">
+    <entry file="file://$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/mapper/AuthorityMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        <state relative-caret-position="210">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/impl/AuthorityServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/AuthorityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="29" column="53" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/controller/LoanController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="62" column="47" lean-forward="true" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
+        <state relative-caret-position="212">
+          <caret line="89" column="45" selection-start-line="89" selection-start-column="45" selection-end-line="89" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/web/pages/loan/loan_list.html">
+    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/mapper/LoanMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="41" />
+        <state relative-caret-position="212">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Volumes/TEST_HD/Document/mavenRepository/org/springframework/spring-core/5.0.4.RELEASE/spring-core-5.0.4.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueueBus/src/main/java/com/queue/service/impl/LoanServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="40" column="21" lean-forward="true" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#1337#1338#0" expanded="true" />
+            <element signature="e#1396#1397#0" expanded="true" />
+            <element signature="e#1456#1457#0" expanded="true" />
+            <element signature="e#1514#1515#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/web/static/js/app/loan/loan.js">
+    <entry file="file://$PROJECT_DIR$/QueueShiro/src/main/java/com/queue/service/impl/RoleUserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QueueWeb/web/pages/contact/contManage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+        <state relative-caret-position="163">
+          <caret line="39" column="52" lean-forward="true" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -2210,11 +2025,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>QueueBus</last-edited>
+          <last-edited>QueueWeb</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.20394088" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

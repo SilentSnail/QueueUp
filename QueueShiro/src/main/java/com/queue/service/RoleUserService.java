@@ -3,6 +3,7 @@ package com.queue.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.queue.entity.RoleUser;
 import com.queue.entity.dto.SysUserDto;
+import com.queue.entity.dto.UserPermission;
 import com.queue.entity.vo.UserSearchVo;
 
 import java.util.List;
@@ -38,4 +39,12 @@ public interface RoleUserService extends IService<RoleUser> {
      * @return
      */
     Set<String> getUserPermissions(String id);
+
+    /**
+     * 依据用户编码获取权限信息
+     * @param userId 用户ID
+     * @param roleId 用户角色ID
+     * @return
+     */
+    List<UserPermission> searchPermissionById(Integer userId, Integer roleId);
 }

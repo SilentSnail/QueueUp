@@ -36,6 +36,11 @@
         </if>
     </select>
 
+    <!-- 查询用户可使用的资源信息 -->
+    <select id="searchPermissionByCode" parameterType="java.lang.String" resultType="com.queue.entity.dto.UserPermission">
+        select user_code from role_user where user_code = #{userCode}
+    </select>
+
     <!--<select id="searchByParam" parameterType="java.util.HashMap" resultMap="BaseResultMap">-->
         <!--select * from valid_log where code = #{code} and sign = #{sign} and effective_time &gt;= now()-->
     <!--</select>-->

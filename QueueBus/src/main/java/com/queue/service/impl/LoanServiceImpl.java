@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.queue.entity.Loan;
 import com.queue.entity.dto.LoanDto;
 import com.queue.entity.dto.LoanListDto;
+import com.queue.entity.vo.LoanSearchDetail;
 import com.queue.entity.vo.LoanSearchVo;
 import com.queue.mapper.LoanMapper;
 import com.queue.service.LoanService;
@@ -41,8 +42,8 @@ public class LoanServiceImpl extends ServiceImpl<LoanMapper, Loan> implements Lo
     }
 
     @Override
-    public LoanDto searchByCode(String code) {
-        return this.loanMapper.searchByCode(code);
+    public List<LoanDto> searchByCode(LoanSearchDetail search) {
+        return this.loanMapper.searchByCode(search);
     }
 
     @Override

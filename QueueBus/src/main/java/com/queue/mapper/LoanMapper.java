@@ -1,9 +1,10 @@
 package com.queue.mapper;
 
-import com.queue.entity.Loan;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.queue.entity.Loan;
 import com.queue.entity.dto.LoanDto;
 import com.queue.entity.dto.LoanListDto;
+import com.queue.entity.vo.LoanSearchDetail;
 import com.queue.entity.vo.LoanSearchVo;
 import org.apache.ibatis.annotations.Param;
 
@@ -23,7 +24,7 @@ public interface LoanMapper extends BaseMapper<Loan> {
 
     Integer updateLoanByCode(Loan loan);
 
-    LoanDto searchByCode(@Param("code") String code);
+    List<LoanDto> searchByCode(LoanSearchDetail search);
 
     Double getFundingCount(@Param("id") Long id);
 }

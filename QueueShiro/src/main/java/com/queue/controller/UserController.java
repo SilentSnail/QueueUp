@@ -3,10 +3,7 @@ package com.queue.controller;
 import com.queue.entity.RoleUser;
 import com.queue.entity.vo.UserSearchVo;
 import com.queue.service.RoleUserService;
-import com.queue.utils.PageBean;
-import com.queue.utils.R;
-import com.queue.utils.SecurityEncryptUtils;
-import com.queue.utils.ShiroUtils;
+import com.queue.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,6 +29,12 @@ public class UserController extends BaseController {
         PageBean page = new PageBean();
         page.setData(this.userService.getUserByParam(search));
         return R.okPage(page);
+    }
+
+    @RequestMapping("/getPermission")
+    public R searchUserPermission(){
+        RoleUser user = ShiroUtils.getLoginUser();
+        return R.ok(this.userService.searchPermissionById(user.getRoleId(), user.getRoleId()));
     }
 
     /**

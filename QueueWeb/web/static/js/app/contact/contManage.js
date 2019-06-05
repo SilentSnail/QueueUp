@@ -17,7 +17,7 @@ $(function () {
                 limitName:'page.pageSize'
             },
             response:{
-                statusCode:'1'
+                statusCode:'1'//返回状态码 1成功，0失败
             },
             cols:[[
                 {fixed: 'left', field: 'userCode', title: '操作', width:115, align:'center', toolbar: '#editHtml'},

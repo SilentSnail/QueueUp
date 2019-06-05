@@ -143,6 +143,7 @@ function addItem(id, title) {
 //导入element
 layui.use(['element', 'layer'], function () {
     var layer = layui.layer;
+
     //点击添加
     $('.layui-side-scroll a').click(function () {
         var id = $(this).attr('lay-href');
@@ -156,9 +157,20 @@ layui.use(['element', 'layer'], function () {
     });
 });
 
+ajax("/user/getPermission", {}, function (data) {
+    if(data.code == 1){
+        var val = data.data;
+        console.log(val);
+    }
+})
+
 //退出登录
 $("#logout").click(function(){
     ajax("/user/logout", {}, function () {
         window.location = "/pages/login.html";
     });
 });
+
+ajax('/user/getPermission', {}, function (data) {
+
+})

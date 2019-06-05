@@ -83,6 +83,13 @@ parseDate = function (str) {
     return '';
 };
 
+parseDateTime = function (str) {
+    if(str){
+        return /\d{4}-\d{1,2}-\d{1,2} \d{1,2}:\d{1,2}:\d{1,2}/g.exec(str);
+    }
+    return '';
+};
+
 /**
  * 获取URL参数
  * @param name 参数名

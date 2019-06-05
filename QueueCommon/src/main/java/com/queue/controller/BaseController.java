@@ -3,8 +3,10 @@ package com.queue.controller;
 import com.queue.utils.RedisUtils;
 import com.queue.utils.SecurityEncryptUtils;
 import com.queue.utils.SerializeUtils;
+import com.queue.utils.editor.IntegerEditor;
 import com.queue.utils.editor.LocalDateEditor;
 import com.queue.utils.editor.LocalDateTimeEditor;
+import com.queue.utils.editor.StringEditor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,7 @@ public class BaseController {
     protected Logger log = LogManager.getLogger(this.getClass());
 
     @Autowired
-    private RedisUtils<String, byte[]> redisUtils;
+    public RedisUtils<String, byte[]> redisUtils;
 
     /**
      * 收到参数的时候 初始化
@@ -32,6 +34,8 @@ public class BaseController {
     private void initBinder(WebDataBinder binder){
         binder.registerCustomEditor(LocalDate.class, new LocalDateEditor());
         binder.registerCustomEditor(LocalDateTime.class, new LocalDateTimeEditor());
+        binder.registerCustomEditor(Integer.class, new IntegerEditor());//不知道有没有效,尚未测试
+        binder.registerCustomEditor(String.class, new StringEditor());
     }
 
     /**
