@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.queue.mapper.ForageTypeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.queue.entity.ForageType">
+        <id column="code" property="code" />
+        <result column="forage_name" property="forageName" />
+        <result column="parent_code" property="parentCode" />
+        <result column="create_time" property="createTime" />
+        <result column="creator" property="creator" />
+        <result column="status" property="status" />
+        <result column="updator" property="updator" />
+        <result column="update_time" property="updateTime" />
+        <result column="del_status" property="delStatus" />
+        <result column="type_level" property="typeLevel" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        code, forage_name, parent_code, create_time, creator, status, updator, update_time, del_status, type_level
+    </sql>
+
+    <select id="fandByParam" parameterType="com.queue.entity.vo.ForageTypeSearchVo" resultType="com.queue.entity.dto.ForageTypeDto">
+        select t.code, t.forage_name, t.parent_code, p.forage_name as parent_name, t.status, t.create_time, t.creator, t.update_time, t.updator, t.del_status, t.type_level from forage_type t
+        left join forage_type p on t.parent_code = p.code
+        where t.del_status = false
+        <if test="code != null and code != ''">
+            and t.code != #{code}
+        </if>
+        <if test="name != null and name != ''">
+            and t.forage_name like concat('%', #{name},'%')
+        </if>
+        <if test="parentName != null and parentName != ''">
+            and p.forage_name like concat('%', #{parentName},'%')
+        </if>
+        <if test="parentCode != null and parentCode != ''">
+            and t.parent_code = #{parentCode}
+        </if>
+        <if test="status != null">
+            and t.status = #{status}
+        </if>
+        <if test="typeLevel != null">
+            and t.type_level &gt;= #{typeLevel}
+        </if>
+    </select>
+
+    <select id="fandParnetByCode" parameterType="java.lang.String" resultType="com.queue.entity.dto.ForageNameDto">
+        select code, forage_name as name from forage_type where del_status = false and parent_code = #{code}
+    </select>
+</mapper>

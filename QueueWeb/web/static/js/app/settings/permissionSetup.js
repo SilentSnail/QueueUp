@@ -89,7 +89,7 @@ $(function () {
                         layer.msg("成功");
                         reLoad({});
                     }else {
-                        layer.msg("失败，错误原因："+ data.data);
+                        layer.msg("失败，错误原因："+ data.msg);
                     }
                 })
             } else if(obj.event === 'change'){//编辑

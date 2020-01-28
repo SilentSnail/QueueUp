@@ -65,12 +65,10 @@ $(function () {
             });
         }
 
-        table.on('tool(userClick)', function(obj){
+        table.on('row(rowClick)', function(obj){
             var data = obj.data;
-            if(obj.event === 'enter'){//查看
-                window.parent.setBaseId(data.id, data.name);//调用父页面方法
-                parent.layer.close(index);
-            }
+            window.parent.setBaseId(data.id, data.name);//调用父页面方法
+            parent.layer.close(index);
         });
         //操作结束
     });

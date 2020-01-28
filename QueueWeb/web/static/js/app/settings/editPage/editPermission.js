@@ -10,21 +10,21 @@ function loadDT(code){
             url = '/permissions/changeInfo';
             var pms = data.data;
             $('input[name="name"]').val(pms.name);
-            $('input[name="parentId"]').val(pms.parentId);
+            $('input[name="parentCode"]').val(pms.parentId);
             $('input[name="url"]').val(pms.url);
             $('textarea[name="describeInf"]').val(pms.describeInf);
             $('input[name="iconSign"]').val(pms.iconSign);
             $('input[name="code"]').val(pms.code);
             $('.parentName').val(pms.baseName);
         } else {
-            parent.layer.msg(data.data);
+            parent.layer.msg(data.msg);
             parent.layer.close(index);
         }
     })
 }
 
 function setBaseId(id, name){
-    $('input[name="parentId"]').val(id);
+    $('input[name="parentCode"]').val(id);
     $('.parentName').val(name);
 }
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>添加借款</title>
+    <title>种类管理</title>
     <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/admin.css">
@@ -11,8 +11,88 @@
     <script src="/static/layui/layui.js"></script>
     <script src="/static/js/util/query.main.util.js"></script>
 </head>
-<body>
-种类管理
+<body layadmin-themealias="default">
+    <div class="layui-fluid">
+        <div class="layui-card">
+            <div class="layui-card-header">新增种类</div>
+            <div class="layui-card-body">
+                <div class="layui-form">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">种类名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="forageName" class="layui-input" lay-verify="required">
+                        </div>
+                        <label class="layui-form-label">上级名称</label>
+                        <div class="layui-input-inline" style="width: 135px;">
+                            <input type="text" class="layui-input parentName" readonly>
+                        </div>
+                        <div class="layui-input-inline" style="width: 45px;margin-top: 5px;">
+                            <button class="layui-btn layui-btn-primary layui-btn-sm searchParent">
+                                <i class="layui-icon">&#xe615;</i>
+                            </button>
+                            <input type="hidden" name="parentCode" id="parentId">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">分类级别</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="typeLevel" class="layui-input typeLevel" lay-verify="required|number" value="0" readonly>
+                        </div>
+                        <div class="layui-input-inline">
+                            <div class="layui-input-block" style="width:200px;">
+                                <button class="layui-btn" lay-submit lay-filter="commit">添加</button>
+                                <button class="layui-btn layui-btn-primary" type="reset" onclick="resetAdd()">清除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- from 结束-->
+            </div>
+        </div>
+
+        <div class="layui-card">
+            <div class="layui-card-header">种类信息</div>
+            <div class="layui-card-body">
+                <div class="layui-form layuiadmin-card-header-auto"><!-- 查询条件块 -->
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">种类名称</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="name" class="layui-input">
+                            </div>
+                            <label class="layui-form-label">上级名称</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="parentName" class="layui-input">
+                            </div>
+<!--                            <div class="layui-input-inline" style="width: 190px;" lay-filter="type">-->
+<!--                                <select name="status">-->
+<!--                                    <option value="">请选择</option>-->
+<!--                                    <option value="1">有效</option>-->
+<!--                                    <option value="0">无效</option>-->
+<!--                                </select>-->
+<!--                            </div>-->
+                            <div class="layui-input-inline" style="margin-left: 70px;">
+                                <button class="layui-btn" lay-submit lay-filter="search">查询</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 30px;"></div>
+                <div class="layui-table-body layui-table-main">
+                    <table id="showForageInfo" lay-filter="forageFilter" style="overflow-x:auto;overflow-y:auto"></table>
+                </div>
+            </div>
+        </div>
+        <script type="text/html" id="editHtml">
+            <div class="layui-btn-group">
+                <button class="layui-btn layui-btn-primary layui-btn-xs" lay-event="del">
+                    <i class="layui-icon">&#xe640;</i>
+                </button>
+                <button class="layui-btn layui-btn-primary layui-btn-xs" lay-event="change">
+                    <i class="layui-icon">&#xe642;</i>
+                </button>
+            </div>
+        </script>
+    </div>
 </body>
 </html>
 <script src="/static/js/app/forage/forageTypeMag.js"></script>

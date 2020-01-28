@@ -33,11 +33,23 @@
         <property name="sessionDAO" ref="sessionDAO" />
     </bean>
 
+<!--    <bean id="authen" class="org.apache.shiro.authc.pam.ModularRealmAuthenticator">-->
+<!--        <property name="r"-->
+<!--    </bean>-->
+
+<!--    <bean id="author" class="">-->
+<!--        <property name=""-->
+<!--    </bean>-->
+
     <!-- 安全管理对象 -->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="myRealm" />
         <property name="sessionManager" ref="sessionManager" />
-        <!--<property name="rememberMeManager" ref="rememberMeManager" />-->
+        <property name="rememberMeManager" ref="rememberMeManager" />
+    </bean>
+
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager" />
     </bean>
 
     <!-- Shiro 过滤器配置 -->
@@ -50,7 +62,10 @@
             <value>
                 /valid/** = anon
                 /static/** = anon
-                /pages/* = anon
+                /pages/** = authc
+                /pages/error.html = anon
+                /pages/login.html = anon
+                /pages/userforget.html = anon
                 /** = authc
             </value>
         </property>
@@ -65,10 +80,7 @@
 
     <!--Cookie管理-->
     <bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+        <property name="cipherKey" value="#{T(org.apache.shiro.codec.Base64).decode('4AvVhmFLUs0KTA3Kprsdag==')}" />
         <property name="cookie" ref="rememberMeCookie" />
-    </bean>
-
-    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
-        <property name="securityManager" ref="securityManager" />
     </bean>
 </beans>

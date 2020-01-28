@@ -37,7 +37,7 @@ $(function() {
                     $('#changePassword').show();
                     $("#code").val(data.data); //得到令牌，用于密码修改验证
                 }else{
-                    layer.alert(data.data, {icon: 5});
+                    layer.alert(data.msg, {icon: 5});
                 }
             });
         });
@@ -45,10 +45,10 @@ $(function() {
         form.on('submit(repassword)', function(res){
             ajax("/valid/rePassChange", res.field, function(data){
                 if(data.code == 1){
-                    layer.alert("修改成功", {icon: 5});
+                    layer.alert("修改成功", {icon: 1});
                     window.location = "/pages/login.html";
                 }else{
-                    layer.alert(data.data, {icon: 5});
+                    layer.alert(data.msg, {icon: 5});
                 }
             });
         });

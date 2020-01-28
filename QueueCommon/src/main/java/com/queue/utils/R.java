@@ -46,7 +46,7 @@ public class R extends HashMap<String,Object> {
     }
 
     public static R error(int code, String message){
-        return new R().put("code", code).put("data", message);
+        return new R().put("code", code).put("msg", message);
     }
 
     public static R okPage(PageBean value){

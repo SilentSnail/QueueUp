@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.queue.mapper.PayMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.queue.entity.Pay">
+        <id column="pay_code" property="payCode" />
+        <result column="order_no" property="orderNo" />
+        <result column="asset_name" property="assetName" />
+        <result column="brand_name" property="brandName" />
+        <result column="price" property="price" />
+        <result column="num" property="num" />
+        <result column="surcharge" property="surcharge" />
+        <result column="pay_time" property="payTime" />
+        <result column="measure" property="measure" />
+        <result column="payee" property="payee" />
+        <result column="pay_type" property="payType" />
+        <result column="pay_status" property="payStatus" />
+        <result column="pay_no" property="payNo" />
+        <result column="has_invoice" property="hasInvoice" />
+        <result column="remark" property="remark" />
+        <result column="create_time" property="createTime" />
+        <result column="creator" property="creator" />
+        <result column="del_time" property="delTime" />
+        <result column="del_status" property="delStatus" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        pay_code, order_no, asset_name, brand_name, price, num, surcharge, pay_time, measure, payee, pay_type, pay_status, pay_no, has_invoice, remark, create_time, creator, del_time, del_status
+    </sql>
+
+</mapper>

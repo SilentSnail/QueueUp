@@ -59,6 +59,7 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+
     <!--拦截请求-->
     <servlet-mapping>
         <servlet-name>SpringMVC</servlet-name>

@@ -119,4 +119,8 @@ public class ConvertUtils {
         }
         return ts;
     }
+
+    public static String numberToStr(int number, String format){
+        return String.format(format, number);
+    }
 }

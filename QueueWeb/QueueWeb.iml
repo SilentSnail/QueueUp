@@ -54,6 +54,8 @@
     <orderEntry type="library" name="Maven: io.protostuff:protostuff-api:1.5.9" level="project" />
     <orderEntry type="library" name="Maven: io.protostuff:protostuff-runtime:1.5.9" level="project" />
     <orderEntry type="library" name="Maven: io.protostuff:protostuff-collectionschema:1.5.9" level="project" />
+    <orderEntry type="library" name="Maven: com.alipay.sdk:alipay-sdk-java:4.8.73.ALL" level="project" />
+    <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.62" level="project" />
     <orderEntry type="module" module-name="QueueShiro" />
     <orderEntry type="module" module-name="QueueBus" />
     <orderEntry type="library" name="Maven: org.apache.shiro:shiro-core:1.4.0" level="project" />

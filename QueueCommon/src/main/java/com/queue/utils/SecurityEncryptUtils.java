@@ -5,6 +5,8 @@ import org.apache.shiro.codec.Hex;
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.springframework.util.DigestUtils;
 
+import java.time.LocalDateTime;
+import java.util.Random;
 import java.util.UUID;
 
 /**
@@ -46,5 +48,16 @@ public class SecurityEncryptUtils {
      */
     public synchronized static final String getUUID(){
         return (UUID.randomUUID().toString()).replace("-", "");
+    }
+
+    public synchronized static final String getNumberNo(){
+        StringBuffer sbf = new StringBuffer();
+        sbf.append(DateUtils.getFormatTime(LocalDateTime.now(), "yyyyMMddHHmmss"));
+        sbf.append(ConvertUtils.numberToStr(new Random().nextInt(10000), ""));
+        return sbf.toString();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(SecurityEncryptUtils.getNumberNo());
     }
 }

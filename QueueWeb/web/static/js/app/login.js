@@ -18,7 +18,7 @@ $(function () {
                 if(data.code == 1){
                     window.location = "/pages/admin/admin.html";
                 }else{
-                    layer.alert(data.data, {icon: 5});
+                    layer.alert(data.msg, {icon: 5});
                 }
             });
         });
