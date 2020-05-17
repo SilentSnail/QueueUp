@@ -2,71 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b47487f-65e3-4cf2-a16b-9b04ce8f3e36" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../.idea/libraries/Maven__org_apache_logging_log4j_log4j_web_2_11_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/controller/AuthorityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/controller/PermissionsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/entity/Permissions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/entity/dto/PermissionDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/entity/dto/PermissionListDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/entity/dto/PrmsBaseListDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/entity/vo/PermissionSaveVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/entity/vo/PermissionSearchVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/mapper/PermissionsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/service/PermissionsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/service/impl/PermissionsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueBus/src/main/resources/com/queue/mapper/PermissionsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueCommon/src/main/java/com/queue/utils/editor/StringEditor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/entity/dto/AuthorityInfoDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/entity/dto/UserPermission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/entity/vo/AuthoritySearchVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/autMagr/autList.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/settings/editPage/basePrmsSearch.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/settings/editPage/editPermission.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/app/autMagr/autList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/app/settings/editPage/basePrmsSearch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/app/settings/editPage/editPermission.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/artifacts/queue.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/artifacts/queue.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/libraries/Maven__org_springframework_spring_websocket_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/libraries/Maven__org_springframework_spring_websocket_5_0_4_RELEASE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueBus/QueueBus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueBus/QueueBus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueCommon/QueueCommon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueCommon/QueueCommon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueCommon/src/main/java/com/queue/config/ExceptionHandlerBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueCommon/src/main/java/com/queue/config/ExceptionHandlerBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueCommon/src/main/java/com/queue/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueCommon/src/main/java/com/queue/controller/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueCommon/src/main/java/com/queue/utils/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueCommon/src/main/java/com/queue/utils/R.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueShiro/QueueShiro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueShiro/QueueShiro.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/controller/ValidController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/controller/ValidController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/entity/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/entity/Authority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/mapper/AuthorityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/mapper/AuthorityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/service/AuthorityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/service/AuthorityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/service/RoleUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/service/RoleUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/service/impl/AuthorityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/service/impl/AuthorityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/service/impl/RoleUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/service/impl/RoleUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/shiro/realm/MyRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueShiro/src/main/java/com/queue/shiro/realm/MyRealm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueShiro/src/main/resources/com/queue/mapper/AuthorityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueShiro/src/main/resources/com/queue/mapper/AuthorityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueShiro/src/main/resources/com/queue/mapper/RoleUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueShiro/src/main/resources/com/queue/mapper/RoleUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueShiro/target/classes/com/queue/mapper/AuthorityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueShiro/target/classes/com/queue/mapper/AuthorityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueShiro/target/classes/com/queue/mapper/RoleUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueShiro/target/classes/com/queue/mapper/RoleUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../QueueSocket/QueueSocket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueSocket/QueueSocket.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QueueWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../QueueWeb.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/java/com/test/RandomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/test/java/com/test/RandomTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/java/com/test/ThreadPoolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/test/java/com/test/ThreadPoolTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/loan/addLoanInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/loan/addLoanInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/settings/permissionSetup.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/settings/permissionSetup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/userforget.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/userforget.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app/admin/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/app/admin/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app/contact/contManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/app/contact/contManage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app/loan/loan.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/app/loan/loan.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/app/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app/settings/permissionSetup.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/app/settings/permissionSetup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/util/query.main.util.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/util/query.main.util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/controller/CommonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/controller/ForageTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/controller/ForageTypeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/controller/LoanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/controller/PayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/controller/PayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/mapper/FileRecordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/mapper/FileRecordMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/mapper/ForageTypeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/mapper/ForageTypeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/service/FileRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/service/FileRecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/service/ForageTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/service/ForageTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/service/impl/FileRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/service/impl/FileRecordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/service/impl/ForageTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueBus/src/main/java/com/queue/service/impl/ForageTypeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueBus/src/main/resources/com/queue/mapper/FileRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueBus/src/main/resources/com/queue/mapper/FileRecordMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueBus/src/main/resources/com/queue/mapper/ForageTypeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueBus/src/main/resources/com/queue/mapper/ForageTypeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueBus/target/classes/com/queue/mapper/FileRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueBus/target/classes/com/queue/mapper/FileRecordMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueBus/target/classes/com/queue/mapper/ForageTypeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueBus/target/classes/com/queue/mapper/ForageTypeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueCommon/src/main/java/com/queue/enums/FileType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueCommon/src/main/java/com/queue/enums/FileType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueCommon/src/main/java/com/queue/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../QueueCommon/src/main/java/com/queue/utils/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../QueueCommon/target/classes/mail.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/spring-shiro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/resources/spring-shiro.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/spring-shiro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/spring-shiro.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/app/loan/addLoanInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/app/loan/addLoanInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/app/loan/editLoanInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/app/loan/editLoanInfo.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -82,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+            <state relative-caret-position="248">
+              <caret line="44" column="26" lean-forward="true" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -116,41 +73,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -202,17 +126,18 @@
       <updated>1555557854763</updated>
       <workItem from="1555557856177" duration="834000" />
       <workItem from="1557646101530" duration="102000" />
+      <workItem from="1587129630390" duration="35000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="936000" />
+    <option name="totallyTimeSpent" value="971000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="23" width="1277" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -267,8 +192,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+        <state relative-caret-position="248">
+          <caret line="44" column="26" lean-forward="true" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
         </state>
       </provider>
     </entry>

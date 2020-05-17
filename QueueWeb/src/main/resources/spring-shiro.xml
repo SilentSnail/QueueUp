@@ -33,14 +33,6 @@
         <property name="sessionDAO" ref="sessionDAO" />
     </bean>
 
-<!--    <bean id="authen" class="org.apache.shiro.authc.pam.ModularRealmAuthenticator">-->
-<!--        <property name="r"-->
-<!--    </bean>-->
-
-<!--    <bean id="author" class="">-->
-<!--        <property name=""-->
-<!--    </bean>-->
-
     <!-- 安全管理对象 -->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="myRealm" />

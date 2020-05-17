@@ -21,7 +21,7 @@
         code, forage_name, parent_code, create_time, creator, status, updator, update_time, del_status, type_level
     </sql>
 
-    <select id="fandByParam" parameterType="com.queue.entity.vo.ForageTypeSearchVo" resultType="com.queue.entity.dto.ForageTypeDto">
+    <select id="findByParam" parameterType="com.queue.entity.vo.ForageTypeSearchVo" resultType="com.queue.entity.dto.ForageTypeDto">
         select t.code, t.forage_name, t.parent_code, p.forage_name as parent_name, t.status, t.create_time, t.creator, t.update_time, t.updator, t.del_status, t.type_level from forage_type t
         left join forage_type p on t.parent_code = p.code
         where t.del_status = false
@@ -45,7 +45,7 @@
         </if>
     </select>
 
-    <select id="fandParnetByCode" parameterType="java.lang.String" resultType="com.queue.entity.dto.ForageNameDto">
+    <select id="findParnetByCode" parameterType="java.lang.String" resultType="com.queue.entity.dto.ForageNameDto">
         select code, forage_name as name from forage_type where del_status = false and parent_code = #{code}
     </select>
 </mapper>

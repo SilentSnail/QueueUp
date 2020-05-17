@@ -40,7 +40,7 @@ public class PayController {
      */
     @RequestMapping("/getItem")
     public R getSelectItem(String parentCode){
-        return R.ok(this.forageTypeService.fandParnetByCode(parentCode));
+        return R.ok(this.forageTypeService.findParnetByCode(parentCode));
     }
 
     /**

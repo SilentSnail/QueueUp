@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.queue.entity.Loan;
 import com.queue.entity.vo.LoanSearchDetail;
 import com.queue.entity.vo.LoanSearchVo;
+import com.queue.service.FileRecordService;
 import com.queue.service.LoanService;
 import com.queue.utils.PageBean;
 import com.queue.utils.R;
@@ -28,6 +29,8 @@ public class LoanController extends BaseController{
 
     @Autowired
     private LoanService loanService;
+    @Autowired
+    private FileRecordService fileRecordService;
 
     /**
      * 保存或新增
@@ -35,15 +38,15 @@ public class LoanController extends BaseController{
      * @return
      */
     @RequestMapping("/save")
-    public R addEntity(Loan loan){
+    public R addEntity(Loan loan, String[] images){
         loan.setCode(SecurityEncryptUtils.getUUID());
         if (loan.getLoanType() == 0){
             loan.setAmount(loan.getAmount()*-1);
         }
-        this.loanService.saveOrUpdate(loan);
+//        this.loanService.saveOrUpdate(loan);
         if(loan.getIsIou() == 1){//有附件
-            System.out.println(loan.getId());
-            System.out.println(loan.getCode());
+            System.out.println(images);
+//            this.fileRecordService.updateIouInfo(images, loan.getCode());
         }
         return R.ok();
     }

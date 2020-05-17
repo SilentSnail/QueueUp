@@ -94,9 +94,8 @@ public class FileUtils {
             } catch (Exception e) {
                 throw e;
             } finally {
-                str = new StringBuffer();
+                return str.toString();
             }
-            return str.toString();
         }
     }
 

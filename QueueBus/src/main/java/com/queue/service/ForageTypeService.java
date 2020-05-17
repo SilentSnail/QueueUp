@@ -18,7 +18,7 @@ import java.util.List;
  */
 public interface ForageTypeService extends IService<ForageType> {
 
-    List<ForageTypeDto> fandByParam(ForageTypeSearchVo param);
+    List<ForageTypeDto> findByParam(ForageTypeSearchVo param);
 
-    List<ForageNameDto> fandParnetByCode(String parentCode);
+    List<ForageNameDto> findParnetByCode(String parentCode);
 }

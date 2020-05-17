@@ -27,12 +27,12 @@ public class ForageTypeServiceImpl extends ServiceImpl<ForageTypeMapper, ForageT
     private ForageTypeMapper forageTypeMapper;
 
     @Override
-    public List<ForageTypeDto> fandByParam(ForageTypeSearchVo param) {
-        return this.forageTypeMapper.fandByParam(param);
+    public List<ForageTypeDto> findByParam(ForageTypeSearchVo param) {
+        return this.forageTypeMapper.findByParam(param);
     }
 
     @Override
-    public List<ForageNameDto> fandParnetByCode(String parentCode) {
-        return this.forageTypeMapper.fandParnetByCode(parentCode);
+    public List<ForageNameDto> findParnetByCode(String parentCode) {
+        return this.forageTypeMapper.findParnetByCode(parentCode);
     }
 }

@@ -21,4 +21,10 @@
         id, code, relation_code, sign, upload_name, save_name, path, status, create_time, user_code
     </sql>
 
+    <update id="updateIouInfoById">
+        update file_record set relation_code = #{rel_code} where code in
+        <foreach collection="images" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
 </mapper>

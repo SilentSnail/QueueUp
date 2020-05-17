@@ -1,7 +1,6 @@
 package com.queue.controller;
 
 import com.queue.entity.FileRecord;
-import com.queue.enums.FileType;
 import com.queue.service.FileRecordService;
 import com.queue.utils.FileUtils;
 import com.queue.utils.R;
@@ -44,6 +43,9 @@ public class CommonController extends BaseController {
             } catch (IOException e) {//错误处理应该由代理类去处理，此处暂时先这样
                 log.error(e.getMessage());
                 uuids[i] = "第 " + (i+1) + " 个文件出现错误，上传失败。错误信息：" + e.getMessage();
+            } catch (Exception e){
+                log.error(e);
+                uuids[i] = "上传第 " + (i+1) + " 个文件时系统内部出错误，文件上传失败";
             }
         }
         return R.ok(uuids);
@@ -62,7 +64,7 @@ public class CommonController extends BaseController {
         String saveName = FileUtils.saveFile(file, savePath);
         //保存文件记录
         record.setCode(code);
-        record.setSign("image");
+        record.setSign("default");
         record.setUploadName(file.getOriginalFilename());
         record.setSaveName(saveName);
         record.setPath(savePath + saveName);
@@ -78,16 +80,19 @@ public class CommonController extends BaseController {
     @RequestMapping("/upload")
     public R upload(MultipartFile file){
         try {
-            String head = FileUtils.getFileHeader(file.getInputStream());
-            if(FileUtils.checkFileType(FileType.XLSX, head)){
-                return R.error("文件类型错误");
-            }
+//            String head = FileUtils.getFileHeader(file.getInputStream());
+//            if(FileUtils.checkFileType(FileType.XLSX, head)){
+//                return R.error("文件类型错误");
+//            }
             FileRecord record = this.getFileRecord(file, FileUtils.convertFilePath(savePath), new FileRecord());
             this.fileRecord.save(record);
             return R.ok(record.getCode());
         } catch (IOException e) {
             log.debug(e.getMessage());
             return R.error(e.getMessage());
+        } catch (Exception e){
+            log.debug(e);
+            return R.error("系统内部错误，上传失败");
         }
     }
 }

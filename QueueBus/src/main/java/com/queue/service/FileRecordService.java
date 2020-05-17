@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface FileRecordService extends IService<FileRecord> {
 
+    Integer updateIouInfo(String[] images, String rel_code);
 }

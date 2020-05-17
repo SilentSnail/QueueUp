@@ -33,7 +33,7 @@ public class ForageTypeController {
     @RequestMapping("/find")
     public R findByParam(ForageTypeSearchVo param){
         PageBean page = new PageBean();
-        page.setData(this.forageTypeService.fandByParam(param));
+        page.setData(this.forageTypeService.findByParam(param));
         return R.okPage(page);
     }
 
