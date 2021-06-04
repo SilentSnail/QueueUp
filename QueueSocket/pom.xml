@@ -12,7 +12,7 @@
     <artifactId>websocket</artifactId>
 
     <properties>
-        <http-client>4.5.5</http-client>
+        <http-client>4.5.13</http-client>
     </properties>
 
     <dependencies>
