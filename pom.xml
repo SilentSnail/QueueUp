@@ -23,7 +23,7 @@
         <mysql-connection>6.0.6</mysql-connection>
         <mybatis-plus>3.0.5</mybatis-plus>
         <druid-version>1.1.9</druid-version>
-        <fastjson-version>1.2.47</fastjson-version>
+        <fastjson-version>1.2.83</fastjson-version>
         <log4j2-version>2.11.0</log4j2-version>
         <shiro-version>1.4.0</shiro-version>
         <junit-version>4.12</junit-version>
